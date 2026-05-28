@@ -62,7 +62,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full`}>
-      <head>
+      <body className="min-h-full flex flex-col antialiased">
+        <JsonLdOrganization />
+        <JsonLdWebSite />
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+        <WhatsAppButton />
         {/* Google Analytics */}
         {GA_MEASUREMENT_ID && (
           <>
@@ -80,14 +86,6 @@ export default function RootLayout({
             </Script>
           </>
         )}
-      </head>
-      <body className="min-h-full flex flex-col antialiased">
-        <JsonLdOrganization />
-        <JsonLdWebSite />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppButton />
       </body>
     </html>
   );
