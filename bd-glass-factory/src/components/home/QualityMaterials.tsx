@@ -17,7 +17,7 @@ export default function QualityMaterials() {
           {/* Text */}
           <div>
             <h2 className="text-brand-dark mb-4">
-              Better Raw Materials for Better Glass Performance
+              Premium Raw Materials for Long-Lasting Glass Performance
             </h2>
             <p className="text-brand-muted-dark mb-6 leading-relaxed">
               We understand that glass quality starts from raw materials. That is why BD-Glass

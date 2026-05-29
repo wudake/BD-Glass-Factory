@@ -14,7 +14,7 @@ const categories: ProductCategory[] = [
     title: "Tempered Glass",
     slug: "tempered-glass",
     description:
-      "Widely used in doors, windows, partitions, furniture, shower rooms, railings, and other applications that require higher strength and impact resistance.",
+      "Safety glass with 4-5× strength of ordinary glass. Thickness: 3–19mm. Ideal for shower rooms, glass doors, partitions, railings, and table tops requiring higher impact resistance.",
     applications: [
       "Shower rooms",
       "Glass doors",
@@ -30,7 +30,7 @@ const categories: ProductCategory[] = [
     title: "Laminated Glass",
     slug: "laminated-glass",
     description:
-      "Commonly used in places with higher safety requirements. Even when broken, the interlayer helps hold the glass fragments together, reducing safety risks.",
+      "Security glass with PVB/SGP interlayer that holds fragments together when broken. Thickness: 6.38–60mm. Suitable for guardrails, curtain walls, skylights, and high-security windows.",
     applications: [
       "Glass guardrails",
       "Curtain walls",
@@ -45,7 +45,7 @@ const categories: ProductCategory[] = [
     title: "Insulated Glass",
     slug: "insulating-glass",
     description:
-      "Designed to improve thermal insulation and sound insulation performance. Widely used in building facades, windows, doors, curtain walls, and energy-saving projects.",
+      "Energy-efficient double and triple glazed units for thermal and sound insulation. Max size: 2,500×5,000mm. Widely used in curtain walls, aluminum windows, and energy-saving buildings.",
     applications: [
       "Building curtain walls",
       "Aluminum windows and doors",
@@ -60,7 +60,7 @@ const categories: ProductCategory[] = [
     title: "Curtain Wall Glass",
     slug: "curtain-wall-glass",
     description:
-      "Supporting curtain wall glass solutions for commercial buildings and large engineering projects. Options include Low-E glass, tempered, laminated, and insulated glass in customized configurations.",
+      "Custom curtain wall glass solutions combining Low-E, tempered, laminated, and insulated glass. Options include thermal insulation, UV protection, wind resistance, and solar control.",
     applications: [
       "Thermal insulation",
       "UV protection",
@@ -75,7 +75,7 @@ const categories: ProductCategory[] = [
     title: "Glass Railings & Stair Handrails",
     slug: "glass-railings",
     description:
-      "Create a clean, transparent, and modern appearance while maintaining safety and durability. Suitable for both indoor and outdoor applications.",
+      "Frameless and framed glass railing systems for balconies, staircases, and outdoor viewing areas. Clean, modern appearance with certified safety and durability.",
     applications: [
       "Villas",
       "Balconies",
@@ -90,7 +90,7 @@ const categories: ProductCategory[] = [
     title: "Glass Partitions",
     slug: "glass-partitions",
     description:
-      "Help create open, bright, and modern spaces. Used in offices, hotels, showrooms, and residential interiors with options for privacy and sound insulation.",
+      "Office and interior glass partitions with options for privacy glass and sound insulation. Used in meeting rooms, commercial interiors, and modern home decoration.",
     applications: [
       "Office partitions",
       "Meeting rooms",
@@ -105,7 +105,7 @@ const categories: ProductCategory[] = [
     title: "Shower Room Glass",
     slug: "shower-room-glass",
     description:
-      "Customized shower room glass for residential, hotel, and apartment projects with safety and easy maintenance in mind.",
+      "Tempered shower room glass for residential, hotel, and apartment projects. Custom sizes and finishes with safety and easy-maintenance design.",
     applications: [
       "Bathroom shower enclosures",
       "Hotel bathrooms",
@@ -122,10 +122,11 @@ export default function ProductCategories() {
     <section className="section bg-brand-gray/5">
       <div className="container-page">
         <div className="text-center mb-12">
-          <h2 className="text-brand-dark mb-4">Product Categories</h2>
+          <h2 className="text-brand-dark mb-4">Our Glass Products — Quality Manufacturing from Our China Factory</h2>
           <p className="text-brand-muted-dark text-body-lg max-w-3xl mx-auto">
-            From safety glass to decorative glass, explore our processed glass products for
-            different applications.
+            From raw glass sheets to finished products, every piece is processed in-house
+            with strict quality control. Explore our main glass product categories for
+            construction, home decoration, and commercial projects.
           </p>
         </div>
 

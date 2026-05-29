@@ -39,7 +39,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               key={item.href}
               href={item.href}
               onClick={onClose}
-              className="text-brand-muted hover:text-brand-blue hover:bg-brand-gray px-4 py-3 text-base font-medium rounded-md transition-colors duration-200"
+              className="text-brand-muted hover:text-brand-gold hover:bg-brand-gray px-4 py-3 text-base font-medium rounded-md transition-colors duration-200"
             >
               {item.label}
             </Link>

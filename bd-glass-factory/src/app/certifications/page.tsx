@@ -2,6 +2,7 @@ import SectionTitle from "@/components/shared/SectionTitle";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import { certifications } from "@/data/certifications";
 import { Shield, FileCheck, Award, Users } from "lucide-react";
+import { JsonLdBreadcrumb } from "@/lib/json-ld";
 import { generatePageMeta } from "@/lib/metadata";
 import type { Metadata } from "next";
 
@@ -33,14 +34,16 @@ export default function CertificationsPage() {
     <div>
       <div className="bg-brand-dark py-20">
         <div className="container-page text-center">
-          <h1 className="text-white mb-4">Certifications & Quality</h1>
+          <p className="text-brand-blue text-sm uppercase tracking-wider mb-4">Quality Assurance</p>
+          <h1 className="text-white mb-4">Quality Certifications — Your Reliable Glass Factory</h1>
           <p className="text-brand-muted text-body-lg max-w-xl mx-auto">
-            Our commitment to quality, safety, and industry standards
+            3C certified, product quality certifications, and active membership in multiple industry associations
           </p>
         </div>
       </div>
       <div className="container-page py-4">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Certifications" }]} />
+        <JsonLdBreadcrumb items={[{ name: "Home", item: "/" }, { name: "Certifications" }]} />
       </div>
       <section className="section">
         <div className="container-page">

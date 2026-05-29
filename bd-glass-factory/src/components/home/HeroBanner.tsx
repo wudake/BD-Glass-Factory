@@ -21,32 +21,32 @@ export default function HeroBanner() {
         <div className="inline-flex items-center gap-2 bg-brand-blue/10 border border-brand-blue/20 rounded-full px-4 py-2 mb-8">
           <span className="w-2 h-2 bg-brand-green rounded-full animate-pulse" />
           <span className="text-brand-blue text-sm font-medium">
-            Factory Direct Supply · Custom Processing · Project-Based Glass Solutions
+            ◆ Professional China Glass Factory Since 2018
           </span>
         </div>
 
         {/* Headline */}
         <h1 className="text-white max-w-4xl mb-6">
-          Reliable Glass Processing Solutions for Windows, Doors, Curtain Walls &amp; Interior Projects
+          Your Trusted China Glass Factory for Tempered &amp; Insulating Glass
         </h1>
 
         {/* Subtitle */}
         <p className="text-brand-muted text-body-lg max-w-2xl mb-10 leading-relaxed">
-          BD-Glass is a China-based glass processing factory supplying high-quality architectural
-          and decorative glass for builders, contractors, window and door manufacturers, developers,
-          and project buyers. From glass sheets to tempered glass, laminated glass, insulated glass,
-          glass railings, partitions, shower rooms, and custom project glass — we help you source
-          the right glass products with stable quality, flexible production, and professional support.
+          BDGLASS is a professional China glass manufacturer with 15,000㎡ production base,
+          5 advanced production lines, and 3C certified quality. We supply tempered glass,
+          insulating glass, laminated glass, and craft glass for builders, contractors,
+          window and door manufacturers, and project buyers across Australia, Africa,
+          Middle East and Southeast Asia.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
           <Link href="/contact" className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2">
-            Get a Quote
+            Get Factory Quote
             <ArrowRight size={20} />
           </Link>
           <Link href="/contact" className="btn-outline border-brand-blue text-brand-blue text-lg px-8 py-4">
-            Send Your Glass Specification
+            Explore Glass Products
           </Link>
         </div>
 

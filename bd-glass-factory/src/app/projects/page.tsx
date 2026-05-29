@@ -3,6 +3,7 @@ import Breadcrumb from "@/components/shared/Breadcrumb";
 import { projects } from "@/data/projects";
 import Link from "next/link";
 import { MapPin, ArrowRight } from "lucide-react";
+import { JsonLdBreadcrumb } from "@/lib/json-ld";
 import { generatePageMeta } from "@/lib/metadata";
 import type { Metadata } from "next";
 
@@ -37,6 +38,7 @@ export default function ProjectsPage() {
       </div>
       <div className="container-page py-4">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Projects" }]} />
+        <JsonLdBreadcrumb items={[{ name: "Home", item: "/" }, { name: "Projects" }]} />
       </div>
 
       {/* Stats Bar */}

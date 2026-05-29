@@ -93,9 +93,9 @@ export default function InquiryForm() {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-200 p-8" noValidate>
-      <h3 className="text-brand-dark mb-2">Send Us a Message</h3>
+      <h3 className="text-brand-dark mb-2">Request a Glass Factory Quote</h3>
       <p className="text-brand-muted-dark text-body-sm mb-6">
-        Fill out the form below and we&apos;ll get back to you as soon as possible.
+        Fill out the form below with your glass requirements. We&apos;ll respond within 24 hours with a detailed quotation.
       </p>
 
       <div className="space-y-5">
@@ -105,7 +105,7 @@ export default function InquiryForm() {
             <label htmlFor="name" className="label">Full Name *</label>
             <input
               type="text" id="name" name="name" value={formData.name}
-              onChange={handleChange} placeholder="Your name"
+              onChange={handleChange} placeholder="Your full name (required for quotation)"
               className={`input-field ${errors.name ? "border-brand-orange" : ""}`}
             />
             {errors.name && <p className="text-brand-orange text-xs mt-1">{errors.name}</p>}
@@ -114,7 +114,7 @@ export default function InquiryForm() {
             <label htmlFor="email" className="label">Email *</label>
             <input
               type="email" id="email" name="email" value={formData.email}
-              onChange={handleChange} placeholder="your@email.com"
+              onChange={handleChange} placeholder="your@email.com (required for quotation delivery)"
               className={`input-field ${errors.email ? "border-brand-orange" : ""}`}
             />
             {errors.email && <p className="text-brand-orange text-xs mt-1">{errors.email}</p>}
@@ -127,7 +127,7 @@ export default function InquiryForm() {
             <label htmlFor="phone" className="label">Phone</label>
             <input
               type="tel" id="phone" name="phone" value={formData.phone}
-              onChange={handleChange} placeholder="+86 123 4567 8900"
+              onChange={handleChange} placeholder="+86 137 2381 0568 (recommended for WhatsApp follow-up)"
               className="input-field"
             />
           </div>
@@ -135,7 +135,7 @@ export default function InquiryForm() {
             <label htmlFor="company" className="label">Company</label>
             <input
               type="text" id="company" name="company" value={formData.company}
-              onChange={handleChange} placeholder="Your company"
+              onChange={handleChange} placeholder="Your company or project name"
               className="input-field"
             />
           </div>
@@ -149,7 +149,7 @@ export default function InquiryForm() {
             onChange={handleChange}
             className={`input-field ${errors.country ? "border-brand-orange" : ""}`}
           >
-            <option value="">Select your country</option>
+            <option value="">Select your country (for shipping &amp; documentation)</option>
             {countries.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
@@ -188,7 +188,7 @@ export default function InquiryForm() {
           <textarea
             id="message" name="message" value={formData.message}
             onChange={handleChange} rows={5}
-            placeholder="Tell us about your glass requirements, sizes, quantities, and project details..."
+            placeholder="Glass type, dimensions (mm), thickness, quantity, application, delivery timeline, and any special requirements..."
             className={`textarea-field ${errors.message ? "border-brand-orange" : ""}`}
           />
           {errors.message && <p className="text-brand-orange text-xs mt-1">{errors.message}</p>}

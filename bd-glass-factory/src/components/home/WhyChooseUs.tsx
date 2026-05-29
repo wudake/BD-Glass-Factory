@@ -5,12 +5,12 @@ export default function WhyChooseUs() {
     {
       icon: PhoneCall,
       title: "Factory Direct Communication",
-      desc: "Work directly with a glass processing factory instead of a trading middleman.",
+      desc: "Work directly with our China glass factory instead of a trading middleman. Faster response, clearer pricing, better control.",
     },
     {
       icon: PenTool,
       title: "Custom Glass Processing",
-      desc: "Send us your sizes, drawings, glass configuration, or project requirements. We can help match suitable glass solutions.",
+      desc: "Send us your sizes, drawings, glass configuration, or project requirements. We match suitable tempered, laminated, or insulating glass solutions.",
     },
     {
       icon: Layers,
@@ -20,17 +20,17 @@ export default function WhyChooseUs() {
     {
       icon: Briefcase,
       title: "Project Experience",
-      desc: "We understand both home decoration and engineering project requirements.",
+      desc: "We understand both home decoration and large engineering project requirements, from small villas to 28,000㎡ commercial towers.",
     },
     {
       icon: Sliders,
       title: "Flexible Service",
-      desc: "We support different project needs, from standard glass supply to customized processing.",
+      desc: "From standard glass supply to fully customized processing — we adapt to your project timeline and quantity needs.",
     },
     {
       icon: Globe,
       title: "Export-Oriented Support",
-      desc: "BD-Glass serves both domestic and overseas markets, supporting global customers with one-stop glass solutions.",
+      desc: "BDGLASS serves buyers across Australia, Africa, Middle East, and Southeast Asia with one-stop glass solutions and global delivery support.",
     },
   ];
 
@@ -38,9 +38,10 @@ export default function WhyChooseUs() {
     <section className="section bg-brand-dark">
       <div className="container-page">
         <div className="text-center mb-12">
-          <h2 className="text-white mb-4">Why Choose BD-Glass</h2>
+          <h2 className="text-white mb-4">Why Choose BDGLASS as Your Glass Supplier</h2>
           <p className="text-brand-muted text-body-lg max-w-3xl mx-auto">
-            A glass processing partner that puts your project first.
+            A reliable glass supplier that puts your project first — from material selection
+            to delivery.
           </p>
         </div>
 

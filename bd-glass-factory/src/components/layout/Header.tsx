@@ -29,9 +29,15 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-white font-bold text-xl tracking-tight flex items-center gap-2"
+            className="text-white font-bold text-xl tracking-tight flex items-center gap-2.5"
           >
-            <span className="text-brand-blue text-2xl">◆</span>
+            <img
+              src="/logo-icon.svg"
+              alt="BDGLASS"
+              className="h-9 w-9"
+              width="36"
+              height="36"
+            />
             {siteConfig.name}
           </Link>
 
@@ -41,7 +47,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-brand-muted hover:text-brand-blue px-4 py-2 text-[15px] font-medium transition-colors duration-200 rounded-md"
+                className="text-brand-muted hover:text-brand-gold px-4 py-2 text-[15px] font-medium transition-colors duration-200 rounded-md"
               >
                 {item.label}
               </Link>

@@ -18,7 +18,7 @@ export default function ProductRange() {
     <section className="section bg-white">
       <div className="container-page">
         <div className="text-center mb-12">
-          <h2 className="text-brand-dark mb-4">One Factory, Multiple Glass Solutions</h2>
+          <h2 className="text-brand-dark mb-4">One China Glass Factory, Multiple Glass Solutions</h2>
           <p className="text-brand-muted-dark text-body-lg max-w-3xl mx-auto">
             Whether you are working on residential buildings, commercial projects, curtain walls,
             villas, hotels, offices, or interior decoration, BD-Glass provides a wide range of

@@ -5,18 +5,18 @@ export default function CertificationsPreview() {
   const items = [
     {
       icon: FileCheck,
-      title: "Tempered Glass 3C Test Report",
-      desc: "Product testing and certification documentation available for tempered glass products.",
+      title: "3C Certified Tempered Glass",
+      desc: "National Compulsory Product Certification (CCC) for tempered glass — meeting Chinese and international safety standards.",
     },
     {
       icon: Shield,
       title: "Insulating Glass Product Certification",
-      desc: "Product certification supporting the quality and performance of our insulating glass units.",
+      desc: "Certified performance for thermal insulation, sound insulation, and seal durability of insulating glass units.",
     },
     {
       icon: ClipboardCheck,
-      title: "Product Warranty Documentation",
-      desc: "Warranty and quality documentation including sealant testing support and desiccant quality records.",
+      title: "10-Year Warranty & Quality Docs",
+      desc: "Full warranty documentation, sealant testing records, and desiccant quality reports available for project orders.",
     },
   ];
 
@@ -24,10 +24,11 @@ export default function CertificationsPreview() {
     <section className="section bg-brand-gray/5">
       <div className="container-page">
         <div className="text-center mb-12">
-          <h2 className="text-brand-dark mb-4">Quality You Can Check</h2>
+          <h2 className="text-brand-dark mb-4">Quality Certifications — Your Assurance of a Reliable Glass Factory</h2>
           <p className="text-brand-muted-dark text-body-lg max-w-3xl mx-auto">
-            BD-Glass focuses on quality control and product reliability. Our glass products
-            are supported by testing, product certification, and quality documentation.
+            BDGLASS focuses on quality control and product reliability. Our glass products
+            are backed by 3C certification, product testing reports, and quality documentation
+            — giving international buyers confidence in every order.
           </p>
         </div>
 

@@ -8,10 +8,11 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div>
-            <h2 className="text-brand-dark mb-4">Contact BD-Glass</h2>
+            <h2 className="text-brand-dark mb-4">Contact BDGLASS — Get Your Glass Quote Today</h2>
             <p className="text-brand-muted-dark mb-8 leading-relaxed">
-              Send us your glass sizes, drawings, or project list today. Our team will reply
-              with a suitable glass solution and quotation.
+              Send us your glass sizes, drawings, or project specifications today. Our team
+              will reply with a suitable glass solution and competitive quotation within
+              24 hours.
             </p>
 
             <div className="space-y-5 mb-8">

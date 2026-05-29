@@ -10,6 +10,33 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import HowWeWork from "@/components/home/HowWeWork";
 import CTASection from "@/components/home/CTASection";
 import ContactSection from "@/components/home/ContactSection";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "China Glass Factory - Tempered & Insulating Glass Manufacturer | BDGLASS",
+  description:
+    "BDGLASS is a professional China glass factory specializing in tempered glass, insulating glass, laminated glass and custom glass processing. 3C certified, 15,000㎡ production base, exporting to 6+ countries. Get a quote today.",
+  keywords: [
+    "China glass factory",
+    "China glass manufacturer",
+    "tempered glass factory China",
+    "insulating glass manufacturer",
+    "custom glass processing",
+    "glass supplier China",
+    "laminated glass China",
+    "architectural glass factory",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "China Glass Factory - Tempered & Insulating Glass Manufacturer | BDGLASS",
+    description:
+      "BDGLASS is a professional China glass factory specializing in tempered glass, insulating glass, laminated glass and custom glass processing. 3C certified, 15,000㎡ production base, exporting to 6+ countries.",
+    type: "website",
+    locale: "en_US",
+  },
+};
 
 export default function HomePage() {
   return (

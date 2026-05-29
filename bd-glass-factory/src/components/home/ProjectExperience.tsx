@@ -18,7 +18,7 @@ export default function ProjectExperience() {
           {/* Text */}
           <div>
             <h2 className="text-white mb-4">
-              Trusted by Real Building and Engineering Projects
+              Trusted by Landmark Projects Across China
             </h2>
             <p className="text-brand-muted mb-6 leading-relaxed">
               BD-Glass has supplied glass products for different project applications, including
@@ -58,7 +58,7 @@ export default function ProjectExperience() {
                 key={stat.label}
                 className="card-dark border-brand-gray-light p-6 text-center"
               >
-                <div className="text-brand-blue text-3xl font-bold font-mono mb-2">
+                <div className="text-brand-blue text-2xl font-bold font-mono mb-2">
                   {stat.value}
                 </div>
                 <div className="text-brand-muted text-sm">{stat.label}</div>

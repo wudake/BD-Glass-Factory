@@ -5,22 +5,22 @@ export default function ApplicationScenarios() {
     {
       icon: Building2,
       title: "Glass for Building Projects",
-      desc: "From curtain walls to balcony windows and glass guardrails, BD-Glass helps project buyers find suitable glass configurations for different building requirements.",
+      desc: "Curtain walls, balcony windows, glass guardrails, and facade glass for commercial and residential buildings. We help project buyers match suitable glass configurations to building codes and climate requirements.",
     },
     {
       icon: LayoutGrid,
       title: "Glass for Windows and Doors",
-      desc: "Our processed glass can be used in aluminum windows, doors, balcony systems, and energy-saving window solutions.",
+      desc: "Processed glass for aluminum windows, doors, balcony systems, and energy-saving window solutions. Available as tempered, laminated, or insulated units.",
     },
     {
       icon: Home,
       title: "Glass for Interior Decoration",
-      desc: "We provide glass solutions for partitions, wardrobes, wine cabinets, shower rooms, staircases, and decorative spaces.",
+      desc: "Glass solutions for partitions, wardrobes, wine cabinets, shower rooms, staircases, and decorative glass for modern residential and commercial interiors.",
     },
     {
       icon: Briefcase,
       title: "Glass for Engineering Projects",
-      desc: "BD-Glass has experience supporting engineering glass applications, including curtain walls, guardrails, handrails, decorative glass, and customized project glass.",
+      desc: "Large-scale engineering glass supply including curtain walls, guardrails, handrails, decorative glass, and custom project glass with full technical support.",
     },
   ];
 
@@ -28,9 +28,10 @@ export default function ApplicationScenarios() {
     <section className="section bg-white">
       <div className="container-page">
         <div className="text-center mb-12">
-          <h2 className="text-brand-dark mb-4">Application Scenarios</h2>
+          <h2 className="text-brand-dark mb-4">Glass Applications — From Building Projects to Interior Design</h2>
           <p className="text-brand-muted-dark text-body-lg max-w-3xl mx-auto">
-            From residential to commercial, interior to exterior — glass solutions for every project type.
+            Our China glass manufacturer supplies processed glass for a wide range of
+            applications — from large-scale building projects to detailed interior decoration.
           </p>
         </div>
 

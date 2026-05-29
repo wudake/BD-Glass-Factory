@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <rect width="500" height="500" fill="#0A1F44"/>
+  
+  <text x="250.0" y="351.5" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="290.0" fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle">BD</text>
+  <line x1="160.0" y1="90.0" x2="340.0" y2="410.0" stroke="#C9A96E" stroke-width="4.166666666666667" stroke-linecap="square"/>
+    <rect x="240.0" y="240.0" width="20.0" height="20.0" fill="#C9A96E"/>
+</svg>

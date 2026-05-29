@@ -5,12 +5,12 @@ export default function FactoryStrength() {
     {
       icon: Building2,
       title: "Factory Location",
-      desc: "Located in Foshan, Guangdong, China — a major glass manufacturing hub",
+      desc: "Located in Foshan, Guangdong, China — the heart of China's glass manufacturing industry",
     },
     {
       icon: Factory,
       title: "Production Scale",
-      desc: "Two production bases with a total area of around 15,000 square meters",
+      desc: "Two production bases totaling 15,000 ㎡ with full-scale glass processing capacity",
     },
     {
       icon: Users,
@@ -20,12 +20,12 @@ export default function FactoryStrength() {
     {
       icon: Wrench,
       title: "Advanced Equipment",
-      desc: "Tempering furnaces, edging machines, CNC cutting, hollow glass production lines, and more",
+      desc: "SouthTech tempering furnaces, CNC cutting, hollow glass lines, and automatic edge grinding",
     },
     {
       icon: Maximize,
       title: "Flexible Service",
-      desc: "Supporting standard glass orders and customized project requirements",
+      desc: "Standard glass orders and customized project requirements with flexible MOQ",
     },
   ];
 
@@ -34,12 +34,14 @@ export default function FactoryStrength() {
       <div className="container-page">
         <div className="text-center mb-12">
           <h2 className="text-white mb-4">
-            Built for Stable Quality and Flexible Production
+            Why Choose BDGLASS as Your Glass Factory Partner
           </h2>
           <p className="text-brand-muted text-body-lg max-w-3xl mx-auto">
-            BD-Glass is backed by professional glass processing facilities and experienced
-            production teams. Our factory is equipped with advanced glass processing equipment,
-            supporting both standard glass orders and customized project requirements.
+            BDGLASS operates a 15,000-square-meter China glass factory in Foshan, Guangdong,
+            with two production bases and five advanced production lines. Our facility is
+            equipped with SouthTech tempering furnaces, CNC cutting machines, automatic
+            edge grinders, and hollow glass production lines — supporting both standard
+            orders and custom glass processing for international buyers.
           </p>
         </div>
 

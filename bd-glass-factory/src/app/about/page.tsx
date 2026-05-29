@@ -4,12 +4,13 @@ import { Check, MapPin, Globe, Building2 } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { generatePageMeta } from "@/lib/metadata";
 import { JsonLdBreadcrumb, JsonLdOrganization } from "@/lib/json-ld";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = generatePageMeta({
-  title: "About BDGLASS - Foshan Glass Factory Since 2018",
+  title: "About BDGLASS | Glass Manufacturer China Since 2018 | Foshan Factory",
   description:
-    "Learn about Foshan Bodian Glass Co., LTD — a professional China glass factory established in 2018. 15,000sqm production base, 80+ team, advanced equipment, 3C certified.",
+    "Foshan Bodian Glass Co., LTD — professional glass manufacturer in China since 2018. 15,000sqm factory, 80+ team, 3C certified. Tempered, insulating, laminated & craft glass exporter.",
   path: "/about",
 });
 
@@ -22,9 +23,9 @@ export default function AboutPage() {
           <p className="text-brand-blue text-sm uppercase tracking-wider mb-4">
             Since {siteConfig.founded}
           </p>
-          <h1 className="text-white mb-4">About BDGLASS</h1>
-          <p className="text-brand-muted text-body-lg max-w-xl mx-auto">
-            A professional China glass factory specializing in architectural and decorative glass processing
+          <h1 className="text-white mb-4">About BDGLASS — Professional Glass Manufacturer in China Since 2018</h1>
+          <p className="text-brand-muted text-body-lg max-w-2xl mx-auto">
+            15,000 square meters production base in Foshan, Guangdong. 80+ team members. 3C certified. Exporting architectural and decorative glass to Australia, Africa, Middle East &amp; Southeast Asia.
           </p>
         </div>
       </div>
@@ -41,26 +42,51 @@ export default function AboutPage() {
               <h2 className="text-brand-dark mb-6">Foshan Bodian Glass Co., LTD</h2>
               <div className="space-y-4 text-brand-muted-dark leading-relaxed">
                 <p>
-                  Foshan Bodian Glass Co., Ltd. was established in 2018, located in Shishan Town,
-                  Nanhai District, Foshan City, Guangdong Province — the heart of China&apos;s glass
-                  manufacturing industry.
+                  Foshan Bodian Glass Co., Ltd. (BDGLASS) is a professional glass manufacturer based in
+                  Foshan City, Guangdong Province, China — the heart of the world&apos;s glass manufacturing
+                  industry. Established in 2018, we have grown from a small glass processing workshop into
+                  a modern glass factory with two production bases totaling 15,000 square meters, serving
+                  clients across China and exporting to over 10 countries worldwide.
                 </p>
                 <p>
-                  In the early days of our company, we introduced a series of advanced glass processing
-                  equipment, such as tempering furnace, edge grinder, drilling machine, hollow wire,
-                  etc., with all-round, large production capacity, flexible and changeable service
-                  capacity.
+                  Our primary product lines include <strong>tempered glass</strong> (toughened safety glass,
+                  3-19mm), <strong>insulating glass</strong> (IGU / double glazed units, 12-52mm),{" "}
+                  <strong>laminated glass</strong> (PVB/SGP safety glass, 6.38-60mm), and{" "}
+                  <strong>craft glass</strong> (decorative glass with acid etching, silk screen printing,
+                  digital enamel, hot melting, and stained glass techniques). These products serve three
+                  main market segments: residential home decoration, commercial building construction, and
+                  architectural curtain wall projects.
                 </p>
                 <p>
-                  The company focuses on the production and processing of insulating glass, tempered
-                  glass, laminated glass and craft glass. The products are widely used in home decoration,
-                  construction and other fields.
+                  Our factory is equipped with industry-leading glass processing machinery including a{" "}
+                  <strong>SouthTech tempering furnace</strong> (capable of processing glass up to 3,300 ×
+                  8,000mm), <strong>5 automated hollow glass production lines</strong> for IGU
+                  manufacturing, <strong>CNC bending machines</strong> for precision curved glass,{" "}
+                  <strong>high-precision CNC cutting machines</strong>, and{" "}
+                  <strong>automatic edge grinding machines</strong>.
                 </p>
                 <p>
-                  All glass products produced have passed the Chinese Safety Glass Certification Center
-                  inspection and obtained &quot;National Compulsory Product Certification&quot; (3C)
-                  certification. Bodian glass not only serves the domestic market, but also actively
-                  expands the international market, providing one-stop glass solutions for global customers.
+                  Quality begins with raw materials. We source our glass original sheets from China&apos;s
+                  top-tier float glass manufacturers — <strong>Xinyi Glass</strong> and{" "}
+                  <strong>South Glass (CSG)</strong> — ensuring higher strength, excellent flatness and
+                  uniformity, and low iron content that reduces the risk of spontaneous breakage. Every
+                  batch undergoes strict quality inspection including dimensional accuracy, surface defect
+                  checking, and impact resistance testing. All products carry the{" "}
+                  <strong>3C (CCC) certification</strong>.
+                </p>
+                <p>
+                  While we maintain a strong presence in China&apos;s domestic market, BDGLASS has been
+                  actively expanding internationally. Our glass products are exported to{" "}
+                  <strong>Australia, Africa, the Middle East, Cambodia, Vietnam</strong>, and other
+                  Southeast Asian countries. We provide professional export packaging (plywood crates with
+                  cork separators), full documentation support, and flexible shipping terms including FOB,
+                  CIF, and DDP.
+                </p>
+                <p>
+                  Our team of 80+ employees has an average age of 29, bringing together youthful energy
+                  with technical expertise. We invest continuously in employee training and skill
+                  development, ensuring our production team stays current with the latest glass processing
+                  technologies and quality standards.
                 </p>
               </div>
             </div>
@@ -100,11 +126,14 @@ export default function AboutPage() {
               <h5 className="text-brand-dark font-semibold mb-4">Core Equipment</h5>
               <div className="space-y-3">
                 {[
-                  "SouthTech Tempering Furnace — High-precision glass tempering",
-                  "5 Hollow Glass Production Lines — Automated IGU manufacturing",
-                  "CNC Bending Machine — Precision curved glass processing",
-                  "High Precision CNC Cutting Machine — Accurate sheet cutting",
-                  "Automatic Edge Grinding Machine — Smooth, polished edges",
+                  "SouthTech Tempering Furnace — High-precision glass tempering up to 3,300 × 8,000mm",
+                  "5 Hollow Glass Production Lines — Automated IGU manufacturing (double & triple glazing)",
+                  "CNC Bending Machine — Precision curved glass with custom radii & shapes",
+                  "High Precision CNC Cutting Machine — Accurate sheet cutting with ±0.5mm tolerance",
+                  "Automatic Edge Grinding Machine — Flat, pencil, bevel, and OG edge finishes",
+                  "CNC Drilling Machine — Precision hole drilling, waterjet-compatible layouts",
+                  "Laminating Autoclave — PVB/SGP laminated glass bonding, 6.38-60mm range",
+                  "Silk Screen Printing Line — Ceramic frit decorative printing, up to 6 colors (Pantone matched)",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <Check size={18} className="text-brand-green mt-0.5 shrink-0" />
@@ -178,9 +207,12 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {[
+                  { value: "2018", label: "Year Founded" },
+                  { value: "15,000㎡", label: "Production Area" },
                   { value: "80+", label: "Team Members" },
                   { value: "29", label: "Average Age" },
-                  { value: "2", label: "Production Bases" },
+                  { value: "5", label: "Production Lines" },
+                  { value: "10+", label: "Export Countries" },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
                     <div className="text-brand-blue text-2xl font-bold font-mono">{stat.value}</div>
@@ -213,17 +245,17 @@ export default function AboutPage() {
               {
                 icon: Globe,
                 title: "Domestic to International",
-                desc: "The company has a solid foundation in the domestic market. Products are exported to Australia, Africa, the Middle East, Cambodia, Vietnam and other countries.",
+                desc: "Solid foundation in China's domestic market supplying major door and window manufacturers in Guangdong and surrounding provinces. Internationally, products are exported to Australia, Africa, the Middle East, Cambodia, Vietnam and Southeast Asia — with FOB Tianjin and CIF shipping options.",
               },
               {
                 icon: Building2,
                 title: "Offline to Online",
-                desc: "With perfect offline sales network and growing online platforms, we expand sales channels through the Internet and provide convenient online consultation.",
+                desc: "Mature offline sales network covering Southern China, plus growing digital presence through Alibaba, Made-in-China, and our own website. We provide convenient online consultation, quotation, and order tracking for international buyers.",
               },
               {
                 icon: MapPin,
                 title: "Home Decoration to Engineering",
-                desc: "From customized door and window glass to large-scale engineering projects including curtain walls, glass guardrails, handrails, and decorative glass.",
+                desc: "From customized door and window glass for residential villas to large-scale engineering projects including commercial curtain walls, glass railings, handrails, and decorative glass installations for hotels and churches.",
               },
             ].map((item) => (
               <div key={item.title} className="card p-6 text-center">
@@ -309,6 +341,103 @@ export default function AboutPage() {
                 <p className="text-brand-muted-dark text-xs">{org.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 8: FAQ */}
+      <section className="section bg-brand-gray/5">
+        <div className="container-page">
+          <SectionTitle
+            title="Frequently Asked Questions About BDGLASS"
+            subtitle="Common questions from international buyers and project partners."
+          />
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                question: "Where is BDGLASS factory located?",
+                answer:
+                  "Our factory is located at No.23, North Garden Road, Shishan Town, Nanhai District, Foshan City, Guangdong Province, China. Foshan is widely recognized as one of China's largest glass manufacturing clusters, with a complete supply chain ecosystem from raw float glass to finished architectural glass products.",
+              },
+              {
+                question: "What certifications does BDGLASS have?",
+                answer:
+                  "All our safety glass products (tempered glass, insulating glass, laminated glass) are certified by the Chinese Safety Glass Certification Center and carry the National Compulsory Product Certification (3C / CCC) mark. We also comply with EN 12150 (tempered glass), EN 1279 (insulating glass), and EN 14449 (laminated glass) European standards. Test reports and certificates are available for project orders.",
+              },
+              {
+                question: "What is your production capacity and lead time?",
+                answer:
+                  "Our two production bases total 15,000 square meters with 5 production lines. Standard lead times are: tempered glass 7-15 working days, insulating glass 10-20 working days, laminated glass 10-20 working days, and craft glass 7-15 working days (samples: 7-10 days). Large project orders may require 25-30 working days. Rush orders are negotiable.",
+              },
+              {
+                question: "Do you accept OEM and custom orders?",
+                answer:
+                  "Yes. Custom orders are our core business. We accept custom dimensions, thicknesses, colors, edge finishes, hole patterns, printed designs, and multi-layer combinations (tempered + laminated + insulating). Send us your specifications or design files (AI, PDF, DWG, DXF) and we will provide a detailed quotation within 24 hours.",
+              },
+              {
+                question: "Which countries do you export to?",
+                answer:
+                  "We currently export to Australia, Africa, the Middle East, Cambodia, Vietnam, and other Southeast Asian countries. We provide professional export packaging (plywood crates with cork separators), full customs documentation, and flexible shipping terms including FOB Tianjin, CIF, and DDP. New markets are continuously being developed.",
+              },
+              {
+                question: "How can I visit your factory?",
+                answer:
+                  "We welcome factory visits by appointment. Our factory is approximately 45 minutes by car from Guangzhou Baiyun International Airport (CAN). Please contact us via WhatsApp at +86 13723810568 or email info@bdglassfactory.com to schedule your visit. Airport pickup and hotel arrangements can be coordinated for serious buyers and project partners.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="border border-gray-200 rounded-lg p-5 bg-white"
+              >
+                <h4 className="text-brand-dark mb-2 text-lg">{item.question}</h4>
+                <p className="text-brand-muted-dark text-body-sm leading-relaxed">
+                  {item.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 9: CTA */}
+      <section className="section bg-white">
+        <div className="container-page">
+          <div className="bg-brand-dark rounded-2xl p-8 md:p-12 text-center">
+            <h2 className="text-white mb-4">Visit Our Factory or Request a Quote Today</h2>
+            <p className="text-brand-muted text-body-lg max-w-2xl mx-auto mb-8">
+              Whether you need a sample, a quotation, or a factory tour — our team is ready to help.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8 text-left">
+              {[
+                "Free quotation within 24 hours — Send your specs, get a detailed quote fast",
+                "Sample production available — 7-10 day turnaround, cost credited to bulk order",
+                "Factory visits welcome — 45 min from Guangzhou Baiyun Airport (CAN)",
+                "Full export documentation — 3C certificates, test reports, customs paperwork",
+                "Flexible shipping terms — FOB Tianjin, CIF, or DDP to your door",
+                "OEM & custom orders — Dimensions, colors, finishes, and multi-layer combinations",
+              ].map((point, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <Check size={16} className="text-brand-green mt-0.5 shrink-0" />
+                  <span className="text-brand-muted text-sm">{point}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2"
+              >
+                Request a Factory Quote
+              </Link>
+              <a
+                href={`https://wa.me/${siteConfig.whatsapp.replace(/[^0-9]/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline border-brand-green text-brand-green text-lg px-8 py-4 inline-flex items-center gap-2"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>

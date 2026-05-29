@@ -38,6 +38,15 @@ export const metadata: Metadata = {
     "BDGLASS",
     "Bodian Glass",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "BDGLASS - China Glass Factory | Tempered & Insulating Glass Manufacturer",
     description:
@@ -46,10 +55,28 @@ export const metadata: Metadata = {
     siteName: "BDGLASS",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: `https://${siteConfig.domain}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "BDGLASS - China Glass Factory",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BDGLASS - China Glass Factory | Tempered & Insulating Glass Manufacturer",
+    description:
+      "Professional China glass factory specializing in tempered, insulating, laminated and craft glass. 3C certified, 15,000 sqm production base, exporting worldwide.",
+    images: [`https://${siteConfig.domain}/og-image.png`],
   },
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 

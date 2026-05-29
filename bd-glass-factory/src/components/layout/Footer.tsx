@@ -11,9 +11,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <div>
-            <h5 className="text-white text-lg font-semibold mb-4">
-              {siteConfig.name}
-            </h5>
+            <div className="flex items-center gap-2.5 mb-4">
+              <img
+                src="/logo-icon.svg"
+                alt="BDGLASS"
+                className="h-8 w-8"
+                width="32"
+                height="32"
+              />
+              <h5 className="text-white text-lg font-semibold">
+                {siteConfig.name}
+              </h5>
+            </div>
             <p className="text-brand-muted text-sm leading-relaxed">
               {siteConfig.fullName}. Professional glass manufacturer specializing in
               tempered, insulating, laminated and craft glass since {siteConfig.founded}.
@@ -32,7 +41,7 @@ export default function Footer() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-brand-muted hover:text-brand-blue text-sm transition-colors duration-200"
+                      className="text-brand-muted hover:text-brand-gold text-sm transition-colors duration-200"
                     >
                       {item.label}
                     </Link>
@@ -50,7 +59,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/products/tempered-glass"
-                  className="text-brand-muted hover:text-brand-blue text-sm transition-colors duration-200"
+                  className="text-brand-muted hover:text-brand-gold text-sm transition-colors duration-200"
                 >
                   Tempered Glass
                 </Link>
@@ -58,7 +67,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/products/insulating-glass"
-                  className="text-brand-muted hover:text-brand-blue text-sm transition-colors duration-200"
+                  className="text-brand-muted hover:text-brand-gold text-sm transition-colors duration-200"
                 >
                   Insulating Glass
                 </Link>
@@ -66,7 +75,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/products/laminated-glass"
-                  className="text-brand-muted hover:text-brand-blue text-sm transition-colors duration-200"
+                  className="text-brand-muted hover:text-brand-gold text-sm transition-colors duration-200"
                 >
                   Laminated Glass
                 </Link>
@@ -74,7 +83,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/products/craft-glass"
-                  className="text-brand-muted hover:text-brand-blue text-sm transition-colors duration-200"
+                  className="text-brand-muted hover:text-brand-gold text-sm transition-colors duration-200"
                 >
                   Craft Glass
                 </Link>
@@ -89,23 +98,23 @@ export default function Footer() {
             </h5>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-brand-muted text-sm">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-brand-blue" />
+                <MapPin size={16} className="mt-0.5 shrink-0 text-brand-gold" />
                 <span>{siteConfig.address.en}</span>
               </li>
               <li className="flex items-center gap-3 text-brand-muted text-sm">
-                <Phone size={16} className="shrink-0 text-brand-blue" />
+                <Phone size={16} className="shrink-0 text-brand-gold" />
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="hover:text-brand-blue transition-colors"
+                  className="hover:text-brand-gold transition-colors"
                 >
                   {siteConfig.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3 text-brand-muted text-sm">
-                <Mail size={16} className="shrink-0 text-brand-blue" />
+                <Mail size={16} className="shrink-0 text-brand-gold" />
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="hover:text-brand-blue transition-colors"
+                  className="hover:text-brand-gold transition-colors"
                 >
                   {siteConfig.email}
                 </a>

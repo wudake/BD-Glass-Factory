@@ -15,10 +15,12 @@ export default function CTASection() {
 
       <div className="container-page relative z-10 text-center">
         <h2 className="text-white mb-4 max-w-3xl mx-auto">
-          Need a Reliable Glass Processing Factory in China?
+          Ready to Source Glass from a Trusted China Factory?
         </h2>
         <p className="text-brand-muted text-body-lg max-w-2xl mx-auto mb-6">
-          Tell us what glass you need. BD-Glass will help you find the right solution for your project.
+          Get a competitive factory quote within 24 hours. Tell us your glass type,
+          thickness, size, quantity, and application — our experts will recommend the
+          best glass solution for your project.
         </p>
         <p className="text-brand-muted text-body-sm max-w-xl mx-auto mb-10">
           Whether you need glass sheets, tempered glass, laminated glass, insulated glass,
@@ -28,7 +30,7 @@ export default function CTASection() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/contact" className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2">
-            Request a Quote
+            Request a Factory Quote
             <ArrowRight size={20} />
           </Link>
           <a
