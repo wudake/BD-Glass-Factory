@@ -32,11 +32,11 @@ export default function Header() {
             className="text-white font-bold text-xl tracking-tight flex items-center gap-2.5"
           >
             <img
-              src="/logo-icon.svg"
+              src="/logo.png"
               alt="BDGLASS"
-              className="h-9 w-9"
-              width="36"
-              height="36"
+              className="h-10 w-10 rounded-md"
+              width="40"
+              height="40"
             />
             {siteConfig.name}
           </Link>

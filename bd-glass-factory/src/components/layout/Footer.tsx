@@ -13,11 +13,11 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <img
-                src="/logo-icon.svg"
+                src="/logo.png"
                 alt="BDGLASS"
-                className="h-8 w-8"
-                width="32"
-                height="32"
+                className="h-9 w-9 rounded-md"
+                width="36"
+                height="36"
               />
               <h5 className="text-white text-lg font-semibold">
                 {siteConfig.name}
