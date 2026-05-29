@@ -11,7 +11,18 @@ Foshan Bodian Glass Co., LTD (BDGLASS) — China glass factory foreign trade web
 
 ## Project Status
 
-Phases 1-5 complete. Phase 6 (Vercel deployment) pending — code committed locally, needs GitHub push.
+**V1.4.0 — Complete SEO optimization across all core pages**
+
+| Phase | Status | Details |
+|-------|--------|---------|
+| 1. Logo Design | ✅ | Custom SVG/PNG/favicon set (deep blue + champagne gold) |
+| 2. Homepage SEO | ✅ | 12 sections optimized with keyword-rich copy, CTAs |
+| 3. Product Detail SEO | ✅ | 4 products: Tempered, Insulating, Laminated, Craft Glass |
+| 4. About / Services / Contact SEO | ✅ | Extended copy, FAQ, CTA, workflow sections |
+| 5. Typography & Brand Colors | ✅ | Hubs.com-inspired scale, CSS custom properties |
+| 6. Deployment | ✅ | Production on port 80, GitHub synced |
+
+**Next**: `/certifications` page SEO, `/projects/[slug]` detail pages, or `/blog` content strategy.
 
 ## Key Conventions
 

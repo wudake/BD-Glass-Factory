@@ -96,10 +96,11 @@ src/
 │       └── InquiryForm.tsx       # Client-side inquiry form
 ├── data/                          # Static TypeScript data files
 │   ├── site-config.ts            # Company info, nav, export info
-│   ├── products.ts               # 4 products with specs & applications
+│   ├── products.ts               # 4 products with full SEO data (specs, FAQ, related)
 │   ├── projects.ts               # 6 project cases with glass config
-│   ├── services.ts               # 6 service descriptions
-│   └── certifications.ts         # 8 certifications & memberships
+│   ├── services.ts               # 6 service descriptions with expanded details
+│   ├── certifications.ts         # 8 certifications & memberships
+│   └── seo-draft-*.md            # SEO copy drafts (about, contact, craft-glass, services)
 └── lib/
     ├── metadata.ts               # SEO metadata generation helper
     └── json-ld.tsx               # Schema.org structured data components
@@ -119,10 +120,26 @@ src/
 
 ## SEO Features
 
+### V1.4.0 SEO Optimization (Completed)
+
+- **Homepage**: AIDA-structured copy with keyword-optimized H1/H2, CTAs, and benefit-driven content across all 12 sections
+- **Product Detail Pages** (4 pages): Per-slug dynamic metadata (title, description, H1, subtitle, CTA), extended long descriptions (~700-1200 words), 13-row spec tables, 6-7 FAQ items, related product recommendations
+  - `/products/tempered-glass` — Tempered Glass Manufacturer China
+  - `/products/insulating-glass` — Insulating Glass Manufacturer China
+  - `/products/laminated-glass` — Laminated Glass Manufacturer China
+  - `/products/craft-glass` — Craft Glass Manufacturer China
+- **About Page**: ~800-word company introduction, 6 core stats, 8 equipment items with specs, 6 FAQ items, bottom CTA section
+- **Services Page**: ~400-word processing capability introduction, 6 expanded service cards, 5-step workflow, 6 FAQ items, bottom CTA section
+- **Contact Page**: Inquiry guide with 6 information checklists, 6 contact info items (incl. factory visit & languages), WhatsApp CTA card, 6 FAQ items
+- **Typography System**: Hubs.com-inspired B2B scale — tightened heading sizes, 1.7 line-height for body text, `--text-display` and `--text-subhead` tokens
+
+### Technical SEO
+
 - Dynamic `sitemap.xml` generation (static + dynamic routes)
 - `robots.txt` with proper crawl rules
 - JSON-LD structured data: Organization, Product, BreadcrumbList, WebSite
-- Per-page metadata with Open Graph tags
+- Per-page metadata with Open Graph and Twitter Cards
+- Canonical URLs, `siteName`, and `locale` on all pages
 - Image optimization: WebP/AVIF formats, responsive sizes
 - Font optimization: `display: swap`, subset loading
 - Semantic HTML with `aria-label` and keyboard accessibility
@@ -145,7 +162,7 @@ src/
 See `src/app/globals.css` for the complete design system:
 
 - **Colors**: 14 design tokens (brand-dark, brand-blue, brand-green, etc.)
-- **Typography**: 10 size levels (H1-Caption), Inter + JetBrains Mono fonts
+- **Typography**: Hubs.com-inspired B2B scale — H1 3rem/1.15, H2 2.25rem/1.25, H3 1.5rem/1.35, H4 1.25rem/1.4, body 1rem/1.7. Inter + JetBrains Mono fonts
 - **Components**: `.btn-primary`, `.btn-outline`, `.btn-link`, `.card`, `.card-dark`, `.input-field`, `.textarea-field`, `.section`, `.container-page`
 - **Motion**: `prefers-reduced-motion` support
 
@@ -159,4 +176,4 @@ See `src/app/globals.css` for the complete design system:
 
 ---
 
-> Version: V1.2.0 | Domain: bdglassfactory.com
+> Version: V1.4.0 | Domain: bdglassfactory.com | Updated: 2026-05-29
