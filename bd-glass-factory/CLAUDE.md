@@ -1,0 +1,39 @@
+@AGENTS.md
+
+# BDGLASS Website Project
+
+Foshan Bodian Glass Co., LTD (BDGLASS) — China glass factory foreign trade website.
+
+- **Domain**: bdglassfactory.com
+- **Stack**: Next.js 16.2 + TypeScript 5 + Tailwind CSS v4 (CSS-first, no tailwind.config.ts)
+- **Package manager**: npm
+- **Build**: `npm run dev` (Turbopack)
+
+## Project Status
+
+Phases 1-5 complete. Phase 6 (Vercel deployment) pending — code committed locally, needs GitHub push.
+
+## Key Conventions
+
+- All content in English, communication with user in Chinese
+- `use client` only for interactive components (Header, MobileNav, WhatsAppButton, InquiryForm)
+- Design tokens in `src/app/globals.css` via `@theme` block
+- Placeholder images marked with "Replace with XXX photo (dimensions WebP)"
+- Content docs in `docs/content/*.md` for user editing
+
+## Project Structure
+
+```
+src/
+├── app/           # App Router pages + layouts
+│   ├── api/contact/route.ts  # POST inquiry handler
+│   ├── robots.ts / sitemap.ts
+│   └── */page.tsx
+├── components/
+│   ├── home/      # 12 homepage section components
+│   ├── layout/    # Header, Footer, MobileNav
+│   ├── shared/    # SectionTitle, Breadcrumb, WhatsAppButton
+│   └── contact/   # InquiryForm
+├── data/          # Static data files (site-config, products, projects, services, certifications)
+└── lib/           # metadata.ts, json-ld.tsx
+```
