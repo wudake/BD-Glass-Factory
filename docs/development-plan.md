@@ -4,7 +4,7 @@
 > 技术栈：Next.js 16.2 + TypeScript 5 + Tailwind CSS v4
 > 部署：Vercel
 > 制定日期：2026-05-27
-> 最后更新：2026-05-27
+> 最后更新：2026-05-29
 
 ---
 
@@ -17,7 +17,7 @@
 | Phase 3 | 核心页面开发 | 14 | ✅ 已完成 |
 | Phase 4 | 交互与转化 | 6 | ✅ 已完成 |
 | Phase 5 | SEO + 性能优化 | 7 | ✅ 已完成 |
-| Phase 6 | 部署上线 | 5 | 🔲 待继续 — 代码已 commit，待推送 GitHub + Vercel 部署 |
+| Phase 6 | 部署上线 | 5 | 🔲 待继续 — 代码已推送 GitHub（V1.2.0），待 Vercel 部署 + 域名配置 |
 
 ---
 
@@ -399,7 +399,7 @@
 
 ### Task 6.1 — Vercel 部署
 
-- [ ] 推送代码到 GitHub 仓库
+- [x] 推送代码到 GitHub 仓库（V1.2.0 / 2026-05-29）
 - [ ] Vercel 连接 GitHub 仓库
 - [ ] 配置环境变量（GA ID、reCAPTCHA Key、SMTP 配置等）
 - [ ] 配置自定义域名 `bdglassfactory.com`
