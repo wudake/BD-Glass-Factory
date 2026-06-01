@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionTitle from "@/components/shared/SectionTitle";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import { products } from "@/data/products";
@@ -49,12 +50,15 @@ export default function ProductsPage() {
                 href={`/products/${product.slug}`}
                 className="card group flex flex-col sm:flex-row overflow-hidden"
               >
-                {/* Image Placeholder */}
-                <div className="sm:w-48 shrink-0 bg-brand-gray flex items-center justify-center aspect-square sm:aspect-auto">
-                  <span className="text-brand-muted text-xs text-center px-2">
-                    {product.name}
-                    <br />Photo
-                  </span>
+                {/* Image */}
+                <div className="sm:w-48 shrink-0 bg-brand-gray relative aspect-square sm:aspect-auto sm:min-h-[200px]">
+                  <Image
+                    src={product.imagePath}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 200px"
+                  />
                 </div>
 
                 {/* Content */}

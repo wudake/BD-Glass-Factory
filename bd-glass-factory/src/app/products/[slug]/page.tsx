@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { products } from "@/data/products";
 import { notFound } from "next/navigation";
 import SectionTitle from "@/components/shared/SectionTitle";
@@ -141,12 +142,14 @@ export default async function ProductDetailPage({
           {/* Product Overview */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Image */}
-            <div className="bg-brand-gray rounded-xl aspect-[4/3] flex items-center justify-center">
-              <span className="text-brand-muted text-sm text-center px-4">
-                {product.name} Product Photo
-                <br />
-                <span className="text-xs">Replace with 800×600 WebP</span>
-              </span>
+            <div className="bg-brand-gray rounded-xl aspect-[4/3] relative overflow-hidden">
+              <Image
+                src={product.imagePath}
+                alt={product.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
 
             {/* Product Info */}

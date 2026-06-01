@@ -61,11 +61,13 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button — min 48×48 touch target per design spec */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-white p-2"
+            className="md:hidden w-12 h-12 flex items-center justify-center text-white rounded-md"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav-drawer"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

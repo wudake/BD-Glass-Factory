@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionTitle from "@/components/shared/SectionTitle";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import { certifications } from "@/data/certifications";
@@ -67,8 +68,14 @@ export default function CertificationsPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {items.map((cert) => (
                     <div key={cert.title} className="card p-6">
-                      <div className="bg-brand-gray rounded-lg aspect-[3/2] flex items-center justify-center mb-4">
-                        <span className="text-brand-muted text-sm">Certificate Image</span>
+                      <div className="bg-brand-gray rounded-lg aspect-[3/2] relative overflow-hidden mb-4">
+                        <Image
+                          src={cert.imagePath}
+                          alt={cert.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        />
                       </div>
                       <h5 className="text-brand-dark mb-2">{cert.title}</h5>
                       <p className="text-brand-muted-dark text-body-sm">{cert.description}</p>

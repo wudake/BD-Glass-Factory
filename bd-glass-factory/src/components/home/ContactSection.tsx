@@ -63,14 +63,14 @@ export default function ContactSection() {
           </div>
 
           {/* Inquiry Form Placeholder / Quick Form */}
-          <div className="bg-white rounded-xl border border-gray-200 p-8">
+          <div className="bg-white rounded-xl border border-gray-200 p-5 sm:p-8">
             <h3 className="text-brand-dark mb-2">Get Your Glass Quote</h3>
             <p className="text-brand-muted-dark text-body-sm mb-6">
               Please send us the following information for a tailored quotation.
             </p>
 
             <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {["Glass type", "Thickness", "Size", "Quantity"].map((field) => (
                   <input
                     key={field}

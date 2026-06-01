@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionTitle from "@/components/shared/SectionTitle";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import { projects } from "@/data/projects";
@@ -76,12 +77,16 @@ export default function ProjectsPage() {
                 className="card group flex flex-col overflow-hidden"
               >
                 {/* Image */}
-                <div className="bg-brand-gray aspect-video flex items-center justify-center relative">
-                  <span className="text-brand-muted text-xs">
-                    Project Photo<br />Replace (960×600)
-                  </span>
+                <div className="bg-brand-gray aspect-video relative overflow-hidden">
+                  <Image
+                    src={project.imagePath}
+                    alt={`${project.name} - ${project.location}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                   {/* Area Badge */}
-                  <div className="absolute top-3 right-3 bg-brand-blue text-white text-xs font-bold px-3 py-1.5 rounded-md">
+                  <div className="absolute top-3 right-3 bg-brand-blue text-white text-xs font-bold px-3 py-1.5 rounded-md z-10">
                     {project.area}
                   </div>
                 </div>

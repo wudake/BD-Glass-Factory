@@ -78,13 +78,13 @@ export default function InquiryForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
+      <div className="bg-white rounded-xl border border-gray-200 p-5 sm:p-8 text-center">
         <CheckCircle size={48} className="text-brand-green mx-auto mb-4" />
         <h3 className="text-brand-dark mb-2">Thank You for Your Inquiry</h3>
         <p className="text-brand-muted-dark mb-6">
           We have received your message and will get back to you within 24 hours.
         </p>
-        <button onClick={() => setStatus("idle")} className="btn-outline border-brand-blue text-brand-blue">
+        <button onClick={() => setStatus("idle")} className="btn-outline border-brand-blue text-brand-blue w-full sm:w-auto">
           Send Another Message
         </button>
       </div>
@@ -92,7 +92,7 @@ export default function InquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-200 p-8" noValidate>
+    <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-200 p-5 sm:p-8" noValidate>
       <h3 className="text-brand-dark mb-2">Request a Glass Factory Quote</h3>
       <p className="text-brand-muted-dark text-body-sm mb-6">
         Fill out the form below with your glass requirements. We&apos;ll respond within 24 hours with a detailed quotation.
@@ -108,7 +108,7 @@ export default function InquiryForm() {
               onChange={handleChange} placeholder="Your full name (required for quotation)"
               className={`input-field ${errors.name ? "border-brand-orange" : ""}`}
             />
-            {errors.name && <p className="text-brand-orange text-xs mt-1">{errors.name}</p>}
+            {errors.name && <p className="text-brand-orange text-sm mt-1.5">{errors.name}</p>}
           </div>
           <div>
             <label htmlFor="email" className="label">Email *</label>
@@ -117,7 +117,7 @@ export default function InquiryForm() {
               onChange={handleChange} placeholder="your@email.com (required for quotation delivery)"
               className={`input-field ${errors.email ? "border-brand-orange" : ""}`}
             />
-            {errors.email && <p className="text-brand-orange text-xs mt-1">{errors.email}</p>}
+            {errors.email && <p className="text-brand-orange text-sm mt-1.5">{errors.email}</p>}
           </div>
         </div>
 
@@ -154,7 +154,7 @@ export default function InquiryForm() {
               <option key={c} value={c}>{c}</option>
             ))}
           </select>
-          {errors.country && <p className="text-brand-orange text-xs mt-1">{errors.country}</p>}
+          {errors.country && <p className="text-brand-orange text-sm mt-1.5">{errors.country}</p>}
         </div>
 
         {/* Product Interest */}
@@ -164,7 +164,7 @@ export default function InquiryForm() {
             {products.map((product) => (
               <label
                 key={product}
-                className={`flex items-center gap-2 text-body-sm cursor-pointer rounded-md border px-3 py-2.5 transition-colors ${
+                className={`flex items-center gap-2 text-body-sm cursor-pointer rounded-md border px-3 min-h-[48px] transition-colors ${
                   productInterest.includes(product)
                     ? "border-brand-blue bg-brand-blue/5 text-brand-blue"
                     : "border-gray-200 text-brand-muted-dark hover:border-gray-300"
@@ -191,7 +191,7 @@ export default function InquiryForm() {
             placeholder="Glass type, dimensions (mm), thickness, quantity, application, delivery timeline, and any special requirements..."
             className={`textarea-field ${errors.message ? "border-brand-orange" : ""}`}
           />
-          {errors.message && <p className="text-brand-orange text-xs mt-1">{errors.message}</p>}
+          {errors.message && <p className="text-brand-orange text-sm mt-1.5">{errors.message}</p>}
         </div>
 
         {/* Error Banner */}

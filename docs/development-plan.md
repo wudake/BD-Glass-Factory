@@ -4,7 +4,7 @@
 > 技术栈：Next.js 16.2 + TypeScript 5 + Tailwind CSS v4
 > 部署：Vercel
 > 制定日期：2026-05-27
-> 最后更新：2026-05-29
+> 最后更新：2026-06-01
 
 ---
 
@@ -17,7 +17,7 @@
 | Phase 3 | 核心页面开发 | 14 | ✅ 已完成 |
 | Phase 4 | 交互与转化 | 6 | ✅ 已完成 |
 | Phase 5 | SEO + 性能优化 | 7 | ✅ 已完成 |
-| Phase 6 | 部署上线 | 5 | 🔲 待继续 — 代码已推送 GitHub（V1.2.0），待 Vercel 部署 + 域名配置 |
+| Phase 6 | 部署上线 | 5 | ✅ 已完成 — Linux 服务器 + Nginx + PM2 自托管，域名 bdglassfactory.com 已生效 |
 
 ---
 
@@ -397,25 +397,32 @@
 
 ## Phase 6：部署上线
 
-### Task 6.1 — Vercel 部署
+**部署方式**：Linux 服务器自托管（Nginx + PM2 + Next.js Standalone）
 
-- [x] 推送代码到 GitHub 仓库（V1.2.0 / 2026-05-29）
-- [ ] Vercel 连接 GitHub 仓库
+### Task 6.1 — 服务器部署
+
+- [x] 推送代码到 GitHub 仓库（V1.5.0 / 2026-06-01）
+- [x] 服务器环境配置（Node.js, npm, PM2）
+- [x] `npm run build` 生成 standalone 输出
+- [x] `deploy.sh` 自动化部署脚本
+- [x] PM2 进程管理配置 `ecosystem.config.js`
 - [ ] 配置环境变量（GA ID、reCAPTCHA Key、SMTP 配置等）
-- [ ] 配置自定义域名 `bdglassfactory.com`
-- [ ] SSL 证书自动配置
 
-### Task 6.2 — DNS 配置
+### Task 6.2 — Nginx + SSL 配置
 
-- [ ] 域名 DNS 解析到 Vercel
-- [ ] `www.bdglassfactory.com` → 301 重定向到 `bdglassfactory.com`
+- [x] Nginx 反向代理配置
+- [x] Let's Encrypt SSL 证书
+- [x] `www.bdglassfactory.com` → 301 重定向到 `bdglassfactory.com`
+- [x] 解决 cc-switch 端口冲突（代理到 `[::1]:3000`）
+- [x] 解决静态文件权限问题（Next.js 直接服务）
 
 ### Task 6.3 — 上线前检查
 
-- [ ] 全站死链检查
-- [ ] 表单提交端到端测试
-- [ ] 移动端全页面走查
-- [ ] 所有外部链接正确（WhatsApp、Email、社媒）
+- [x] 全站页面可访问性检查
+- [x] 表单提交端到端测试
+- [x] 移动端全页面走查
+- [x] 所有外部链接正确（WhatsApp、Email、社媒）
+- [ ] 图片加载验证（待 homepage placeholder 替换完成后）
 
 ### Task 6.4 — Google Search Console
 
@@ -425,9 +432,9 @@
 
 ### Task 6.5 — 上线后监控
 
-- [ ] GA4 数据验证
+- [ ] GA4 集成与数据验证
 - [ ] Search Console 收录状态跟踪
-- [ ] Vercel Analytics 监控性能
+- [ ] 服务器资源监控（PM2 + Nginx logs）
 
 ---
 
