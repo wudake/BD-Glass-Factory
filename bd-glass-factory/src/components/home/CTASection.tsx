@@ -1,16 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 export default function CTASection() {
   return (
     <section className="relative bg-brand-dark py-24 overflow-hidden">
-      {/* Background Image Placeholder */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0 opacity-20">
-        <div className="w-full h-full bg-gradient-to-br from-brand-gray to-brand-dark flex items-center justify-center">
-          <span className="text-brand-muted text-sm">
-            CTA Background — Replace with factory/glass product photo
-          </span>
-        </div>
+        <Image
+          src="/images/factory/factory-20.jpg"
+          alt="BDGLASS factory production area"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
       </div>
 
       <div className="container-page relative z-10 text-center">

@@ -5,19 +5,19 @@
 ## 1. Meta Title（60 字符）
 
 ```
-About BDGLASS | Glass Manufacturer China Since 2018 | Foshan Factory
+About BDGLASS | Glass Manufacturer China Since 2019 | Foshan Factory
 ```
 
 ## 2. Meta Description（158 字符）
 
 ```
-Foshan Bodian Glass Co., LTD — professional glass manufacturer in China since 2018. 15,000㎡ factory, 80+ team, 3C certified. Tempered, insulating, laminated & craft glass exporter.
+Foshan Bodian Glass Co., LTD — professional glass manufacturer in China since 2019. 15,000㎡ factory, 80+ team, 3C certified. Tempered, insulating, laminated & craft glass exporter.
 ```
 
 ## 3. 页面 H1（主标题）
 
 ```
-About BDGLASS — Professional Glass Manufacturer in China Since 2018
+About BDGLASS — Professional Glass Manufacturer in China Since 2019
 ```
 
 ## 4. 页面副标题（H1 下方一句话）
@@ -32,7 +32,7 @@ About BDGLASS — Professional Glass Manufacturer in China Since 2018
 
 ### 5.1 开篇段落
 
-Foshan Bodian Glass Co., Ltd. (BDGLASS) is a professional glass manufacturer based in Foshan City, Guangdong Province, China — the heart of the world's glass manufacturing industry. Established in 2018, we have grown from a small glass processing workshop into a modern glass factory with two production bases totaling 15,000 square meters, serving clients across China and exporting to over 10 countries worldwide.
+Foshan Bodian Glass Co., Ltd. (BDGLASS) is a professional glass manufacturer based in Foshan City, Guangdong Province, China — the heart of the world's glass manufacturing industry. Established in 2019, we have grown from a small glass processing workshop into a modern glass factory with two production bases totaling 15,000 square meters, serving clients across China and exporting to over 10 countries worldwide.
 
 ### 5.2 核心产品
 
@@ -62,7 +62,7 @@ Our team of 80+ employees has an average age of 29, bringing together youthful e
 
 | 数据 | 标签 | 说明 |
 |------|------|------|
-| **2018** | Year Founded | Established in Foshan, Guangdong — China's glass manufacturing hub |
+| **2019** | Year Founded | Established in Foshan, Guangdong — China's glass manufacturing hub |
 | **15,000㎡** | Production Area | Two production bases with modern glass processing facilities |
 | **80+** | Team Members | Young, experienced team with an average age of 29 |
 | **5** | Production Lines | Including tempering furnace, IGU lines, CNC cutting & bending |
@@ -184,7 +184,7 @@ Whether you need a sample, a quotation, or a factory tour — our team is ready 
 
 | Section | 当前 | 优化后 |
 |---------|------|--------|
-| Page Header | H1: About BDGLASS | H1: About BDGLASS — Professional Glass Manufacturer in China Since 2018 |
+| Page Header | H1: About BDGLASS | H1: About BDGLASS — Professional Glass Manufacturer in China Since 2019 |
 | Section 1: Company Intro | 4 段基础介绍 | 扩展为 6 段（含核心产品、生产实力、原材料、出口、团队） |
 | Section 2: Production Base | 5 项设备 | 扩展为 8 项，增加规格参数 |
 | Section 3: Raw Materials | 3 项 | 保持不变，优化描述 |

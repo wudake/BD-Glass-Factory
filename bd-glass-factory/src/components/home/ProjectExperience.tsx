@@ -52,7 +52,7 @@ export default function ProjectExperience() {
               { value: "6+", label: "Major Project Types" },
               { value: "95,000+", label: "Square Meters Installed" },
               { value: "6", label: "Cities Across China" },
-              { value: "2018", label: "Glass Experience Since" },
+              { value: "2019", label: "Glass Experience Since" },
             ].map((stat) => (
               <div
                 key={stat.label}

@@ -1,16 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function HeroBanner() {
   return (
     <section className="relative min-h-[90vh] bg-brand-dark flex items-center overflow-hidden">
-      {/* Background Image Placeholder */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="w-full h-full bg-gradient-to-br from-brand-gray to-brand-dark flex items-center justify-center">
-          <span className="text-brand-muted text-sm">
-            Hero Background Image — Replace with factory/production line photo (1920×1080 WebP)
-          </span>
-        </div>
+        <Image
+          src="/images/home/hero-bg.jpg"
+          alt="BDGLASS factory production line interior"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/60 to-brand-dark" />
       </div>
@@ -21,17 +25,17 @@ export default function HeroBanner() {
         <div className="inline-flex items-center gap-2 bg-brand-blue/10 border border-brand-blue/20 rounded-full px-4 py-2 mb-8">
           <span className="w-2 h-2 bg-brand-green rounded-full animate-pulse" />
           <span className="text-brand-blue text-sm font-medium">
-            ◆ Professional China Glass Factory Since 2018
+            ◆ Professional China Glass Factory Since 2019
           </span>
         </div>
 
         {/* Headline */}
         <h1 className="text-white max-w-4xl mb-6">
-          Your Trusted China Glass Factory for Tempered &amp; Insulating Glass
+          Your Trusted China Glass Factory for Glass Solution
         </h1>
 
         {/* Subtitle */}
-        <p className="text-brand-muted text-body-lg max-w-2xl mb-10 leading-relaxed">
+        <p className="text-white text-body-lg max-w-2xl mb-10 leading-relaxed">
           BDGLASS is a professional China glass manufacturer with 15,000㎡ production base,
           5 advanced production lines, and 3C certified quality. We supply tempered glass,
           insulating glass, laminated glass, and craft glass for builders, contractors,

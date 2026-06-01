@@ -15,7 +15,7 @@ export const siteConfig = {
   email: 'info@bdglassfactory.com',
   whatsapp: '+8613723810568',
 
-  founded: 2018,
+  founded: 2019,
   baseArea: '15,000 ㎡',
   employees: '80+',
   avgAge: 29,

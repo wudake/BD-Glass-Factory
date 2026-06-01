@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Factory, Users, Maximize, Wrench, Building2 } from "lucide-react";
 
 export default function FactoryStrength() {
@@ -15,7 +16,7 @@ export default function FactoryStrength() {
     {
       icon: Users,
       title: "Experienced Team",
-      desc: "More than 80 team members with established glass processing experience since 2018",
+      desc: "More than 80 team members with established glass processing experience since 2019",
     },
     {
       icon: Wrench,
@@ -58,11 +59,26 @@ export default function FactoryStrength() {
           ))}
         </div>
 
-        {/* Equipment Image Placeholder */}
-        <div className="bg-brand-gray rounded-xl aspect-[21/9] flex items-center justify-center">
-          <span className="text-brand-muted text-sm">
-            Factory Equipment Image Placeholder — Replace with production line photo (1920×820 WebP)
-          </span>
+        {/* Factory Image Masonry Grid */}
+        <div className="columns-2 md:columns-3 gap-4 space-y-4">
+          {[
+            { src: "/images/factory/factory-7.jpg", alt: "BDGLASS tempering furnace production line", aspect: "aspect-[4/3]" },
+            { src: "/images/factory/factory-11.jpg", alt: "BDGLASS factory vertical view", aspect: "aspect-[3/4]" },
+            { src: "/images/factory/factory-8.jpg", alt: "BDGLASS CNC glass cutting machine", aspect: "aspect-[4/3]" },
+            { src: "/images/factory/factory-15.jpg", alt: "BDGLASS glass storage and workshop", aspect: "aspect-[3/4]" },
+            { src: "/images/factory/factory-19.jpg", alt: "BDGLASS automated edge grinding line", aspect: "aspect-[4/3]" },
+            { src: "/images/factory/factory-26.jpg", alt: "BDGLASS quality inspection station", aspect: "aspect-[3/4]" },
+          ].map((img) => (
+            <div key={img.src} className={`relative rounded-xl overflow-hidden break-inside-avoid ${img.aspect}`}>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 33vw"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

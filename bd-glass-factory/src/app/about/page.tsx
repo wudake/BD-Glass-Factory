@@ -8,9 +8,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = generatePageMeta({
-  title: "About BDGLASS | Glass Manufacturer China Since 2018 | Foshan Factory",
+  title: "About BDGLASS | Glass Manufacturer China Since 2019 | Foshan Factory",
   description:
-    "Foshan Bodian Glass Co., LTD — professional glass manufacturer in China since 2018. 15,000sqm factory, 80+ team, 3C certified. Tempered, insulating, laminated & craft glass exporter.",
+    "Foshan Bodian Glass Co., LTD — professional glass manufacturer in China since 2019. 15,000sqm factory, 80+ team, 3C certified. Tempered, insulating, laminated & craft glass exporter.",
   path: "/about",
 });
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
           <p className="text-brand-blue text-sm uppercase tracking-wider mb-4">
             Since {siteConfig.founded}
           </p>
-          <h1 className="text-white mb-4">About BDGLASS — Professional Glass Manufacturer in China Since 2018</h1>
+          <h1 className="text-white mb-4">About BDGLASS — Professional Glass Manufacturer in China Since 2019</h1>
           <p className="text-brand-muted text-body-lg max-w-2xl mx-auto">
             15,000 square meters production base in Foshan, Guangdong. 80+ team members. 3C certified. Exporting architectural and decorative glass to Australia, Africa, Middle East &amp; Southeast Asia.
           </p>
@@ -44,7 +44,7 @@ export default function AboutPage() {
                 <p>
                   Foshan Bodian Glass Co., Ltd. (BDGLASS) is a professional glass manufacturer based in
                   Foshan City, Guangdong Province, China — the heart of the world&apos;s glass manufacturing
-                  industry. Established in 2018, we have grown from a small glass processing workshop into
+                  industry. Established in 2019, we have grown from a small glass processing workshop into
                   a modern glass factory with two production bases totaling 15,000 square meters, serving
                   clients across China and exporting to over 10 countries worldwide.
                 </p>
@@ -207,7 +207,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {[
-                  { value: "2018", label: "Year Founded" },
+                  { value: "2019", label: "Year Founded" },
                   { value: "15,000㎡", label: "Production Area" },
                   { value: "80+", label: "Team Members" },
                   { value: "29", label: "Average Age" },
