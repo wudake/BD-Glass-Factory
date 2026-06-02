@@ -81,6 +81,7 @@ src/
 │   │   ├── ProjectExperience.tsx
 │   │   ├── CertificationsPreview.tsx
 │   │   ├── WhyChooseUs.tsx
+│   │   ├── ClientVisits.tsx          # Overseas client factory visit gallery
 │   │   ├── HowWeWork.tsx
 │   │   ├── CTASection.tsx
 │   │   └── ContactSection.tsx
@@ -120,9 +121,9 @@ src/
 
 ## SEO Features
 
-### V1.4.0 SEO Optimization (Completed)
+### V2.0.0 SEO Optimization (Completed)
 
-- **Homepage**: AIDA-structured copy with keyword-optimized H1/H2, CTAs, and benefit-driven content across all 12 sections
+- **Homepage**: AIDA-structured copy with keyword-optimized H1/H2, CTAs, and benefit-driven content across all 13 sections (including new ClientVisits gallery)
 - **Product Detail Pages** (4 pages): Per-slug dynamic metadata (title, description, H1, subtitle, CTA), extended long descriptions (~700-1200 words), 13-row spec tables, 6-7 FAQ items, related product recommendations
   - `/products/tempered-glass` — Tempered Glass Manufacturer China
   - `/products/insulating-glass` — Insulating Glass Manufacturer China
@@ -176,4 +177,4 @@ See `src/app/globals.css` for the complete design system:
 
 ---
 
-> Version: V1.4.0 | Domain: bdglassfactory.com | Updated: 2026-05-29
+> Version: V2.0.0 | Domain: bdglassfactory.com | Updated: 2026-06-02

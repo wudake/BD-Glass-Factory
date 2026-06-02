@@ -2,7 +2,7 @@
 
 **Professional China Glass Factory | Foreign Trade Website**
 
-[![Version](https://img.shields.io/badge/version-V1.2.0-blue)](https://github.com/wudake/BD-Glass-Factory/releases/tag/V1.2.0)
+[![Version](https://img.shields.io/badge/version-V2.0.0-blue)](https://github.com/wudake/BD-Glass-Factory/releases/tag/V2.0.0)
 [![Stack](https://img.shields.io/badge/stack-Next.js%2016.2%20%2B%20TypeScript%20%2B%20Tailwind%20CSS%20v4-black)](https://nextjs.org)
 
 ---
@@ -127,7 +127,8 @@ BD-Glass-Factory/
 - **Security Headers** — X-Content-Type-Options, X-Frame-Options, XSS Protection, Referrer-Policy
 
 ### UX & Conversion
-- **AIDA Model Homepage** — Attention → Interest → Desire → Action (12 sections)
+- **AIDA Model Homepage** — Attention → Interest → Desire → Action (13 sections)
+- **Client Visit Gallery** — Staggered 4-column photo grid showcasing overseas buyers at factory
 - **Contact Form** — client + server validation, reCAPTCHA-ready
 - **WhatsApp Button** — global floating button with tooltip
 - **Responsive Design** — Mobile / Tablet / Desktop with breakpoints
@@ -150,9 +151,17 @@ BD-Glass-Factory/
 | Phase 3 | Core Pages (8 routes) | Complete |
 | Phase 4 | Interaction & Conversion | Complete |
 | Phase 5 | SEO + Performance Optimization | Complete |
-| Phase 6 | Deployment (Vercel + Domain) | GitHub pushed, Vercel pending |
+| Phase 6 | Deployment (Linux + Nginx + PM2) | Complete |
 
 Full development plan: [`docs/development-plan.md`](docs/development-plan.md)
+
+### V2.0.0 Release (2026-06-02)
+
+- **New Logo** — 3D metallic BD icon with glass door effect, full favicon suite replaced
+- **Client Visit Gallery** — New homepage section (`ClientVisits`) with 11 overseas buyer factory visit photos in staggered 4-column layout
+- **Homepage Copy U-Type Optimization** — All 12 sections rewritten from I-type to U-type (buyer-centric) copy
+- **SEO Complete** — Product detail pages, about, services, contact pages all SEO-optimized with dynamic metadata
+- **Production Deployed** — Live on https://bdglassfactory.com via Linux + Nginx + PM2
 
 ---
 
@@ -182,4 +191,4 @@ cp bd-glass-factory/.env.example bd-glass-factory/.env.local
 
 ---
 
-> Version: V1.2.0 | Updated: 2026-05-29
+> Version: V2.0.0 | Updated: 2026-06-02
