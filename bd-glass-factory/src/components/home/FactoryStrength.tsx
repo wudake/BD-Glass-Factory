@@ -5,28 +5,28 @@ export default function FactoryStrength() {
   const advantages = [
     {
       icon: Building2,
-      title: "Factory Location",
-      desc: "Located in Foshan, Guangdong, China — the heart of China's glass manufacturing industry",
+      title: "Fast Material Access",
+      desc: "Located in Foshan, China's glass hub — shorter lead times and efficient logistics to your port",
     },
     {
       icon: Factory,
-      title: "Production Scale",
-      desc: "Two production bases totaling 15,000 ㎡ with full-scale glass processing capacity",
+      title: "Scale You Can Count On",
+      desc: "15,000㎡ across two bases means no bottlenecks, from trial batches to full project loads",
     },
     {
       icon: Users,
-      title: "Experienced Team",
-      desc: "More than 80 team members with established glass processing experience since 2019",
+      title: "Seasoned Team",
+      desc: "80+ specialists since 2019 — your specs get understood precisely, not guessed",
     },
     {
       icon: Wrench,
-      title: "Advanced Equipment",
-      desc: "SouthTech tempering furnaces, CNC cutting, hollow glass lines, and automatic edge grinding",
+      title: "Precision Equipment",
+      desc: "SouthTech tempering, CNC cutting, automatic edging — the accuracy your tolerances demand",
     },
     {
       icon: Maximize,
-      title: "Flexible Service",
-      desc: "Standard glass orders and customized project requirements with flexible MOQ",
+      title: "Order Flexibility",
+      desc: "No rigid MOQ. Start small to validate, then scale up when you're ready",
     },
   ];
 
@@ -38,11 +38,12 @@ export default function FactoryStrength() {
             Why Choose BDGLASS as Your Glass Factory Partner
           </h2>
           <p className="text-brand-muted text-body-lg max-w-3xl mx-auto">
-            BDGLASS operates a 15,000-square-meter China glass factory in Foshan, Guangdong,
-            with two production bases and five advanced production lines. Our facility is
-            equipped with SouthTech tempering furnaces, CNC cutting machines, automatic
-            edge grinders, and hollow glass production lines — supporting both standard
-            orders and custom glass processing for international buyers.
+            When you partner with BDGLASS, you get more than a supplier — you get a
+            production backbone that protects your timeline and your margins. Our
+            15,000㎡ facility in Foshan runs five advanced lines with SouthTech tempering
+            furnaces, CNC cutting, and hollow glass production — so whether you need
+            standard stock or custom processing, your order ships on time, to spec,
+            without surprises.
           </p>
         </div>
 

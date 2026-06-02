@@ -18,7 +18,7 @@ export default function CTASection() {
 
       <div className="container-page relative z-10 text-center">
         <h2 className="text-white mb-4 max-w-3xl mx-auto">
-          Ready to Source Glass from a Trusted China Factory?
+          Ready to Get Your Glass Sorted?
         </h2>
         <p className="text-brand-muted text-body-lg max-w-2xl mx-auto mb-6">
           Get a competitive factory quote within 24 hours. Tell us your glass type,

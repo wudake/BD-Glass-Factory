@@ -4,8 +4,8 @@ export default function WhyChooseUs() {
   const reasons = [
     {
       icon: PhoneCall,
-      title: "Factory Direct Communication",
-      desc: "Work directly with our China glass factory instead of a trading middleman. Faster response, clearer pricing, better control.",
+      title: "Talk Direct to the Factory",
+      desc: "Skip the trading company layer. You speak directly with production and technical staff — faster answers, clearer quotes, no message lost in translation.",
     },
     {
       icon: PenTool,
@@ -19,8 +19,8 @@ export default function WhyChooseUs() {
     },
     {
       icon: Briefcase,
-      title: "Project Experience",
-      desc: "We understand both home decoration and large engineering project requirements, from small villas to 28,000㎡ commercial towers.",
+      title: "We've Seen Projects Like Yours",
+      desc: "From villa renovations to 28,000㎡ commercial towers, we understand the difference between home decoration specs and engineering-grade requirements — and we deliver accordingly.",
     },
     {
       icon: Sliders,
@@ -29,8 +29,8 @@ export default function WhyChooseUs() {
     },
     {
       icon: Globe,
-      title: "Export-Oriented Support",
-      desc: "BDGLASS serves buyers across Australia, Africa, Middle East, and Southeast Asia with one-stop glass solutions and global delivery support.",
+      title: "Export-Ready Support to Your Region",
+      desc: "We regularly ship to Australia, Africa, the Middle East, and Southeast Asia — with packaging, documentation, and logistics support built for international project delivery.",
     },
   ];
 

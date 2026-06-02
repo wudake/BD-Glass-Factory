@@ -6,17 +6,17 @@ export default function CertificationsPreview() {
     {
       icon: FileCheck,
       title: "3C Certified Tempered Glass",
-      desc: "National Compulsory Product Certification (CCC) for tempered glass — meeting Chinese and international safety standards.",
+      desc: "CCC certification meets Chinese and international safety standards — the documentation your project approval process requires.",
     },
     {
       icon: Shield,
-      title: "Insulating Glass Product Certification",
-      desc: "Certified performance for thermal insulation, sound insulation, and seal durability of insulating glass units.",
+      title: "Insulating Glass Performance Certified",
+      desc: "Tested and verified for thermal insulation, sound reduction, and seal durability — so your units perform as specified, season after season.",
     },
     {
       icon: ClipboardCheck,
       title: "10-Year Warranty & Quality Docs",
-      desc: "Full warranty documentation, sealant testing records, and desiccant quality reports available for project orders.",
+      desc: "Full warranty documentation, sealant testing records, and desiccant quality reports — everything you need for project handover and client confidence.",
     },
   ];
 
@@ -24,11 +24,12 @@ export default function CertificationsPreview() {
     <section className="section bg-brand-gray/5">
       <div className="container-page">
         <div className="text-center mb-12">
-          <h2 className="text-brand-dark mb-4">Quality Certifications — Your Assurance of a Reliable Glass Factory</h2>
+          <h2 className="text-brand-dark mb-4">Certifications That Give You Confidence in Every Order</h2>
           <p className="text-brand-muted-dark text-body-lg max-w-3xl mx-auto">
-            BDGLASS focuses on quality control and product reliability. Our glass products
-            are backed by 3C certification, product testing reports, and quality documentation
-            — giving international buyers confidence in every order.
+            Buying glass from overseas shouldn&apos;t feel like a gamble. Our 3C certifications,
+            product testing reports, and quality documentation are available for every
+            project order — so you have the paperwork you need for customs, clients,
+            and building inspections.
           </p>
         </div>
 

@@ -7,15 +7,16 @@ import ApplicationScenarios from "@/components/home/ApplicationScenarios";
 import ProjectExperience from "@/components/home/ProjectExperience";
 import CertificationsPreview from "@/components/home/CertificationsPreview";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
+import ClientVisits from "@/components/home/ClientVisits";
 import HowWeWork from "@/components/home/HowWeWork";
 import CTASection from "@/components/home/CTASection";
 import ContactSection from "@/components/home/ContactSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "China Glass Factory - Tempered & Insulating Glass Manufacturer | BDGLASS",
+  title: "Tempered & Insulating Glass Supplier | Factory-Direct from China | BDGLASS",
   description:
-    "BDGLASS is a professional China glass factory specializing in tempered glass, insulating glass, laminated glass and custom glass processing. 3C certified, 15,000㎡ production base, exporting to 6+ countries. Get a quote today.",
+    "Factory-direct 3C certified tempered, insulating, laminated, and craft glass. Reliable quality, no middlemen, no delays. Get a quote today.",
   keywords: [
     "China glass factory",
     "China glass manufacturer",
@@ -30,9 +31,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "China Glass Factory - Tempered & Insulating Glass Manufacturer | BDGLASS",
+    title: "Tempered & Insulating Glass Supplier | Factory-Direct from China | BDGLASS",
     description:
-      "BDGLASS is a professional China glass factory specializing in tempered glass, insulating glass, laminated glass and custom glass processing. 3C certified, 15,000㎡ production base, exporting to 6+ countries.",
+      "Factory-direct 3C certified tempered, insulating, laminated, and craft glass. Reliable quality, no middlemen, no delays.",
     type: "website",
     locale: "en_US",
   },
@@ -55,6 +56,7 @@ export default function HomePage() {
       <ProjectExperience />
       <CertificationsPreview />
       <WhyChooseUs />
+      <ClientVisits />
 
       {/* Action */}
       <HowWeWork />

@@ -5,22 +5,22 @@ export default function ApplicationScenarios() {
     {
       icon: Building2,
       title: "Glass for Building Projects",
-      desc: "Curtain walls, balcony windows, glass guardrails, and facade glass for commercial and residential buildings. We help project buyers match suitable glass configurations to building codes and climate requirements.",
+      desc: "From curtain walls to guardrails — get glass configurations that meet local building codes and climate demands, without over-engineering your budget.",
     },
     {
       icon: LayoutGrid,
       title: "Glass for Windows and Doors",
-      desc: "Processed glass for aluminum windows, doors, balcony systems, and energy-saving window solutions. Available as tempered, laminated, or insulated units.",
+      desc: "Need tempered, laminated, or insulated glass for aluminum window and door systems? We supply units that fit your frames and performance specs.",
     },
     {
       icon: Home,
       title: "Glass for Interior Decoration",
-      desc: "Glass solutions for partitions, wardrobes, wine cabinets, shower rooms, staircases, and decorative glass for modern residential and commercial interiors.",
+      desc: "Create modern, light-filled interiors with partitions, showers, railings, and decorative finishes — matched to your aesthetic and functional needs.",
     },
     {
       icon: Briefcase,
       title: "Glass for Engineering Projects",
-      desc: "Large-scale engineering glass supply including curtain walls, guardrails, handrails, decorative glass, and custom project glass with full technical support.",
+      desc: "Large-scale builds need reliable supply and technical backup. We support contractors with bulk glass, configuration advice, and full project documentation.",
     },
   ];
 
@@ -30,8 +30,8 @@ export default function ApplicationScenarios() {
         <div className="text-center mb-12">
           <h2 className="text-brand-dark mb-4">Glass Applications — From Building Projects to Interior Design</h2>
           <p className="text-brand-muted-dark text-body-lg max-w-3xl mx-auto">
-            Our China glass manufacturer supplies processed glass for a wide range of
-            applications — from large-scale building projects to detailed interior decoration.
+            Not sure which glass suits your application? Here&apos;s how we help contractors,
+            builders, and window manufacturers match the right product to their project type.
           </p>
         </div>
 

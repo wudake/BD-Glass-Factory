@@ -22,11 +22,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "BDGLASS - China Glass Factory | Tempered & Insulating Glass Manufacturer",
+    default: "BDGLASS - Tempered & Insulating Glass | Factory-Direct from China",
     template: "%s - BDGLASS",
   },
   description:
-    "Foshan Bodian Glass Co., LTD is a professional China glass factory specializing in tempered, insulating, laminated and craft glass. 3C certified, 15,000 sqm production base, exporting worldwide.",
+    "Get factory-direct 3C certified tempered, insulating, laminated and craft glass for your project. Reliable quality, no middlemen, competitive pricing. Request a quote today.",
   keywords: [
     "China glass factory",
     "glass manufacturer China",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "BDGLASS - China Glass Factory | Tempered & Insulating Glass Manufacturer",
+    title: "BDGLASS - Tempered & Insulating Glass | Factory-Direct from China",
     description:
-      "Professional China glass factory specializing in tempered, insulating, laminated and craft glass. 3C certified, 15,000 sqm production base, exporting worldwide.",
+      "Get factory-direct 3C certified tempered, insulating, laminated and craft glass for your project. Reliable quality, no middlemen, competitive pricing.",
     url: `https://${siteConfig.domain}`,
     siteName: "BDGLASS",
     locale: "en_US",
@@ -60,15 +60,15 @@ export const metadata: Metadata = {
         url: `https://${siteConfig.domain}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "BDGLASS - China Glass Factory",
+        alt: "BDGLASS - Tempered & Insulating Glass Supplier",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BDGLASS - China Glass Factory | Tempered & Insulating Glass Manufacturer",
+    title: "BDGLASS - Tempered & Insulating Glass | Factory-Direct from China",
     description:
-      "Professional China glass factory specializing in tempered, insulating, laminated and craft glass. 3C certified, 15,000 sqm production base, exporting worldwide.",
+      "Get factory-direct 3C certified tempered, insulating, laminated and craft glass for your project. Reliable quality, no middlemen, competitive pricing.",
     images: [`https://${siteConfig.domain}/og-image.png`],
   },
   robots: {

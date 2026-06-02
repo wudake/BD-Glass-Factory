@@ -17,12 +17,14 @@ export default function QualityMaterials() {
           {/* Text */}
           <div>
             <h2 className="text-brand-dark mb-4">
-              Premium Raw Materials for Long-Lasting Glass Performance
+              Glass That Performs — Year After Year
             </h2>
             <p className="text-brand-muted-dark mb-6 leading-relaxed">
-              We understand that glass quality starts from raw materials. That is why BD-Glass
-              focuses on carefully selected glass sheets, sealing materials, butyl rubber,
-              silicone sealants, and other key components used in production.
+              The difference between glass that lasts and glass that fails is in the
+              materials. We use carefully selected glass sheets, high-grade butyl rubber,
+              and first-line silicone sealants — so your installed glass delivers the
+              thermal insulation, sound reduction, safety, and weather resistance your
+              project requires, without callbacks or replacements.
             </p>
             <p className="text-brand-muted-dark mb-8 leading-relaxed">
               For insulated glass and architectural glass applications, we pay attention to

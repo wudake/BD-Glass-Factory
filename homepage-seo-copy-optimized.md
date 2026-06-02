@@ -31,11 +31,8 @@ Your Trusted China Glass Factory for Tempered & Insulating Glass
 
 **副标题（前 100 字）**
 ```
-BDGLASS is a professional China glass manufacturer with 15,000㎡ production base,
-5 advanced production lines, and 3C certified quality. We supply tempered glass,
-insulating glass, laminated glass, and craft glass for builders, contractors,
-window and door manufacturers, and project buyers across Australia, Africa,
-Middle East and Southeast Asia.
+Factory-direct 3C and AS2047 certified tempered, insulating, laminated, and craft
+glass — reliable quality, no middlemen, no delays.
 ```
 > ✅ 保持不变。自然覆盖 `China glass manufacturer`、`tempered glass`、`insulating glass`、出口地区。
 

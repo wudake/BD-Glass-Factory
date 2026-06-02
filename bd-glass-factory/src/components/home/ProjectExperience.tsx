@@ -18,12 +18,14 @@ export default function ProjectExperience() {
           {/* Text */}
           <div>
             <h2 className="text-white mb-4">
-              Trusted by Landmark Projects Across China
+              Project Experience That Protects Your Timeline
             </h2>
             <p className="text-brand-muted mb-6 leading-relaxed">
-              BD-Glass has supplied glass products for different project applications, including
-              airports, industrial parks, science city projects, aviation new city projects, and
-              commercial buildings.
+              We&apos;ve supplied glass for industrial parks, science city projects, villas,
+              apartments, and commercial towers — builds where delays and quality issues
+              aren&apos;t an option. That experience means we understand what contractors,
+              developers, and window manufacturers actually need: accurate specs, reliable
+              delivery, and glass that passes inspection on the first try.
             </p>
 
             <div className="space-y-2.5 mb-8">
@@ -49,10 +51,10 @@ export default function ProjectExperience() {
           {/* Stats Cards */}
           <div className="grid grid-cols-2 gap-4">
             {[
-              { value: "6+", label: "Major Project Types" },
-              { value: "95,000+", label: "Square Meters Installed" },
-              { value: "6", label: "Cities Across China" },
-              { value: "2019", label: "Glass Experience Since" },
+              { value: "6+", label: "Project Types You Recognize" },
+              { value: "95,000+", label: "Square Meters of Proven Scale" },
+              { value: "6", label: "Cities for Multi-Site Logistics" },
+              { value: "2019", label: "A Track Record You Can Verify" },
             ].map((stat) => (
               <div
                 key={stat.label}

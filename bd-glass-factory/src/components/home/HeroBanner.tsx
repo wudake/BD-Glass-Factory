@@ -25,7 +25,7 @@ export default function HeroBanner() {
         <div className="inline-flex items-center gap-2 bg-brand-blue/10 border border-brand-blue/20 rounded-full px-4 py-2 mb-8">
           <span className="w-2 h-2 bg-brand-green rounded-full animate-pulse" />
           <span className="text-brand-blue text-sm font-medium">
-            ◆ Professional China Glass Factory Since 2019
+            ◆ Helping Builders & Contractors Source Glass Since 2019
           </span>
         </div>
 
@@ -36,11 +36,8 @@ export default function HeroBanner() {
 
         {/* Subtitle */}
         <p className="text-white text-body-lg max-w-2xl mb-10 leading-relaxed">
-          BDGLASS is a professional China glass manufacturer with 15,000㎡ production base,
-          5 advanced production lines, and 3C certified quality. We supply tempered glass,
-          insulating glass, laminated glass, and craft glass for builders, contractors,
-          window and door manufacturers, and project buyers across Australia, Africa,
-          Middle East and Southeast Asia.
+          Factory-direct 3C certified tempered, insulating, laminated, and craft
+          glass — reliable quality, no middlemen, no delays.
         </p>
 
         {/* CTA Buttons */}
@@ -59,7 +56,7 @@ export default function HeroBanner() {
           {[
             { label: "Factory Direct Supply", desc: "No middleman markup" },
             { label: "Custom Processing", desc: "Made to your specifications" },
-            { label: "Project Solutions", desc: "From single sheets to bulk orders" },
+            { label: "Project Solutions", desc: "Scaled to your timeline and order size" },
           ].map((item) => (
             <div key={item.label} className="flex items-start gap-3">
               <span className="w-1 h-12 bg-brand-blue rounded-full shrink-0 mt-1" />
