@@ -5,6 +5,7 @@ import { siteConfig } from "@/data/site-config";
 import { MapPin, Phone, Mail, Clock, Check, MessageCircle } from "lucide-react";
 import { JsonLdBreadcrumb } from "@/lib/json-ld";
 import { generatePageMeta } from "@/lib/metadata";
+import Script from "next/script";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = generatePageMeta({
@@ -14,9 +15,15 @@ export const metadata: Metadata = generatePageMeta({
   path: "/contact",
 });
 
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
+
 export default function ContactPage() {
   return (
     <div>
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        strategy="lazyOnload"
+      />
       <div className="bg-brand-dark py-20">
         <div className="container-page text-center">
           <p className="text-brand-blue text-sm uppercase tracking-wider mb-4">24-Hour Response</p>
@@ -79,7 +86,7 @@ export default function ContactPage() {
         <div className="container-page">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Client Component Form */}
-            <InquiryForm />
+            <InquiryForm turnstileSiteKey={TURNSTILE_SITE_KEY} />
 
             {/* Contact Info */}
             <div>

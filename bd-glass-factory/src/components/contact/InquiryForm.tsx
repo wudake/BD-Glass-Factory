@@ -3,7 +3,29 @@
 import { useState, FormEvent } from "react";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
-export default function InquiryForm() {
+interface InquiryFormProps {
+  turnstileSiteKey: string;
+}
+
+// Extend Window for Turnstile
+declare global {
+  interface Window {
+    turnstile?: {
+      ready: (callback: () => void) => void;
+      execute: (
+        container: string | HTMLElement,
+        options: {
+          sitekey: string;
+          callback?: (token: string) => void;
+          "error-callback"?: () => void;
+        }
+      ) => void;
+      reset: (widgetId?: string) => void;
+    };
+  }
+}
+
+export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -55,16 +77,38 @@ export default function InquiryForm() {
     return Object.keys(newErrors).length === 0;
   };
 
+  const getTurnstileToken = (): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      if (!turnstileSiteKey) {
+        reject(new Error("Turnstile site key not configured"));
+        return;
+      }
+      if (typeof window === "undefined" || !window.turnstile) {
+        reject(new Error("Turnstile script not loaded"));
+        return;
+      }
+      window.turnstile.ready(() => {
+        window.turnstile!.execute("#turnstile-container", {
+          sitekey: turnstileSiteKey,
+          callback: (token: string) => resolve(token),
+          "error-callback": () => reject(new Error("Turnstile verification failed")),
+        });
+      });
+    });
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setStatus("loading");
     try {
+      const turnstileToken = await getTurnstileToken();
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, productInterest }),
+        body: JSON.stringify({ ...formData, productInterest, turnstileToken }),
       });
 
       if (!res.ok) throw new Error("Submission failed");
@@ -193,6 +237,9 @@ export default function InquiryForm() {
           />
           {errors.message && <p className="text-brand-orange text-sm mt-1.5">{errors.message}</p>}
         </div>
+
+        {/* Turnstile container (invisible) */}
+        <div id="turnstile-container" className="hidden" />
 
         {/* Error Banner */}
         {status === "error" && (

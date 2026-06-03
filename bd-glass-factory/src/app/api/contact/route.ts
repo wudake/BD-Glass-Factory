@@ -78,7 +78,7 @@ function getCustomerConfirmationHtml(name: string) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, company, country, productInterest, message } = body;
+    const { name, email, phone, company, country, productInterest, message, turnstileToken } = body;
 
     // Server-side validation
     if (!name || !email || !country || !message) {
@@ -93,6 +93,32 @@ export async function POST(request: NextRequest) {
         { error: "Invalid email format" },
         { status: 400 }
       );
+    }
+
+    // Verify Turnstile token
+    if (process.env.TURNSTILE_SECRET_KEY) {
+      if (!turnstileToken) {
+        return NextResponse.json(
+          { error: "Security verification required" },
+          { status: 400 }
+        );
+      }
+      const turnstileRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          secret: process.env.TURNSTILE_SECRET_KEY,
+          response: turnstileToken,
+        }),
+      });
+      const turnstileData = await turnstileRes.json();
+      if (!turnstileData.success) {
+        console.error("Turnstile verification failed:", turnstileData);
+        return NextResponse.json(
+          { error: "Security verification failed. Please try again." },
+          { status: 400 }
+        );
+      }
     }
 
     // Check Resend API key
