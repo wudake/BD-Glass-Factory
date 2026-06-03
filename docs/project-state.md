@@ -15,7 +15,7 @@
 | 构建输出 | standalone |
 | 部署方式 | Linux 服务器 + Nginx + PM2 |
 | 包管理器 | npm |
-| 当前版本 | V2.1.0 |
+| 当前版本 | V2.2.0 |
 
 ---
 
@@ -93,6 +93,12 @@
 - [x] 产品详情 SEO 文案
 - [x] 静态图片整理（工厂、设备、认证、团队等）
 - [x] **客户来访照片上传 + 展示模块（2026-06-02）**
+
+### V2.2.0 更新 ✅（2026-06-03）
+- [x] **联系电话全局更新** — +86 13786871098 / WhatsApp +8613786871098
+- [x] **首页 ProjectExperience 项目详情** — 6 个项目完整配置、面积、地址
+- [x] **Contact 页面精简** — 删除 Working Hours + Languages，更新 Factory Visit 文案
+- [x] **Standalone 构建脚本根治修复** — `package.json` build 自动复制 static + public
 
 ### 首页文案 I 型 → U 型优化 ✅（2026-06-01）
 - [x] **HeroBanner** — Trust Badge、Trust Banner 3、Subtitle（去掉 AS2047）
@@ -206,23 +212,23 @@ server {
 | 访问网站弹出 Basic Auth | ✅ 已解决 | cc-switch-web 监听 0.0.0.0:3000 | Nginx 代理到 `[::1]:3000` |
 | 桌面端无样式 | ✅ 已解决 | Nginx 静态文件 403 | 移除 static location，Next.js 自处理 |
 | 图片无法加载 | ✅ 已解决 | standalone 缺少 public/ | deploy.sh 复制 public 和 static |
-| **构建后样式丢失** | ✅ 已解决（2026-06-01）| `npm run build` 后未复制 `public/` 和 `.next/static/` 到 standalone 目录 | **必须执行：** `cp -r public .next/standalone/` 和 `cp -r .next/static .next/standalone/.next/`，再 `pm2 restart` |
+| **构建后样式丢失** | ✅ **已根治（2026-06-03）** | `npm run build` 后未复制 `public/` 和 `.next/static/` 到 standalone 目录 | **`package.json` build 脚本已集成自动复制**：`next build && cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public` |
 | AI 图片生成不可用 | ⚠️ 已知 | Pollinations.ai 返回 402 | 使用 Unsplash 库存图或付费 API |
 | 询盘表单无邮件通知 | ✅ 已解决（2026-06-02）| API 仅接收，未配置 SMTP | 已集成 Resend，内部通知 + 客户确认邮件 |
 | 移动端图片 placeholder | 🔄 进行中 | 组件使用 `<div>` 代替 `<Image>` | 待替换为 Next.js Image |
 | **src/app/favicon.ico 导致构建失败** | ✅ 已解决（2026-06-02）| Turbopack 无法解码 ICO 中 RGB 格式的 PNG | **已删除** `src/app/favicon.ico`，改用 layout.tsx metadata 引用 `public/favicon.ico` |
 
-> ⚠️ **关于 "构建后样式丢失" 的详细说明：**
-> Next.js `output: "standalone"` 模式下，`npm run build` 生成的 `.next/standalone/` 目录**不包含** `public/` 和 `.next/static/` 的内容。如果只执行 `npm run build && pm2 restart`，样式文件（CSS）和静态资源（图片、字体）都不会被复制到 standalone 运行目录，导致前端无样式、图片 404。
+> ⚠️ **关于 "构建后样式丢失" 的详细说明（2026-06-03 已根治）：**
+> Next.js `output: "standalone"` 模式下，`npm run build` 生成的 `.next/standalone/` 目录**不包含** `public/` 和 `.next/static/` 的内容。
 >
-> **正确流程（每次构建后必须执行）：**
-> ```bash
-> npm run build
-> cp -r public .next/standalone/
-> cp -r .next/static .next/standalone/.next/
-> pm2 restart bd-glass-factory
+> **根治方案（已写入 `package.json`）：**
+> ```json
+> "build": "next build && cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public"
 > ```
-> 或直接用：`bash deploy.sh`（已包含上述步骤）
+> 现在执行 `npm run build` 即可自动完成复制，无需额外手动步骤。
+>
+> ~~旧流程（已废弃）：~~
+> ~~`cp -r public .next/standalone/` + `cp -r .next/static .next/standalone/.next/`~~
 
 ---
 
@@ -300,14 +306,13 @@ public/images/
 3. **检查 tempered-glass.jpg** — 问用户是否已替换
 4. **替换组件 placeholder** — ProductCategories, ProjectExperience, QualityMaterials
 5. **本地测试** — `npm run dev`，确认图片和文案正常显示
-6. **构建** — `npm run build`，确认无报错
-7. **⚠️ 关键：复制静态文件** — `cp -r public .next/standalone/` + `cp -r .next/static .next/standalone/.next/`（standalone 模式必须！漏了这步会导致样式丢失！）
-8. **部署** — `pm2 restart bd-glass-factory`（或直接用 `bash deploy.sh`）
-9. **线上验证** — 访问 https://bdglassfactory.com 确认
+6. **构建** — `npm run build`（脚本已自动复制 static + public，无需手动操作）
+7. **部署** — `pm2 restart bd-glass-factory`
+8. **线上验证** — 访问 https://bdglassfactory.com 确认
 
-> **重要提醒**：每次 `npm run build` 后，standalone 模式**不会自动**把 `public/` 和 `.next/static/` 复制到 `.next/standalone/`。如果省略第 7 步直接 `pm2 restart`，前端会显示无样式、图片 404。
+> **重要提醒**：`package.json` 的 `build` 脚本已集成 `cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public`，执行 `npm run build` 即可自动完成，无需额外手动复制。
 
 ---
 
 > 此文件由 AI 自动生成于 2026-06-02，用于项目进度保存。
-> 最近更新：2026-06-02 — V2.1.0 发布：Turnstile 反垃圾验证 + Resend 邮件通知 + 首页表单统一 + 去掉 Product Interest
+> 最近更新：2026-06-03 — V2.2.0 发布：电话更新 + 项目详情 + Contact 精简 + Standalone 构建脚本根治修复
