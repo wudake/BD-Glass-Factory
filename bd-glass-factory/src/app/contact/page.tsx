@@ -2,16 +2,16 @@ import SectionTitle from "@/components/shared/SectionTitle";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import InquiryForm from "@/components/contact/InquiryForm";
 import { siteConfig } from "@/data/site-config";
-import { MapPin, Phone, Mail, Clock, Check, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Check } from "lucide-react";
 import { JsonLdBreadcrumb } from "@/lib/json-ld";
 import { generatePageMeta } from "@/lib/metadata";
 import Script from "next/script";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = generatePageMeta({
-  title: "Contact BDGLASS | Glass Factory Quote China | WhatsApp +86 13723810568",
+  title: "Contact BDGLASS | Glass Factory Quote China | WhatsApp +86 13786871098",
   description:
-    "Contact BDGLASS glass factory in Foshan, China. Get a quote for tempered, insulating, laminated & craft glass. WhatsApp +86 13723810568. 24-hour response guaranteed.",
+    "Contact BDGLASS glass factory in Foshan, China. Get a quote for tempered, insulating, laminated & craft glass. WhatsApp +86 13786871098. 24-hour response guaranteed.",
   path: "/contact",
 });
 
@@ -73,7 +73,7 @@ export default function ContactPage() {
               <p>
                 We guarantee a response to all inquiries within <strong>24 hours</strong> during business
                 days (Monday–Saturday, 8:00 AM–6:00 PM GMT+8). For urgent inquiries, we recommend
-                contacting us directly via <strong>WhatsApp at +86 13723810568</strong> for instant
+                contacting us directly via <strong>WhatsApp at +86 13786871098</strong> for instant
                 messaging.
               </p>
             </div>
@@ -130,31 +130,7 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-brand-gray rounded-lg flex items-center justify-center shrink-0">
-                    <Clock size={20} className="text-brand-blue" />
-                  </div>
-                  <div>
-                    <h5 className="text-brand-dark mb-1">Working Hours</h5>
-                    <p className="text-brand-muted-dark text-body-sm">
-                      Monday - Saturday: 8:00 AM - 6:00 PM (GMT+8)
-                    </p>
-                    <p className="text-brand-muted text-body-sm mt-1">
-                      Sunday is our rest day. WhatsApp messages received on Sunday will be replied on Monday morning.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-brand-gray rounded-lg flex items-center justify-center shrink-0">
-                    <MessageCircle size={20} className="text-brand-blue" />
-                  </div>
-                  <div>
-                    <h5 className="text-brand-dark mb-1">Languages</h5>
-                    <p className="text-brand-muted-dark text-body-sm">
-                      English and Chinese (Mandarin / Cantonese)
-                    </p>
-                  </div>
-                </div>
+
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-brand-gray rounded-lg flex items-center justify-center shrink-0">
                     <MapPin size={20} className="text-brand-blue" />
@@ -162,7 +138,7 @@ export default function ContactPage() {
                   <div>
                     <h5 className="text-brand-dark mb-1">Factory Visit</h5>
                     <p className="text-brand-muted-dark text-body-sm">
-                      Welcome by appointment. Airport pickup from CAN available for serious buyers.
+                      Welcome by appointment. Airport pickup from Guangzhou Baiyun International Airport for serious buyers.
                     </p>
                   </div>
                 </div>
@@ -200,7 +176,7 @@ export default function ContactPage() {
               {
                 question: "How do I get a glass factory quotation?",
                 answer:
-                  "The fastest way is to fill out the inquiry form on this page with your glass specifications (type, dimensions, thickness, quantity, application, and destination). Alternatively, send us a message on WhatsApp at +86 13723810568 with your requirements and any drawings or photos. We guarantee a detailed quotation within 24 hours during business days.",
+                  "The fastest way is to fill out the inquiry form on this page with your glass specifications (type, dimensions, thickness, quantity, application, and destination). Alternatively, send us a message on WhatsApp at +86 13786871098 with your requirements and any drawings or photos. We guarantee a detailed quotation within 24 hours during business days.",
               },
               {
                 question: "What information do I need to provide for an accurate quote?",
@@ -210,7 +186,7 @@ export default function ContactPage() {
               {
                 question: "How quickly will you respond to my inquiry?",
                 answer:
-                  "We guarantee a response to all inquiries within 24 hours during business days (Monday–Saturday, 8:00 AM–6:00 PM GMT+8). For urgent inquiries, contact us via WhatsApp at +86 13723810568 for instant messaging during business hours. Messages received on Sunday are replied on Monday morning.",
+                  "We guarantee a response to all inquiries within 24 hours during business days (Monday–Saturday, 8:00 AM–6:00 PM GMT+8). For urgent inquiries, contact us via WhatsApp at +86 13786871098 for instant messaging during business hours. Messages received on Sunday are replied on Monday morning.",
               },
               {
                 question: "Can I visit your glass factory in Foshan?",
@@ -225,7 +201,7 @@ export default function ContactPage() {
               {
                 question: "Can I contact you via WhatsApp?",
                 answer:
-                  "Absolutely. WhatsApp at +86 13723810568 is our preferred communication channel for international buyers. It allows instant messaging, photo sharing, and video calls for factory tours. Our team monitors WhatsApp during business hours (Monday–Saturday, 8:00 AM–6:00 PM GMT+8) and typically responds within minutes.",
+                  "Absolutely. WhatsApp at +86 13786871098 is our preferred communication channel for international buyers. It allows instant messaging, photo sharing, and video calls for factory tours. Our team monitors WhatsApp during business hours (Monday–Saturday, 8:00 AM–6:00 PM GMT+8) and typically responds within minutes.",
               },
             ].map((item, i) => (
               <div

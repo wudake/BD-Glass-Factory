@@ -59,16 +59,16 @@ function getCustomerConfirmationHtml(name: string) {
       <div style="padding: 24px; background: #ffffff; border: 1px solid #E5E9EC;">
         <p>Hi ${name},</p>
         <p>Thank you for contacting <strong>BDGLASS</strong> — Foshan Bodian Glass Co., LTD. We have received your inquiry and will get back to you within <strong>24 hours</strong> during business days (Monday–Saturday, 8:00 AM–6:00 PM GMT+8).</p>
-        <p>In the meantime, feel free to reach out to us directly via WhatsApp at <strong>+86 13723810568</strong> for instant communication.</p>
+        <p>In the meantime, feel free to reach out to us directly via WhatsApp at <strong>+86 13786871098</strong> for instant communication.</p>
         <div style="margin: 24px 0; text-align: center;">
-          <a href="https://wa.me/8613723810568" style="display: inline-block; background: linear-gradient(135deg, #00A3E0, #00C2FF); color: #ffffff; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: 600;">Chat on WhatsApp</a>
+          <a href="https://wa.me/8613786871098" style="display: inline-block; background: linear-gradient(135deg, #00A3E0, #00C2FF); color: #ffffff; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: 600;">Chat on WhatsApp</a>
         </div>
         <p>Best regards,<br>The BDGLASS Team</p>
         <hr style="border: none; border-top: 1px solid #E5E9EC; margin: 24px 0;" />
         <p style="font-size: 12px; color: #8A9BA8;">
           Foshan Bodian Glass Co., LTD<br>
           No.23, North Garden Road, Shishan Town, Nanhai District, Foshan City, Guangdong Province, China<br>
-          Email: info@bdglassfactory.com | Phone/WhatsApp: +86 13723810568
+          Email: info@bdglassfactory.com | Phone/WhatsApp: +86 13786871098
         </p>
       </div>
     </div>

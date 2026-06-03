@@ -37,7 +37,7 @@ export default function CTASection() {
             <ArrowRight size={20} />
           </Link>
           <a
-            href="https://wa.me/8613723810568"
+            href="https://wa.me/8613786871098"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline border-brand-green text-brand-green text-lg px-8 py-4 inline-flex items-center gap-2"

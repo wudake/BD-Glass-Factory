@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Check } from "lucide-react";
 
 interface ProductCategory {
@@ -7,6 +8,7 @@ interface ProductCategory {
   description: string;
   applications: string[];
   imageLabel: string;
+  imageSrc?: string;
 }
 
 const categories: ProductCategory[] = [
@@ -25,6 +27,7 @@ const categories: ProductCategory[] = [
       "Interior decoration",
     ],
     imageLabel: "Tempered Glass Product Photo",
+    imageSrc: "/images/home/Tempered Glass Product Photo.jpg",
   },
   {
     title: "Laminated Glass",
@@ -40,6 +43,7 @@ const categories: ProductCategory[] = [
       "High-security windows",
     ],
     imageLabel: "Laminated Glass Product Photo",
+    imageSrc: "/images/home/Laminated Glass Product Photo.jpg",
   },
   {
     title: "Insulated Glass",
@@ -55,6 +59,7 @@ const categories: ProductCategory[] = [
       "Residential & commercial projects",
     ],
     imageLabel: "Insulated Glass Product Photo",
+    imageSrc: "/images/home/Insulated Glass Product Photo.jpg",
   },
   {
     title: "Curtain Wall Glass",
@@ -70,6 +75,7 @@ const categories: ProductCategory[] = [
       "Visible light transmission control",
     ],
     imageLabel: "Curtain Wall Glass Photo",
+    imageSrc: "/images/home/Curtain Wall Glass Photo.jpg",
   },
   {
     title: "Glass Railings & Stair Handrails",
@@ -85,6 +91,7 @@ const categories: ProductCategory[] = [
       "Outdoor viewing areas",
     ],
     imageLabel: "Glass Railings Photo",
+    imageSrc: "/images/home/Glass Railings and Stair Handrails.jpg",
   },
   {
     title: "Glass Partitions",
@@ -100,6 +107,7 @@ const categories: ProductCategory[] = [
       "Sound insulation partition systems",
     ],
     imageLabel: "Glass Partitions Photo",
+    imageSrc: "/images/home/Glass Partitions Photo.jpg",
   },
   {
     title: "Shower Room Glass",
@@ -114,6 +122,7 @@ const categories: ProductCategory[] = [
       "Custom interior projects",
     ],
     imageLabel: "Shower Room Glass Photo",
+    imageSrc: "/images/home/Shower Room Glass Photo.jpg",
   },
 ];
 
@@ -138,17 +147,33 @@ export default function ProductCategories() {
                 index % 2 === 1 ? "lg:grid-flow-dense" : ""
               }`}
             >
-              {/* Image Placeholder */}
-              <div
-                className={`bg-brand-gray rounded-xl aspect-[4/3] flex items-center justify-center order-1 ${
-                  index % 2 === 1 ? "lg:order-2" : ""
-                }`}
-              >
-                <span className="text-brand-muted text-sm text-center px-4">
-                  {cat.imageLabel}<br />
-                  <span className="text-xs">(Replace with 800×600 WebP)</span>
-                </span>
-              </div>
+              {/* Image */}
+              {cat.imageSrc ? (
+                <div
+                  className={`relative rounded-xl overflow-hidden aspect-[4/3] order-1 ${
+                    index % 2 === 1 ? "lg:order-2" : ""
+                  }`}
+                >
+                  <Image
+                    src={cat.imageSrc}
+                    alt={cat.imageLabel}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              ) : (
+                <div
+                  className={`bg-brand-gray rounded-xl aspect-[4/3] flex items-center justify-center order-1 ${
+                    index % 2 === 1 ? "lg:order-2" : ""
+                  }`}
+                >
+                  <span className="text-brand-muted text-sm text-center px-4">
+                    {cat.imageLabel}<br />
+                    <span className="text-xs">(Replace with 800×600 WebP)</span>
+                  </span>
+                </div>
+              )}
 
               {/* Content */}
               <div className={`order-2 ${index % 2 === 1 ? "lg:order-1" : ""}`}>

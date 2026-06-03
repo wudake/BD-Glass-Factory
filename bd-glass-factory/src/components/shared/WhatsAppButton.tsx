@@ -5,7 +5,7 @@ import { MessageCircle, X } from "lucide-react";
 
 export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(true);
-  const whatsappNumber = "8613723810568";
+  const whatsappNumber = "8613786871098";
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (

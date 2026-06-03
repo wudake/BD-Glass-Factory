@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Shield, Thermometer, Volume2, Sun, Droplets, Clock } from "lucide-react";
 
 export default function QualityMaterials() {
@@ -43,13 +44,15 @@ export default function QualityMaterials() {
             </div>
           </div>
 
-          {/* Image Placeholder */}
-          <div className="bg-brand-gray rounded-xl aspect-[4/3] flex items-center justify-center">
-            <span className="text-brand-muted text-sm text-center px-4">
-              Raw Materials Image Placeholder<br />
-              Replace with materials/quality inspection photo<br />
-              (800×600 WebP)
-            </span>
+          {/* Image */}
+          <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
+            <Image
+              src="/images/home/Raw Materials.jpg"
+              alt="Raw Materials"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </div>
       </div>

@@ -149,7 +149,7 @@ We currently export to **Australia, Africa, the Middle East, Cambodia, Vietnam, 
 
 ### Q6: How can I visit your factory?
 
-We welcome factory visits by appointment. Our factory is approximately 45 minutes by car from Guangzhou Baiyun International Airport (CAN). Please contact us via WhatsApp at +86 13723810568 or email info@bdglassfactory.com to schedule your visit. Airport pickup and hotel arrangements can be coordinated for serious buyers and project partners.
+We welcome factory visits by appointment. Our factory is approximately 45 minutes by car from Guangzhou Baiyun International Airport (CAN). Please contact us via WhatsApp at +86 13786871098 or email info@bdglassfactory.com to schedule your visit. Airport pickup and hotel arrangements can be coordinated for serious buyers and project partners.
 
 ---
 

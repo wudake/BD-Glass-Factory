@@ -11,9 +11,9 @@ export const siteConfig = {
     zh: '广东省佛山市南海区狮山镇北园路23号',
   },
 
-  phone: '+86 13723810568',
+  phone: '+86 13786871098',
   email: 'info@bdglassfactory.com',
-  whatsapp: '+8613723810568',
+  whatsapp: '+8613786871098',
 
   founded: 2019,
   baseArea: '15,000 ㎡',

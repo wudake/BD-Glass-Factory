@@ -5,13 +5,13 @@
 ## 1. Meta Title（60 字符）
 
 ```
-Contact BDGLASS | Glass Factory Quote China | WhatsApp +86 13723810568
+Contact BDGLASS | Glass Factory Quote China | WhatsApp +86 13786871098
 ```
 
 ## 2. Meta Description（158 字符）
 
 ```
-Contact BDGLASS glass factory in Foshan, China. Get a quote for tempered, insulating, laminated & craft glass. WhatsApp +86 13723810568. 24-hour response guaranteed.
+Contact BDGLASS glass factory in Foshan, China. Get a quote for tempered, insulating, laminated & craft glass. WhatsApp +86 13786871098. 24-hour response guaranteed.
 ```
 
 ## 3. 页面 H1（主标题）
@@ -47,7 +47,7 @@ To provide the most accurate quote, please include the following details in your
 
 ### 回复承诺
 
-We guarantee a response to all inquiries within **24 hours** during business days (Monday–Saturday, 8:00 AM–6:00 PM GMT+8). For urgent inquiries, we recommend contacting us directly via **WhatsApp at +86 13723810568** for instant messaging.
+We guarantee a response to all inquiries within **24 hours** during business days (Monday–Saturday, 8:00 AM–6:00 PM GMT+8). For urgent inquiries, we recommend contacting us directly via **WhatsApp at +86 13786871098** for instant messaging.
 
 ---
 
@@ -58,7 +58,7 @@ We guarantee a response to all inquiries within **24 hours** during business day
 | 项目 | 内容 | 优化后描述 |
 |------|------|-----------|
 | **Address** | No.23, North Garden Road, Shishan Town, Nanhai District, Foshan City, Guangdong Province, China | Factory address in Foshan, Guangdong — China's glass manufacturing hub. 45 minutes from Guangzhou Baiyun International Airport (CAN). |
-| **Phone / WhatsApp** | +86 13723810568 | **Primary contact for international buyers.** WhatsApp messaging available 24/7. Instant response during business hours. |
+| **Phone / WhatsApp** | +86 13786871098 | **Primary contact for international buyers.** WhatsApp messaging available 24/7. Instant response during business hours. |
 | **Email** | info@bdglassfactory.com | For detailed quotations, technical specifications, and project documentation. Replies within 24 hours. |
 | **Working Hours** | Monday - Saturday: 8:00 AM - 6:00 PM (GMT+8) | Business hours in China Standard Time (GMT+8). Sunday is our rest day. WhatsApp messages received on Sunday will be replied on Monday morning. |
 
@@ -109,7 +109,7 @@ Fill out the form below with your glass requirements. We'll respond within 24 ho
 
 ### Q1: How do I get a glass factory quotation?
 
-The fastest way is to fill out the inquiry form on this page with your glass specifications (type, dimensions, thickness, quantity, application, and destination). Alternatively, send us a message on WhatsApp at +86 13723810568 with your requirements and any drawings or photos. We guarantee a detailed quotation within 24 hours during business days.
+The fastest way is to fill out the inquiry form on this page with your glass specifications (type, dimensions, thickness, quantity, application, and destination). Alternatively, send us a message on WhatsApp at +86 13786871098 with your requirements and any drawings or photos. We guarantee a detailed quotation within 24 hours during business days.
 
 ### Q2: What information do I need to provide for an accurate quote?
 
@@ -117,7 +117,7 @@ For the most accurate quotation, please provide: (1) Glass type (tempered, insul
 
 ### Q3: How quickly will you respond to my inquiry?
 
-We guarantee a response to all inquiries within **24 hours** during business days (Monday–Saturday, 8:00 AM–6:00 PM GMT+8). For urgent inquiries, contact us via **WhatsApp at +86 13723810568** for instant messaging during business hours. Messages received on Sunday are replied on Monday morning.
+We guarantee a response to all inquiries within **24 hours** during business days (Monday–Saturday, 8:00 AM–6:00 PM GMT+8). For urgent inquiries, contact us via **WhatsApp at +86 13786871098** for instant messaging during business hours. Messages received on Sunday are replied on Monday morning.
 
 ### Q4: Can I visit your glass factory in Foshan?
 
@@ -129,7 +129,7 @@ Yes, we strongly recommend ordering samples for custom glass projects, especiall
 
 ### Q6: Can I contact you via WhatsApp?
 
-Absolutely. **WhatsApp at +86 13723810568** is our preferred communication channel for international buyers. It allows instant messaging, photo sharing, and video calls for factory tours. Our team monitors WhatsApp during business hours (Monday–Saturday, 8:00 AM–6:00 PM GMT+8) and typically responds within minutes.
+Absolutely. **WhatsApp at +86 13786871098** is our preferred communication channel for international buyers. It allows instant messaging, photo sharing, and video calls for factory tours. Our team monitors WhatsApp during business hours (Monday–Saturday, 8:00 AM–6:00 PM GMT+8) and typically responds within minutes.
 
 ---
 

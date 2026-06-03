@@ -208,7 +208,7 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
             <label htmlFor="phone" className="label">Phone</label>
             <input
               type="tel" id="phone" name="phone" value={formData.phone}
-              onChange={handleChange} placeholder="+86 137 2381 0568 (recommended for WhatsApp follow-up)"
+              onChange={handleChange} placeholder="+86 137 8687 1098 (recommended for WhatsApp follow-up)"
               className="input-field"
             />
           </div>
