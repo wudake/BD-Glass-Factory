@@ -249,14 +249,14 @@ Run `bash bd-glass-factory/deploy.sh` for full deployment:
 ## Contact & Business Info
 
 - **Company**: Foshan Bodian Glass Co., LTD (BDGLASS)
-- **Phone**: +86 13723810568
-- **WhatsApp**: same number, link `https://wa.me/8613723810568`
-- **Founded**: 2018
+- **Phone**: +86 13786871098
+- **WhatsApp**: same number, link `https://wa.me/8613786871098`
+- **Founded**: 2019
 - **Production Area**: 15,000 ㎡
 - **Employees**: 80+
 - **Export Markets**: Australia, Africa, Middle East, Cambodia, Vietnam
 
 ---
 
-> Last updated: 2026-06-01
+> Last updated: 2026-06-03
 > Next session focus: Image replacement in components + tempered-glass.jpg

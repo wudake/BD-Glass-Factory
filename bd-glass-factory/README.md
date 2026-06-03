@@ -38,13 +38,10 @@ cp .env.example .env.local
 | Variable | Description |
 |----------|-------------|
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 Measurement ID |
-| `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` | reCAPTCHA v3 site key |
-| `RECAPTCHA_SECRET_KEY` | reCAPTCHA v3 secret key |
-| `SMTP_HOST` | SMTP host for contact form emails |
-| `SMTP_PORT` | SMTP port (default 587) |
-| `SMTP_USER` | SMTP username |
-| `SMTP_PASS` | SMTP password |
-| `CONTACT_EMAIL` | Target email for inquiries |
+| `RESEND_API_KEY` | Resend API key for email notifications |
+| `CONTACT_EMAIL` | Target email for inquiry notifications |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key |
+| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret key |
 
 ---
 
@@ -121,9 +118,24 @@ src/
 
 ## SEO Features
 
+### V2.2.0 Updates (2026-06-03)
+
+- **Project Experience Details** — All 6 projects now display real glass configuration, engineering area, and address in modal popup
+- **Phone Number** — Global contact updated to +86 13786871098
+- **Contact Page** — Removed Working Hours and Languages sections; streamlined to 4 info cards
+- **Standalone Build** — `package.json` build script auto-copies `static` and `public` to prevent style/image loss
+
+### V2.1.0 Updates (2026-06-02)
+
+- **Resend Email** — Contact form sends internal notification + customer auto-reply
+- **Cloudflare Turnstile** — Invisible anti-spam on inquiry form
+- **New Logo** — 3D metallic BD icon, full favicon suite replaced
+- **Client Visit Gallery** — 11 overseas buyer factory visit photos in staggered grid
+- **Homepage U-Type Copy** — All 12 sections rewritten buyer-centric
+
 ### V2.0.0 SEO Optimization (Completed)
 
-- **Homepage**: AIDA-structured copy with keyword-optimized H1/H2, CTAs, and benefit-driven content across all 13 sections (including new ClientVisits gallery)
+- **Homepage**: AIDA-structured copy with keyword-optimized H1/H2, CTAs, and benefit-driven content across all 13 sections (including ClientVisits gallery)
 - **Product Detail Pages** (4 pages): Per-slug dynamic metadata (title, description, H1, subtitle, CTA), extended long descriptions (~700-1200 words), 13-row spec tables, 6-7 FAQ items, related product recommendations
   - `/products/tempered-glass` — Tempered Glass Manufacturer China
   - `/products/insulating-glass` — Insulating Glass Manufacturer China
@@ -131,7 +143,7 @@ src/
   - `/products/craft-glass` — Craft Glass Manufacturer China
 - **About Page**: ~800-word company introduction, 6 core stats, 8 equipment items with specs, 6 FAQ items, bottom CTA section
 - **Services Page**: ~400-word processing capability introduction, 6 expanded service cards, 5-step workflow, 6 FAQ items, bottom CTA section
-- **Contact Page**: Inquiry guide with 6 information checklists, 6 contact info items (incl. factory visit & languages), WhatsApp CTA card, 6 FAQ items
+- **Contact Page**: Inquiry guide with 6 information checklists, 4 contact info items (address, phone, email, factory visit), WhatsApp CTA card, 6 FAQ items
 - **Typography System**: Hubs.com-inspired B2B scale — tightened heading sizes, 1.7 line-height for body text, `--text-display` and `--text-subhead` tokens
 
 ### Technical SEO
@@ -152,7 +164,7 @@ src/
 - HTTPS enforcement via Next.js headers
 - X-Content-Type-Options, X-Frame-Options, XSS Protection headers
 - Referrer-Policy: strict-origin-when-cross-origin
-- reCAPTCHA v3 integration (configurable via env vars)
+- Cloudflare Turnstile invisible anti-spam (configurable via env vars)
 - Server-side form validation
 - Environment variables for all secrets
 
@@ -177,4 +189,4 @@ See `src/app/globals.css` for the complete design system:
 
 ---
 
-> Version: V2.0.0 | Domain: bdglassfactory.com | Updated: 2026-06-02
+> Version: V2.2.0 | Domain: bdglassfactory.com | Updated: 2026-06-03

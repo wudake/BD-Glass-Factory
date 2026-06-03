@@ -2,7 +2,7 @@
 
 **Professional China Glass Factory | Foreign Trade Website**
 
-[![Version](https://img.shields.io/badge/version-V2.0.0-blue)](https://github.com/wudake/BD-Glass-Factory/releases/tag/V2.0.0)
+[![Version](https://img.shields.io/badge/version-V2.2.0-blue)](https://github.com/wudake/BD-Glass-Factory/releases/tag/V2.2.0)
 [![Stack](https://img.shields.io/badge/stack-Next.js%2016.2%20%2B%20TypeScript%20%2B%20Tailwind%20CSS%20v4-black)](https://nextjs.org)
 
 ---
@@ -44,7 +44,7 @@ This repository contains the complete BDGLASS foreign trade website — a static
 | [Tailwind CSS](https://tailwindcss.com/) | v4 | CSS-first utility styling (no config file) |
 | [React](https://react.dev/) | 19.2.4 | UI library |
 | [Lucide Icons](https://lucide.dev/) | 1.16 | Icon library |
-| [Vercel](https://vercel.com/) | — | Hosting & deployment |
+| [PM2](https://pm2.io/) | — | Process management & deployment |
 
 ### Quick Start
 
@@ -57,12 +57,14 @@ npm install
 # Development server (Turbopack)
 npm run dev
 
-# Production build
+# Production build (standalone output — auto-copies static + public)
 npm run build
 
-# Start production server
-npm run start
+# Deploy via PM2
+pm2 restart bd-glass-factory
 ```
+
+> **Standalone Build Note**: `package.json` build script automatically copies `.next/static` and `public/` to the standalone output directory. No manual `cp` steps needed.
 
 ---
 
@@ -129,7 +131,7 @@ BD-Glass-Factory/
 ### UX & Conversion
 - **AIDA Model Homepage** — Attention → Interest → Desire → Action (13 sections)
 - **Client Visit Gallery** — Staggered 4-column photo grid showcasing overseas buyers at factory
-- **Contact Form** — client + server validation, reCAPTCHA-ready
+- **Contact Form** — client + server validation, Cloudflare Turnstile anti-spam, Resend email auto-reply
 - **WhatsApp Button** — global floating button with tooltip
 - **Responsive Design** — Mobile / Tablet / Desktop with breakpoints
 - **Google Analytics** — GA4 integration via environment variable
@@ -155,12 +157,21 @@ BD-Glass-Factory/
 
 Full development plan: [`docs/development-plan.md`](docs/development-plan.md)
 
-### V2.0.0 Release (2026-06-02)
+### V2.2.0 Release (2026-06-03)
 
+- **Phone Number Updated** — Global contact number changed to +86 13786871098 (WhatsApp synced)
+- **Project Details Complete** — All 6 projects in `ProjectExperience` now display real glass configuration, engineering area, and address in modal
+- **Contact Page Streamlined** — Removed Working Hours and Languages sections, updated Factory Visit copy
+- **Standalone Build Fixed** — `package.json` build script now auto-copies `static` and `public` to standalone directory, preventing recurring style/image loss
+
+### V2.1.0 Release (2026-06-02)
+
+- **Resend Email Integration** — Contact form now sends internal notification + customer auto-reply via Resend
+- **Cloudflare Turnstile** — Invisible anti-spam protection on inquiry form
+- **Homepage Form Unification** — Bottom contact section now reuses `InquiryForm` component
 - **New Logo** — 3D metallic BD icon with glass door effect, full favicon suite replaced
-- **Client Visit Gallery** — New homepage section (`ClientVisits`) with 11 overseas buyer factory visit photos in staggered 4-column layout
+- **Client Visit Gallery** — New homepage section (`ClientVisits`) with 11 overseas buyer factory visit photos
 - **Homepage Copy U-Type Optimization** — All 12 sections rewritten from I-type to U-type (buyer-centric) copy
-- **SEO Complete** — Product detail pages, about, services, contact pages all SEO-optimized with dynamic metadata
 - **Production Deployed** — Live on https://bdglassfactory.com via Linux + Nginx + PM2
 
 ---
@@ -176,9 +187,10 @@ cp bd-glass-factory/.env.example bd-glass-factory/.env.local
 | Variable | Description | Required |
 |----------|-------------|----------|
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 Measurement ID | Optional |
-| `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` | reCAPTCHA v3 site key | Optional |
-| `RECAPTCHA_SECRET_KEY` | reCAPTCHA v3 secret key | Optional |
-| `SMTP_HOST` | SMTP server for contact form emails | Optional |
+| `RESEND_API_KEY` | Resend API key for email notifications | Optional |
+| `CONTACT_EMAIL` | Target email for inquiry notifications | Optional |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key | Optional |
+| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret key | Optional |
 
 ---
 
@@ -186,9 +198,9 @@ cp bd-glass-factory/.env.example bd-glass-factory/.env.local
 
 - **Website**: [bdglassfactory.com](https://bdglassfactory.com)
 - **Email**: info@bdglassfactory.com
-- **Phone/WhatsApp**: +86 13723810568
+- **Phone/WhatsApp**: +86 13786871098
 - **Address**: No.23, North Garden Road, Shishan Town, Nanhai District, Foshan City, Guangdong Province, China
 
 ---
 
-> Version: V2.0.0 | Updated: 2026-06-02
+> Version: V2.2.0 | Updated: 2026-06-03
