@@ -22,7 +22,7 @@ export default function ContactPage() {
     <div>
       <Script
         src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
       <div className="bg-brand-dark py-20">
         <div className="container-page text-center">

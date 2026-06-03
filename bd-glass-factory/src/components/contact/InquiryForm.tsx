@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 interface InquiryFormProps {
@@ -12,14 +12,16 @@ declare global {
   interface Window {
     turnstile?: {
       ready: (callback: () => void) => void;
-      execute: (
+      render: (
         container: string | HTMLElement,
         options: {
           sitekey: string;
+          size?: string;
           callback?: (token: string) => void;
           "error-callback"?: () => void;
         }
-      ) => void;
+      ) => string;
+      getResponse: (widgetId?: string) => string | undefined;
       reset: (widgetId?: string) => void;
     };
   }
@@ -37,6 +39,7 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
   const [productInterest, setProductInterest] = useState<string[]>([]);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const widgetIdRef = useRef<string | null>(null);
 
   const countries = [
     "Australia", "United States", "United Kingdom", "United Arab Emirates",
@@ -50,6 +53,30 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
     "Laminated Glass",
     "Craft Glass",
   ];
+
+  // Render invisible Turnstile widget on mount
+  useEffect(() => {
+    if (!turnstileSiteKey || typeof window === "undefined" || !window.turnstile) return;
+
+    const renderWidget = () => {
+      const container = document.getElementById("turnstile-container");
+      if (!container) return;
+      // Clean up existing widget
+      if (widgetIdRef.current) {
+        window.turnstile!.reset(widgetIdRef.current);
+      }
+      widgetIdRef.current = window.turnstile!.render(container, {
+        sitekey: turnstileSiteKey,
+        size: "invisible",
+      });
+    };
+
+    if (document.readyState === "complete") {
+      renderWidget();
+    } else {
+      window.turnstile.ready(renderWidget);
+    }
+  }, [turnstileSiteKey]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -84,15 +111,36 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
         return;
       }
       if (typeof window === "undefined" || !window.turnstile) {
-        reject(new Error("Turnstile script not loaded"));
+        reject(new Error("Turnstile script not loaded. Please refresh the page and try again."));
         return;
       }
-      window.turnstile.ready(() => {
-        window.turnstile!.execute("#turnstile-container", {
-          sitekey: turnstileSiteKey,
-          callback: (token: string) => resolve(token),
-          "error-callback": () => reject(new Error("Turnstile verification failed")),
-        });
+
+      // Try to get existing response first
+      const existingToken = widgetIdRef.current
+        ? window.turnstile.getResponse(widgetIdRef.current)
+        : undefined;
+
+      if (existingToken) {
+        resolve(existingToken);
+        return;
+      }
+
+      // Otherwise render a fresh invisible widget to generate token
+      const container = document.getElementById("turnstile-container");
+      if (!container) {
+        reject(new Error("Turnstile container not found"));
+        return;
+      }
+
+      if (widgetIdRef.current) {
+        window.turnstile.reset(widgetIdRef.current);
+      }
+
+      widgetIdRef.current = window.turnstile.render(container, {
+        sitekey: turnstileSiteKey,
+        size: "invisible",
+        callback: (token: string) => resolve(token),
+        "error-callback": () => reject(new Error("Turnstile verification failed")),
       });
     });
   };
@@ -115,6 +163,10 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", company: "", country: "", message: "" });
       setProductInterest([]);
+      // Reset turnstile for next submission
+      if (widgetIdRef.current && window.turnstile) {
+        window.turnstile.reset(widgetIdRef.current);
+      }
     } catch {
       setStatus("error");
     }
@@ -238,8 +290,8 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
           {errors.message && <p className="text-brand-orange text-sm mt-1.5">{errors.message}</p>}
         </div>
 
-        {/* Turnstile container (invisible) */}
-        <div id="turnstile-container" className="hidden" />
+        {/* Turnstile container (invisible but present in DOM) */}
+        <div id="turnstile-container" className="absolute left-0 top-0 w-0 h-0 overflow-hidden" />
 
         {/* Error Banner */}
         {status === "error" && (
