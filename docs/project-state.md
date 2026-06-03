@@ -15,7 +15,7 @@
 | 构建输出 | standalone |
 | 部署方式 | Linux 服务器 + Nginx + PM2 |
 | 包管理器 | npm |
-| 当前版本 | V2.0.0 |
+| 当前版本 | V2.1.0 |
 
 ---
 
@@ -62,6 +62,10 @@
 - [x] API Route `/api/contact`
 - [x] WhatsApp 悬浮按钮
 - [x] Contact 页完整内容
+- [x] **Resend 邮件服务集成（2026-06-02）** — 内部通知 + 客户自动确认邮件
+- [x] **Cloudflare Turnstile 反垃圾验证（2026-06-02）** — invisible 模式
+- [x] **首页底部表单统一（2026-06-02）** — 复用 Contact 页 InquiryForm
+- [x] **去掉 Product Interest 字段（2026-06-02）** — 简化表单
 
 ### Phase 5 — SEO + 性能优化 ✅
 - [x] 每个页面独立 metadata
@@ -123,11 +127,9 @@
 | 6 | /certifications 页 SEO 优化 | 当前内容较基础，需关键词丰富化 |
 | 7 | /projects/[slug] 详情页 SEO | 每个项目独立 SEO 内容 |
 | 8 | Google Analytics 4 集成 | 测量 ID 通过环境变量配置 |
-| 9 | reCAPTCHA v3 集成 | 询盘表单防垃圾 |
-| 10 | 表单邮件通知 | API 只接收数据，未发送邮件 |
-| 11 | 产品图片质量检查 | 确认 4 个产品图是否足够专业 |
-| 12 | 关于页图片检查 | 部分 about 图片可能是占位图 |
-| 13 | ClientVisits 模块优化 | 用户可能希望调整交错幅度、裁剪比例或照片顺序 |
+| 9 | 产品图片质量检查 | 确认 4 个产品图是否足够专业 |
+| 10 | 关于页图片检查 | 部分 about 图片可能是占位图 |
+| 11 | ClientVisits 模块优化 | 用户可能希望调整交错幅度、裁剪比例或照片顺序 |
 
 ### 🟢 低优先级 / 未来规划
 
@@ -206,7 +208,7 @@ server {
 | 图片无法加载 | ✅ 已解决 | standalone 缺少 public/ | deploy.sh 复制 public 和 static |
 | **构建后样式丢失** | ✅ 已解决（2026-06-01）| `npm run build` 后未复制 `public/` 和 `.next/static/` 到 standalone 目录 | **必须执行：** `cp -r public .next/standalone/` 和 `cp -r .next/static .next/standalone/.next/`，再 `pm2 restart` |
 | AI 图片生成不可用 | ⚠️ 已知 | Pollinations.ai 返回 402 | 使用 Unsplash 库存图或付费 API |
-| 询盘表单无邮件通知 | ⚠️ 待处理 | API 仅接收，未配置 SMTP | 待集成 Nodemailer / Resend |
+| 询盘表单无邮件通知 | ✅ 已解决（2026-06-02）| API 仅接收，未配置 SMTP | 已集成 Resend，内部通知 + 客户确认邮件 |
 | 移动端图片 placeholder | 🔄 进行中 | 组件使用 `<div>` 代替 `<Image>` | 待替换为 Next.js Image |
 | **src/app/favicon.ico 导致构建失败** | ✅ 已解决（2026-06-02）| Turbopack 无法解码 ICO 中 RGB 格式的 PNG | **已删除** `src/app/favicon.ico`，改用 layout.tsx metadata 引用 `public/favicon.ico` |
 
@@ -308,4 +310,4 @@ public/images/
 ---
 
 > 此文件由 AI 自动生成于 2026-06-02，用于项目进度保存。
-> 最近更新：2026-06-02 — Logo 更换 + ClientVisits 客户来访模块上线 + 修复 favicon.ico 构建问题
+> 最近更新：2026-06-02 — V2.1.0 发布：Turnstile 反垃圾验证 + Resend 邮件通知 + 首页表单统一 + 去掉 Product Interest
