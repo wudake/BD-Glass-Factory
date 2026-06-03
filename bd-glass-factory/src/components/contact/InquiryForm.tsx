@@ -36,7 +36,6 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
     country: "",
     message: "",
   });
-  const [productInterest, setProductInterest] = useState<string[]>([]);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const widgetIdRef = useRef<string | null>(null);
@@ -45,13 +44,6 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
     "Australia", "United States", "United Kingdom", "United Arab Emirates",
     "Saudi Arabia", "India", "Vietnam", "Cambodia", "South Africa",
     "Nigeria", "Kenya", "Other",
-  ];
-
-  const products = [
-    "Tempered Glass",
-    "Insulating Glass",
-    "Laminated Glass",
-    "Craft Glass",
   ];
 
   // Render invisible Turnstile widget on mount
@@ -82,12 +74,6 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
-  };
-
-  const handleProductToggle = (product: string) => {
-    setProductInterest((prev) =>
-      prev.includes(product) ? prev.filter((p) => p !== product) : [...prev, product]
-    );
   };
 
   const validate = (): boolean => {
@@ -156,13 +142,12 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, productInterest, turnstileToken }),
+        body: JSON.stringify({ ...formData, turnstileToken }),
       });
 
       if (!res.ok) throw new Error("Submission failed");
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", company: "", country: "", message: "" });
-      setProductInterest([]);
       // Reset turnstile for next submission
       if (widgetIdRef.current && window.turnstile) {
         window.turnstile.reset(widgetIdRef.current);
@@ -251,31 +236,6 @@ export default function InquiryForm({ turnstileSiteKey }: InquiryFormProps) {
             ))}
           </select>
           {errors.country && <p className="text-brand-orange text-sm mt-1.5">{errors.country}</p>}
-        </div>
-
-        {/* Product Interest */}
-        <div>
-          <label className="label">Product Interest</label>
-          <div className="grid grid-cols-2 gap-3">
-            {products.map((product) => (
-              <label
-                key={product}
-                className={`flex items-center gap-2 text-body-sm cursor-pointer rounded-md border px-3 min-h-[48px] transition-colors ${
-                  productInterest.includes(product)
-                    ? "border-brand-blue bg-brand-blue/5 text-brand-blue"
-                    : "border-gray-200 text-brand-muted-dark hover:border-gray-300"
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  checked={productInterest.includes(product)}
-                  onChange={() => handleProductToggle(product)}
-                  className="sr-only"
-                />
-                {product}
-              </label>
-            ))}
-          </div>
         </div>
 
         {/* Message */}

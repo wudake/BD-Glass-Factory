@@ -11,6 +11,7 @@ import ClientVisits from "@/components/home/ClientVisits";
 import HowWeWork from "@/components/home/HowWeWork";
 import CTASection from "@/components/home/CTASection";
 import ContactSection from "@/components/home/ContactSection";
+import Script from "next/script";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -39,9 +40,16 @@ export const metadata: Metadata = {
   },
 };
 
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
+
 export default function HomePage() {
   return (
     <div>
+      <Script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        strategy="afterInteractive"
+      />
+
       {/* Attention */}
       <HeroBanner />
 
@@ -61,7 +69,7 @@ export default function HomePage() {
       {/* Action */}
       <HowWeWork />
       <CTASection />
-      <ContactSection />
+      <ContactSection turnstileSiteKey={TURNSTILE_SITE_KEY} />
     </div>
   );
 }

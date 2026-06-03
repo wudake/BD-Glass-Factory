@@ -1,7 +1,12 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
+import InquiryForm from "@/components/contact/InquiryForm";
 
-export default function ContactSection() {
+interface ContactSectionProps {
+  turnstileSiteKey: string;
+}
+
+export default function ContactSection({ turnstileSiteKey }: ContactSectionProps) {
   return (
     <section className="section bg-brand-gray/5">
       <div className="container-page">
@@ -62,44 +67,8 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Inquiry Form Placeholder / Quick Form */}
-          <div className="bg-white rounded-xl border border-gray-200 p-5 sm:p-8">
-            <h3 className="text-brand-dark mb-2">Get Your Glass Quote</h3>
-            <p className="text-brand-muted-dark text-body-sm mb-6">
-              Please send us the following information for a tailored quotation.
-            </p>
-
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {["Glass type", "Thickness", "Size", "Quantity"].map((field) => (
-                  <input
-                    key={field}
-                    type="text"
-                    placeholder={field}
-                    className="input-field text-sm py-3"
-                  />
-                ))}
-              </div>
-              <input
-                type="text"
-                placeholder="Application (e.g., curtain wall, shower room)"
-                className="input-field text-sm py-3"
-              />
-              <input
-                type="text"
-                placeholder="Project drawings, if available (link or description)"
-                className="input-field text-sm py-3"
-              />
-              <input
-                type="text"
-                placeholder="Destination country or city"
-                className="input-field text-sm py-3"
-              />
-              <button type="submit" className="btn-primary w-full">
-                Submit Your Requirements
-              </button>
-            </form>
-          </div>
+          {/* Inquiry Form */}
+          <InquiryForm turnstileSiteKey={turnstileSiteKey} />
         </div>
       </div>
     </section>
