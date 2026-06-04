@@ -85,6 +85,63 @@ export function JsonLdProduct({
   );
 }
 
+export function JsonLdLocalBusiness() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `https://${siteConfig.domain}/about#localbusiness`,
+    name: siteConfig.fullName,
+    alternateName: siteConfig.name,
+    description: siteConfig.description,
+    url: `https://${siteConfig.domain}/about`,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: siteConfig.address.en.split(",")[0],
+      addressLocality: "Foshan",
+      addressRegion: "Guangdong",
+      addressCountry: "CN",
+    },
+    image: `https://${siteConfig.domain}/logo.png`,
+    priceRange: "$$",
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export function JsonLdFAQPage({ items }: { items: FAQItem[] }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export function JsonLdWebSite() {
   const jsonLd = {
     "@context": "https://schema.org",

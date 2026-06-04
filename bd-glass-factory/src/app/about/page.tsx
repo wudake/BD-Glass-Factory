@@ -3,7 +3,8 @@ import SectionTitle from "@/components/shared/SectionTitle";
 import { Check, MapPin, Globe, Building2 } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { generatePageMeta } from "@/lib/metadata";
-import { JsonLdBreadcrumb, JsonLdOrganization } from "@/lib/json-ld";
+import { JsonLdBreadcrumb, JsonLdLocalBusiness, JsonLdFAQPage } from "@/lib/json-ld";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -13,6 +14,39 @@ export const metadata: Metadata = generatePageMeta({
     "Foshan Bodian Glass Co., LTD — professional glass manufacturer in China since 2019. 15,000sqm factory, 80+ team, 3C certified. Tempered, insulating, laminated & craft glass exporter.",
   path: "/about",
 });
+
+const faqData = [
+  {
+    question: "Where is BDGLASS factory located?",
+    answer:
+      "Our factory is located at No.23, North Garden Road, Shishan Town, Nanhai District, Foshan City, Guangdong Province, China. Foshan is widely recognized as one of China's largest glass manufacturing clusters, with a complete supply chain ecosystem from raw float glass to finished architectural glass products.",
+  },
+  {
+    question: "What certifications does BDGLASS have?",
+    answer:
+      "All our safety glass products (tempered glass, insulating glass, laminated glass) are certified by the Chinese Safety Glass Certification Center and carry the National Compulsory Product Certification (3C / CCC) mark. We also comply with EN 12150 (tempered glass), EN 1279 (insulating glass), and EN 14449 (laminated glass) European standards. Test reports and certificates are available for project orders.",
+  },
+  {
+    question: "What is your production capacity and lead time?",
+    answer:
+      "Our two production bases total 15,000 square meters with 5 production lines. Standard lead times are: tempered glass 7-15 working days, insulating glass 10-20 working days, laminated glass 10-20 working days, and craft glass 7-15 working days (samples: 7-10 days). Large project orders may require 25-30 working days. Rush orders are negotiable.",
+  },
+  {
+    question: "Do you accept OEM and custom orders?",
+    answer:
+      "Yes. Custom orders are our core business. We accept custom dimensions, thicknesses, colors, edge finishes, hole patterns, printed designs, and multi-layer combinations (tempered + laminated + insulating). Send us your specifications or design files (AI, PDF, DWG, DXF) and we will provide a detailed quotation within 24 hours.",
+  },
+  {
+    question: "Which countries do you export to?",
+    answer:
+      "We currently export to Australia, Africa, the Middle East, Cambodia, Vietnam, and other Southeast Asian countries. We provide professional export packaging (plywood crates with cork separators), full customs documentation, and flexible shipping terms including FOB Tianjin, CIF, and DDP. New markets are continuously being developed.",
+  },
+  {
+    question: "How can I visit your factory?",
+    answer:
+      "We welcome factory visits by appointment. Our factory is approximately 45 minutes by car from Guangzhou Baiyun International Airport (CAN). Please contact us via WhatsApp at +86 13786871098 or email info@bdglassfactory.com to schedule your visit. Airport pickup and hotel arrangements can be coordinated for serious buyers and project partners.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -32,6 +66,7 @@ export default function AboutPage() {
       <div className="container-page py-4">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "About" }]} />
         <JsonLdBreadcrumb items={[{ name: "Home", item: "/" }, { name: "About" }]} />
+        <JsonLdLocalBusiness />
       </div>
 
       {/* Section 1: Company Introduction */}
@@ -43,58 +78,31 @@ export default function AboutPage() {
               <div className="space-y-4 text-brand-muted-dark leading-relaxed">
                 <p>
                   Foshan Bodian Glass Co., Ltd. (BDGLASS) is a professional glass manufacturer based in
-                  Foshan City, Guangdong Province, China — the heart of the world&apos;s glass manufacturing
-                  industry. Established in 2019, we have grown from a small glass processing workshop into
-                  a modern glass factory with two production bases totaling 15,000 square meters, serving
-                  clients across China and exporting to over 10 countries worldwide.
+                  Foshan, Guangdong, China. Established in 2019, we have grown into a modern glass factory
+                  with two production bases totaling 15,000 square meters and 80+ team members.
                 </p>
                 <p>
-                  Our primary product lines include <strong>tempered glass</strong> (toughened safety glass,
-                  3-19mm), <strong>insulating glass</strong> (IGU / double glazed units, 12-52mm),{" "}
-                  <strong>laminated glass</strong> (PVB/SGP safety glass, 6.38-60mm), and{" "}
-                  <strong>craft glass</strong> (decorative glass with acid etching, silk screen printing,
-                  digital enamel, hot melting, and stained glass techniques). These products serve three
-                  main market segments: residential home decoration, commercial building construction, and
-                  architectural curtain wall projects.
+                  We specialize in tempered glass (3–19mm), insulating glass (12–52mm IGU), laminated glass
+                  (6.38–60mm), and craft glass — serving residential, commercial, and architectural
+                  curtain wall projects. Our facility features a SouthTech tempering furnace, 5 automated
+                  IGU lines, CNC cutting, and edge grinding machines.
                 </p>
                 <p>
-                  Our factory is equipped with industry-leading glass processing machinery including a{" "}
-                  <strong>SouthTech tempering furnace</strong> (capable of processing glass up to 3,300 ×
-                  8,000mm), <strong>5 automated hollow glass production lines</strong> for IGU
-                  manufacturing, <strong>CNC bending machines</strong> for precision curved glass,{" "}
-                  <strong>high-precision CNC cutting machines</strong>, and{" "}
-                  <strong>automatic edge grinding machines</strong>.
-                </p>
-                <p>
-                  Quality begins with raw materials. We source our glass original sheets from China&apos;s
-                  top-tier float glass manufacturers — <strong>Xinyi Glass</strong> and{" "}
-                  <strong>South Glass (CSG)</strong> — ensuring higher strength, excellent flatness and
-                  uniformity, and low iron content that reduces the risk of spontaneous breakage. Every
-                  batch undergoes strict quality inspection including dimensional accuracy, surface defect
-                  checking, and impact resistance testing. All products carry the{" "}
-                  <strong>3C (CCC) certification</strong>.
-                </p>
-                <p>
-                  While we maintain a strong presence in China&apos;s domestic market, BDGLASS has been
-                  actively expanding internationally. Our glass products are exported to{" "}
-                  <strong>Australia, Africa, the Middle East, Cambodia, Vietnam</strong>, and other
-                  Southeast Asian countries. We provide professional export packaging (plywood crates with
-                  cork separators), full documentation support, and flexible shipping terms including FOB,
-                  CIF, and DDP.
-                </p>
-                <p>
-                  Our team of 80+ employees has an average age of 29, bringing together youthful energy
-                  with technical expertise. We invest continuously in employee training and skill
-                  development, ensuring our production team stays current with the latest glass processing
-                  technologies and quality standards.
+                  All products use premium Xinyi and CSG float glass and carry 3C (CCC) certification. We
+                  export to Australia, Africa, Middle East, Cambodia, Vietnam, and Southeast Asia with
+                  professional packaging and full documentation. Factory visits and custom inquiries are
+                  welcome.
                 </p>
               </div>
             </div>
-            <div className="bg-brand-gray rounded-xl aspect-[4/3] flex items-center justify-center">
-              <span className="text-brand-muted text-sm text-center px-4">
-                Factory Exterior Photo<br />
-                <span className="text-xs">Replace with factory building photo (800×600 WebP)</span>
-              </span>
+            <div className="relative rounded-xl aspect-[3/2] overflow-hidden">
+              <Image
+                src="/images/about/Foshan%20Bodian%20Glass.jpg"
+                alt="Foshan Bodian Glass factory building and production facility"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
@@ -109,11 +117,46 @@ export default function AboutPage() {
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="bg-brand-gray rounded-xl aspect-[4/3] flex items-center justify-center order-2 lg:order-1">
-              <span className="text-brand-muted text-sm text-center px-4">
-                Production Line Photo<br />
-                <span className="text-xs">Replace with factory production line photo (1200×800 WebP)</span>
-              </span>
+            <div className="grid grid-cols-2 gap-3 order-2 lg:order-1">
+              {[
+                {
+                  src: "/images/about/Production-Base/Glass%20tempering%20furnace.jpg",
+                  label: "Glass Tempering Furnace",
+                },
+                {
+                  src: "/images/about/Production-Base/Insulating%20glass%20processing%20machine.jpg",
+                  label: "Insulating Glass Processing",
+                },
+                {
+                  src: "/images/about/Production-Base/Glass%20cutting%20machine.jpg",
+                  label: "CNC Cutting Machine",
+                },
+                {
+                  src: "/images/about/Production-Base/Cleaning%20and%20edge%20grinding%20machine.jpg",
+                  label: "Cleaning & Edge Grinding",
+                },
+                {
+                  src: "/images/about/Production-Base/Automated%20glass%20cleaning%20machine.jpg",
+                  label: "Automated Cleaning",
+                },
+                {
+                  src: "/images/about/Production-Base/Injection%20glue%20machine.jpg",
+                  label: "Injection Glue Machine",
+                },
+              ].map((img) => (
+                <div key={img.src} className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.label}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs py-1.5 px-2 text-center font-medium">
+                    {img.label}
+                  </div>
+                </div>
+              ))}
             </div>
 
             <div className="order-1 lg:order-2">
@@ -222,11 +265,14 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="bg-brand-gray rounded-xl aspect-[4/3] flex items-center justify-center">
-              <span className="text-brand-muted text-sm text-center px-4">
-                Team Photo<br />
-                <span className="text-xs">Replace with team group photo (800×600 WebP)</span>
-              </span>
+            <div className="relative rounded-xl aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/about/Team%20Photo.jpg"
+                alt="BDGLASS team photo"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
@@ -270,77 +316,122 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Section 6: Partner Clients */}
+      {/* Section 6: Amazing Clients */}
       <section className="section bg-brand-gray/5">
         <div className="container-page">
           <SectionTitle
-            title="Partner Clients"
-            subtitle="Trusted by leading door and window brands across China."
+            title="Amazing Clients"
+            subtitle="Proudly supplying glass to leading door, window and construction brands across China."
           />
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "Ai Shang Mei Doors & Windows",
-              "Pearl Creation Exhibition",
-              "Boss Doors & Windows",
-              "Chibang Door & Window",
-              "Alvi Doors & Windows",
-              "Mei Jia Deschamps Doors & Windows",
-              "To Still Sunshine Doors & Windows",
-              "Yaffe Door & Window",
-              "Yu Jingxuan Doors & Windows",
-              "View Door & Window",
+              {
+                name: "Derchi",
+                domain: "derchiwindow.com",
+                href: "https://www.derchiwindow.com/",
+                image: "/images/about/clients/derchi.jpg",
+              },
+              {
+                name: "Vinco",
+                domain: "vincowindow.com",
+                href: "https://www.vincowindow.com/",
+                image: "/images/about/clients/vincowindow.jpg",
+              },
+              {
+                name: "Smart Alwew",
+                domain: "smart-alwew.com",
+                href: "https://www.smart-alwew.com/",
+                image: "/images/about/clients/smart-alwew.jpg",
+              },
+              {
+                name: "Boswindor",
+                domain: "boswindor.com",
+                href: "https://boswindor.com/",
+                image: "/images/about/clients/boswindor.jpg",
+              },
+              {
+                name: "George Buildings",
+                domain: "georgebuildings.com",
+                href: "https://georgebuildings.com/",
+                image: "/images/about/clients/georgebuildings.jpg",
+              },
+              {
+                name: "Forge",
+                domain: "forgewindow.com",
+                href: "https://www.forgewindow.com/",
+                image: "/images/about/clients/forgewindow.jpg",
+              },
             ].map((client) => (
-              <div
-                key={client}
-                className="bg-white border border-gray-100 rounded-lg p-5 flex items-center justify-center text-center hover:border-brand-blue/30 transition-colors"
+              <a
+                key={client.name}
+                href={client.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-brand-blue/30 transition-all group"
               >
-                <span className="text-brand-muted-dark text-sm">{client}</span>
-              </div>
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={client.image}
+                    alt={`${client.name} website banner`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+                <div className="p-5 text-center">
+                  <h5 className="text-brand-dark font-semibold mb-1 group-hover:text-brand-blue transition-colors">
+                    {client.name}
+                  </h5>
+                  <p className="text-brand-muted text-xs">{client.domain}</p>
+                </div>
+              </a>
             ))}
           </div>
-
-          <p className="text-brand-muted text-sm text-center mt-6">
-            Client logo images — replace with actual logo PNG/SVG files
-          </p>
         </div>
       </section>
 
-      {/* Section 7: Association Memberships */}
+      {/* Section 7: Founder */}
       <section className="section bg-white">
         <div className="container-page">
-          <SectionTitle
-            title="Association Memberships"
-            subtitle="Active members of professional glass and construction industry organizations."
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                name: "Foshan Safety Production Association",
-                desc: "Committed to workplace safety and industry best practices in glass manufacturing.",
-              },
-              {
-                name: "China Door & Window Industry Forum",
-                desc: "Member of the organizing committee for China's high-quality growth forum.",
-              },
-              {
-                name: "China Architectural Glass & Industrial Glass Association",
-                desc: "National association connecting us with industry standards and technology advancements.",
-              },
-              {
-                name: "Guangdong Door & Window Association",
-                desc: "Fostering collaboration with door and window manufacturers across the supply chain.",
-              },
-            ].map((org) => (
-              <div key={org.name} className="card p-5 text-center">
-                <div className="bg-brand-gray rounded-lg aspect-[3/2] flex items-center justify-center mb-4">
-                  <span className="text-brand-muted text-xs">Certificate Image</span>
-                </div>
-                <h5 className="text-brand-dark text-sm mb-2">{org.name}</h5>
-                <p className="text-brand-muted-dark text-xs">{org.desc}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-brand-blue text-sm uppercase tracking-wider mb-4 font-semibold">
+                Leadership & Vision
+              </p>
+              <h2 className="text-brand-dark mb-6">Meet Lian.Guo — Founder of BDGLASS</h2>
+              <div className="space-y-4 text-brand-muted-dark leading-relaxed">
+                <p>
+                  BDGLASS was founded in 2019 by Ms. Lian.Guo (郭女士) with a clear vision: to build
+                  a modern glass manufacturing enterprise that combines advanced technology with
+                  uncompromising quality. Starting from a modest glass processing workshop, Lian.Guo
+                  led the company through rapid growth, establishing two production bases and
+                  expanding from domestic supply to international export markets.
+                </p>
+                <p>
+                  With a hands-on approach to production and deep expertise in architectural glass
+                  solutions, Lian.Guo has built a team of 80+ professionals who share the same
+                  commitment to precision, innovation, and customer satisfaction. Under her
+                  leadership, BDGLASS has secured partnerships with leading door and window brands
+                  across China and established a growing presence in Australia, Africa, the Middle
+                  East, and Southeast Asia.
+                </p>
+                <p>
+                  The core philosophy is simple: every piece of glass that leaves the factory must
+                  meet the highest standards — because our clients&apos; projects depend on it.
+                </p>
               </div>
-            ))}
+            </div>
+            <div className="rounded-xl overflow-hidden max-w-md mx-auto lg:max-w-none">
+              <img
+                src="/images/about/Factory-Founder-Miss-Guo.png"
+                alt="Lian.Guo, founder of BDGLASS"
+                className="w-full h-auto object-cover rounded-xl"
+                width="505"
+                height="898"
+               
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -353,38 +444,7 @@ export default function AboutPage() {
             subtitle="Common questions from international buyers and project partners."
           />
           <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              {
-                question: "Where is BDGLASS factory located?",
-                answer:
-                  "Our factory is located at No.23, North Garden Road, Shishan Town, Nanhai District, Foshan City, Guangdong Province, China. Foshan is widely recognized as one of China's largest glass manufacturing clusters, with a complete supply chain ecosystem from raw float glass to finished architectural glass products.",
-              },
-              {
-                question: "What certifications does BDGLASS have?",
-                answer:
-                  "All our safety glass products (tempered glass, insulating glass, laminated glass) are certified by the Chinese Safety Glass Certification Center and carry the National Compulsory Product Certification (3C / CCC) mark. We also comply with EN 12150 (tempered glass), EN 1279 (insulating glass), and EN 14449 (laminated glass) European standards. Test reports and certificates are available for project orders.",
-              },
-              {
-                question: "What is your production capacity and lead time?",
-                answer:
-                  "Our two production bases total 15,000 square meters with 5 production lines. Standard lead times are: tempered glass 7-15 working days, insulating glass 10-20 working days, laminated glass 10-20 working days, and craft glass 7-15 working days (samples: 7-10 days). Large project orders may require 25-30 working days. Rush orders are negotiable.",
-              },
-              {
-                question: "Do you accept OEM and custom orders?",
-                answer:
-                  "Yes. Custom orders are our core business. We accept custom dimensions, thicknesses, colors, edge finishes, hole patterns, printed designs, and multi-layer combinations (tempered + laminated + insulating). Send us your specifications or design files (AI, PDF, DWG, DXF) and we will provide a detailed quotation within 24 hours.",
-              },
-              {
-                question: "Which countries do you export to?",
-                answer:
-                  "We currently export to Australia, Africa, the Middle East, Cambodia, Vietnam, and other Southeast Asian countries. We provide professional export packaging (plywood crates with cork separators), full customs documentation, and flexible shipping terms including FOB Tianjin, CIF, and DDP. New markets are continuously being developed.",
-              },
-              {
-                question: "How can I visit your factory?",
-                answer:
-                  "We welcome factory visits by appointment. Our factory is approximately 45 minutes by car from Guangzhou Baiyun International Airport (CAN). Please contact us via WhatsApp at +86 13786871098 or email info@bdglassfactory.com to schedule your visit. Airport pickup and hotel arrangements can be coordinated for serious buyers and project partners.",
-              },
-            ].map((item, i) => (
+            {faqData.map((item, i) => (
               <div
                 key={i}
                 className="border border-gray-200 rounded-lg p-5 bg-white"
@@ -396,6 +456,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+          <JsonLdFAQPage items={faqData} />
         </div>
       </section>
 
