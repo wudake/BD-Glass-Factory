@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FileCheck, Shield, ClipboardCheck } from "lucide-react";
 
 export default function CertificationsPreview() {
@@ -33,7 +32,7 @@ export default function CertificationsPreview() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {items.map((item) => (
             <div key={item.title} className="card p-6 text-center">
               <div className="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center mx-auto mb-5">
@@ -43,17 +42,6 @@ export default function CertificationsPreview() {
               <p className="text-brand-muted-dark text-body-sm">{item.desc}</p>
             </div>
           ))}
-        </div>
-
-        <p className="text-brand-muted-dark text-body-sm text-center mb-8 max-w-2xl mx-auto">
-          For project orders, we can provide suitable product information according to the
-          actual glass configuration and application requirement.
-        </p>
-
-        <div className="text-center">
-          <Link href="/certifications" className="btn-outline border-brand-blue text-brand-blue">
-            View Certifications
-          </Link>
         </div>
       </div>
     </section>

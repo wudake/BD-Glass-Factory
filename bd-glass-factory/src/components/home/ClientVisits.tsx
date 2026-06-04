@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 const photos = [
   { src: "/images/client-visits/BDGlass-Client-Visits (1).jpg", alt: "Overseas clients visiting BDGLASS factory entrance in Foshan" },
@@ -37,14 +36,11 @@ export default function ClientVisits() {
                 index % 2 === 1 ? "mt-6 md:mt-10" : ""
               }`}
             >
-              <Image
+              <img
                 src={photo.src}
                 alt={photo.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-                sizes="(max-width: 768px) 50vw, 25vw"
-              />
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy" />
             </div>
           ))}
         </div>

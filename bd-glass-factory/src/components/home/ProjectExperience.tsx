@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Building2, X, ClipboardList, MapPin, Ruler } from "lucide-react";
 
 interface ProjectPhoto {
@@ -109,7 +108,7 @@ export default function ProjectExperience() {
           {/* Text */}
           <div>
             <h2 className="text-white mb-4">
-              Project Experience That Protects Your Timeline
+              Architectural Glass Projects — 95,000+ sqm Installed Across China
             </h2>
             <p className="text-brand-muted mb-6 leading-relaxed">
               We&apos;ve supplied glass for industrial parks, science city projects, villas,
@@ -168,13 +167,11 @@ export default function ProjectExperience() {
               onClick={() => setSelectedPhoto(photo)}
               className={`relative rounded-xl overflow-hidden break-inside-avoid w-full block ${photo.aspect} group`}
             >
-              <Image
+              <img
                 src={photo.src}
                 alt={photo.alt}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <span className="text-white text-sm font-medium">{photo.alt}</span>
               </div>
@@ -195,13 +192,10 @@ export default function ProjectExperience() {
           >
             {/* Modal Image */}
             <div className="relative aspect-[16/9] w-full">
-              <Image
+              <img
                 src={selectedPhoto.src}
                 alt={selectedPhoto.alt}
-                fill
-                className="object-cover rounded-t-2xl"
-                sizes="(max-width: 768px) 100vw, 672px"
-              />
+                className="w-full h-full object-cover rounded-t-2xl" />
               <button
                 onClick={() => setSelectedPhoto(null)}
                 className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors"

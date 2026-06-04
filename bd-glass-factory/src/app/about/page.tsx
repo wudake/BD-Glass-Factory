@@ -4,7 +4,6 @@ import { Check, MapPin, Globe, Building2 } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import { generatePageMeta } from "@/lib/metadata";
 import { JsonLdBreadcrumb, JsonLdLocalBusiness, JsonLdFAQPage } from "@/lib/json-ld";
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -96,13 +95,10 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative rounded-xl aspect-[3/2] overflow-hidden">
-              <Image
+              <img
                 src="/images/about/Foshan%20Bodian%20Glass.jpg"
                 alt="Foshan Bodian Glass factory building and production facility"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+                className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -145,13 +141,10 @@ export default function AboutPage() {
                 },
               ].map((img) => (
                 <div key={img.src} className="relative aspect-[4/3] rounded-lg overflow-hidden">
-                  <Image
+                  <img
                     src={img.src}
                     alt={img.label}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                  />
+                    className="w-full h-full object-cover" />
                   <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs py-1.5 px-2 text-center font-medium">
                     {img.label}
                   </div>
@@ -266,13 +259,10 @@ export default function AboutPage() {
             </div>
 
             <div className="relative rounded-xl aspect-[4/3] overflow-hidden">
-              <Image
+              <img
                 src="/images/about/Team%20Photo.jpg"
                 alt="BDGLASS team photo"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+                className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -371,13 +361,10 @@ export default function AboutPage() {
                 className="bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-md hover:border-brand-blue/30 transition-all group"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image
+                  <img
                     src={client.image}
                     alt={`${client.name} website banner`}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-5 text-center">
                   <h5 className="text-brand-dark font-semibold mb-1 group-hover:text-brand-blue transition-colors">

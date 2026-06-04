@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
     <section className="section bg-brand-dark">
       <div className="container-page">
         <div className="text-center mb-12">
-          <h2 className="text-white mb-4">Why Choose BDGLASS as Your Glass Supplier</h2>
+          <h2 className="text-white mb-4">6 Reasons International Buyers Choose Our China Glass Factory</h2>
           <p className="text-brand-muted text-body-lg max-w-3xl mx-auto">
             A reliable glass supplier that puts your project first — from material selection
             to delivery.

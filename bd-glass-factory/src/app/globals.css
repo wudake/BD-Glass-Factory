@@ -17,7 +17,7 @@
 
   /* Fonts */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
   /* Font Sizes — Referenced hubs.com (Protolabs Network) B2B typography scale */
   /* Display: reserved for hero-only oversized headlines */

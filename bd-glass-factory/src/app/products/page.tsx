@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SectionTitle from "@/components/shared/SectionTitle";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import { products } from "@/data/products";
@@ -9,9 +8,9 @@ import { generatePageMeta } from "@/lib/metadata";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = generatePageMeta({
-  title: "Glass Products - Tempered, Insulating, Laminated & Craft Glass",
+  title: "Glass Products - Tempered, Insulating, Laminated, Curtain Wall & More",
   description:
-    "Explore BDGLASS glass products: tempered glass (3-19mm), insulating glass, laminated glass with PVB/SGP, and decorative craft glass. 3C certified China glass factory.",
+    "Explore BDGLASS glass products: tempered glass, insulating glass, laminated glass, curtain wall glass, glass railings, office partitions, and shower enclosures. 3C certified China glass factory.",
   path: "/products",
 });
 
@@ -26,7 +25,7 @@ export default function ProductsPage() {
           </p>
           <h1 className="text-white mb-4">Our Glass Products</h1>
           <p className="text-brand-muted text-body-lg max-w-xl mx-auto">
-            Tempered, insulating, laminated and craft glass — manufactured in our China glass factory
+            Tempered, insulating, laminated, curtain wall, railing, partition & shower glass — manufactured in our China factory
           </p>
         </div>
       </div>
@@ -50,14 +49,13 @@ export default function ProductsPage() {
                 href={`/products/${product.slug}`}
                 className="card group flex flex-col sm:flex-row overflow-hidden"
               >
-                {/* Image */}
-                <div className="sm:w-48 shrink-0 bg-brand-gray relative aspect-square sm:aspect-auto sm:min-h-[200px]">
-                  <Image
+                {/* Product Image */}
+                <div className="sm:w-48 shrink-0 relative aspect-square sm:aspect-auto sm:min-h-[200px] bg-brand-gray">
+                  <img
                     src={product.imagePath}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, 200px"
+                    alt={`${product.name} - BDGLASS China factory`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
 

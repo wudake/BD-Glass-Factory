@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Shield, Thermometer, Volume2, Sun, Droplets, Clock } from "lucide-react";
 
 export default function QualityMaterials() {
@@ -18,7 +17,7 @@ export default function QualityMaterials() {
           {/* Text */}
           <div>
             <h2 className="text-brand-dark mb-4">
-              Glass That Performs — Year After Year
+              Quality Raw Materials for Long-Lasting Glass Performance
             </h2>
             <p className="text-brand-muted-dark mb-6 leading-relaxed">
               The difference between glass that lasts and glass that fails is in the
@@ -46,13 +45,10 @@ export default function QualityMaterials() {
 
           {/* Image */}
           <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
-            <Image
+            <img
               src="/images/home/Raw Materials.jpg"
               alt="Raw Materials"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+              className="w-full h-full object-cover" />
           </div>
         </div>
       </div>

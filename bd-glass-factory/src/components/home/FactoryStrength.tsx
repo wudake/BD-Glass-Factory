@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Factory, Users, Maximize, Wrench, Building2 } from "lucide-react";
 
 export default function FactoryStrength() {
@@ -71,13 +70,11 @@ export default function FactoryStrength() {
             { src: "/images/factory/factory-26.jpg", alt: "BDGLASS quality inspection station", aspect: "aspect-[3/4]" },
           ].map((img) => (
             <div key={img.src} className={`relative rounded-xl overflow-hidden break-inside-avoid ${img.aspect}`}>
-              <Image
+              <img
                 src={img.src}
                 alt={img.alt}
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-500"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy" />
             </div>
           ))}
         </div>

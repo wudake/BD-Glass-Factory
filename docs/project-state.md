@@ -15,7 +15,7 @@
 | 构建输出 | standalone |
 | 部署方式 | Linux 服务器 + Nginx + PM2 |
 | 包管理器 | npm |
-| 当前版本 | V2.4.0 |
+| 当前版本 | V2.5.0 |
 
 ---
 
@@ -93,6 +93,18 @@
 - [x] 产品详情 SEO 文案
 - [x] 静态图片整理（工厂、设备、认证、团队等）
 - [x] **客户来访照片上传 + 展示模块（2026-06-02）**
+
+### V2.5.0 更新 ✅（2026-06-04）
+
+- [x] **首页 Title 优化** — 75→65 字符，"China glass factory" 关键词前置
+- [x] **Meta Description 重写** — 加入 "China glass factory" + 信任信号（15,000㎡、80+ team、24h）
+- [x] **OG Image + Twitter Card 补全** — page.tsx openGraph 补 images，新增 twitter metadata
+- [x] **H1 微调** — "Glass Solution" → "Glass Solutions"
+- [x] **H2 去重 + 关键词强化** — WhyChooseUs/ProjectExperience/HowWeWork/CTASection/QualityMaterials 全部重写 H2
+- [x] **首页 JSON-LD 扩展** — 新增 LocalBusiness + FAQPage（6 个 FAQ），现共 4 种 Schema
+- [x] **图片懒加载提升** — 23/35 → 30/35（86%），FactoryStrength + ProjectExperience + ProductCategories
+- [x] **/products 页面产品图片** — 8 张 placeholder 替换为 800×800 WebP 产品实拍图
+- [x] **删除 keywords meta** — Google 已弃用
 
 ### V2.4.0 更新 ✅（2026-06-04）
 - [x] **About 页面 SEO 全面优化** — 精简公司描述至 120 词，LocalBusiness Schema + FAQPage Schema
@@ -329,4 +341,4 @@ public/images/
 ---
 
 > 此文件由 AI 自动生成于 2026-06-02，用于项目进度保存。
-> 最近更新：2026-06-04 — V2.4.0 发布：About 页面 SEO 优化 + 创始人模块 + Production Base 图组 + Amazing Clients 外链卡片
+> 最近更新：2026-06-04 — V2.5.0 发布：首页全面 SEO 优化 + 产品图片替换 + JSON-LD Schema 扩展

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SectionTitle from "@/components/shared/SectionTitle";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import { projects } from "@/data/projects";
@@ -78,13 +77,10 @@ export default function ProjectsPage() {
               >
                 {/* Image */}
                 <div className="bg-brand-gray aspect-video relative overflow-hidden">
-                  <Image
+                  <img
                     src={project.imagePath}
                     alt={`${project.name} - ${project.location}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                    className="w-full h-full object-cover" />
                   {/* Area Badge */}
                   <div className="absolute top-3 right-3 bg-brand-blue text-white text-xs font-bold px-3 py-1.5 rounded-md z-10">
                     {project.area}

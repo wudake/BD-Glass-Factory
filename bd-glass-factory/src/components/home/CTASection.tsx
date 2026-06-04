@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
@@ -7,18 +6,15 @@ export default function CTASection() {
     <section className="relative bg-brand-dark py-24 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 opacity-20">
-        <Image
+        <img
           src="/images/factory/factory-20.jpg"
           alt="BDGLASS factory production area"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
+          className="w-full h-full object-cover" />
       </div>
 
       <div className="container-page relative z-10 text-center">
         <h2 className="text-white mb-4 max-w-3xl mx-auto">
-          Ready to Get Your Glass Sorted?
+          Get Your Custom Glass Quote from Our China Factory
         </h2>
         <p className="text-brand-muted text-body-lg max-w-2xl mx-auto mb-6">
           Get a competitive factory quote within 24 hours. Tell us your glass type,

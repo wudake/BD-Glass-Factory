@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -7,14 +6,10 @@ export default function HeroBanner() {
     <section className="relative min-h-[90vh] bg-brand-dark flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
+        <img
           src="/images/home/hero-bg.jpg"
           alt="BDGLASS factory production line interior"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+          className="w-full h-full object-cover" />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/60 to-brand-dark" />
       </div>
@@ -31,7 +26,7 @@ export default function HeroBanner() {
 
         {/* Headline */}
         <h1 className="text-white max-w-4xl mb-6">
-          Your Trusted China Glass Factory for Glass Solution
+          Your Trusted China Glass Factory for Glass Solutions
         </h1>
 
         {/* Subtitle */}

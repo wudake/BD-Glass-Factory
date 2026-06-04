@@ -2,7 +2,7 @@
 
 **Professional China Glass Factory | Foreign Trade Website**
 
-[![Version](https://img.shields.io/badge/version-V2.4.0-blue)](https://github.com/wudake/BD-Glass-Factory/releases/tag/V2.4.0)
+[![Version](https://img.shields.io/badge/version-V2.5.0-blue)](https://github.com/wudake/BD-Glass-Factory/releases/tag/V2.5.0)
 [![Stack](https://img.shields.io/badge/stack-Next.js%2016.2%20%2B%20TypeScript%20%2B%20Tailwind%20CSS%20v4-black)](https://nextjs.org)
 
 ---
@@ -157,6 +157,15 @@ BD-Glass-Factory/
 
 Full development plan: [`docs/development-plan.md`](docs/development-plan.md)
 
+### V2.5.0 Release (2026-06-04)
+
+- **Homepage SEO Optimization** — Title shortened (75→65 chars) with "China glass factory" keyword front-loaded; meta description rewritten with trust signals; OG image & Twitter Card restored on homepage
+- **H1/H2 Structure Optimized** — H1 pluralized; duplicate "Why Choose BDGLASS" H2s differentiated; 5 weak H2s strengthened with keywords
+- **JSON-LD Schema Expansion** — Added LocalBusiness and FAQPage (6 Q&As) to homepage, now 4 schema types
+- **Image Lazy Loading** — Increased from 65% to 86% (30/35 images); added to FactoryStrength, ProjectExperience, ProductCategories
+- **Product Images Replaced** — All 8 product card images on /products page converted from placeholder divs to real product photos (800×800 WebP converted from 8 JPG source files)
+- **About Page Enhancements** — Founder module with Lian.Guo photo; 6-device production base gallery; 6 linked client cards with website banner screenshots; LocalBusiness & FAQPage schemas
+
 ### V2.4.0 Release (2026-06-04)
 
 - **About Page SEO Optimization** — Company description streamlined to ~120 words; added LocalBusiness Schema and FAQPage structured data
@@ -212,4 +221,4 @@ cp bd-glass-factory/.env.example bd-glass-factory/.env.local
 
 ---
 
-> Version: V2.4.0 | Updated: 2026-06-04
+> Version: V2.5.0 | Updated: 2026-06-04

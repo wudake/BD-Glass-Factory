@@ -9,6 +9,8 @@ export interface Product {
   faq?: { question: string; answer: string }[];
   relatedProducts?: { name: string; slug: string; description: string }[];
   imagePath: string;
+  galleryImages?: string[];
+  certifications?: string[];
 }
 
 export const products: Product[] = [
@@ -129,7 +131,7 @@ export const products: Product[] = [
           'Custom configurations of tempered, laminated, and insulated glass for commercial building facades.',
       },
     ],
-    imagePath: '/images/products/tempered-glass.jpg',
+    imagePath: '/images/products/tempered-glass.webp',
   },
   {
     name: 'Insulating Glass',
@@ -250,7 +252,7 @@ export const products: Product[] = [
           'Complete curtain wall solutions combining insulating glass with aluminum framing systems and structural silicone.',
       },
     ],
-    imagePath: '/images/products/insulating-glass.jpg',
+    imagePath: '/images/products/insulating-glass.webp',
   },
   {
     name: 'Laminated Glass',
@@ -370,7 +372,7 @@ export const products: Product[] = [
           'Complete curtain wall solutions with laminated outer pane + tempered inner pane for safety, thermal performance, and structural integrity.',
       },
     ],
-    imagePath: '/images/products/laminated-glass.jpg',
+    imagePath: '/images/products/laminated-glass.webp',
   },
   {
     name: 'Craft Glass',
@@ -490,6 +492,485 @@ export const products: Product[] = [
           'Incorporate decorative glass into double-glazed units for energy-efficient façades with visual impact and thermal performance.',
       },
     ],
-    imagePath: '/images/products/craft-glass.jpg',
+    imagePath: '/images/products/craft-glass.webp',
+  },
+  {
+    name: 'Curtain Wall Glass',
+    slug: 'curtain-wall-glass',
+    description:
+      'BDGLASS supplies curtain wall glass for commercial buildings: Low-E IGU, tempered laminated, reflective coated. Foshan factory, 15,000sqm capacity. Project support with performance calculations and shop drawings.',
+    longDescription:
+      'BDGLASS supplies curtain wall glass for commercial towers, hotels, office complexes, and mixed-use developments from our 15,000㎡ factory in Foshan, Guangdong, China. We produce the full spectrum of facade glass: Low-E insulating units, reflective-coated tempered glass, spandrel panels, and structural laminated glass fins. Our largest project to date: 28,000 square meters of IGU for the Shenzhen Guangqi Future Center.\n\nA curtain wall is not just a skin. It is the building\'s thermal barrier, daylight controller, and structural interface with the environment. Specifying the wrong glass leads to energy penalties, tenant complaints, and costly retrofits. BDGLASS helps architects and facade contractors select the right glass configuration for each project.\n\nOur curtain wall glass product range includes vision glass (6mm Low-E + 12A Argon + 6mm Clear IGU for daylight and thermal control), spandrel glass (6mm Opacified + 12A + 6mm Clear to conceal floor slabs while matching vision area color), structural glass fins (15mm SGP Laminated Tempered for frameless facades), reflective glass (6mm Reflective Coated + 12A + 6mm Clear for solar control), and ultra-large panels (up to 3,300 × 5,000mm for atriums and flagship retail).\n\nWe provide performance calculations (U-value, SHGC, light transmittance), shop drawings compatible with unitized and stick-system curtain walls, and full-size sample mock-ups (minimum 1m × 1m) for optical and thermal performance review before mass production.',
+    features: [
+      'Complete Facade Glass Range — One Supplier: Low-E IGU, reflective coated, spandrel panels, and structural laminated fins. Eliminate the complexity of coordinating multiple glass suppliers for a single facade project.',
+      'Performance Calculations for Specifiers: We provide U-value, SHGC, and light transmittance calculations based on your exact glass configuration. Compatible with LEED and BREEAM certification requirements.',
+      'Shop Drawings & Glass Scheduling: Detailed panel drawings with IDs, dimensions, and markings. Compatible with both unitized and stick-system curtain wall installations.',
+      'Full-Size Sample Mock-ups: Minimum 1m × 1m sample panels for optical and thermal performance review before committing to mass production. Reduces project risk and ensures color consistency.',
+      'Up to 3,300 × 5,000mm Panel Size: Large-format IGU and laminated panels for lobby atriums, curtain walls, and flagship retail spaces. Precision edge finishing and CNC drilling for point-supported systems.',
+    ],
+    specs: [
+      { label: 'Vision Glass', value: '6mm Low-E + 12A Argon + 6mm Clear IGU' },
+      { label: 'Spandrel Glass', value: '6mm Opacified + 12A + 6mm Clear (color-matched)' },
+      { label: 'Structural Glass Fin', value: '15mm SGP Laminated Tempered' },
+      { label: 'Reflective Glass', value: '6mm Reflective Coated + 12A + 6mm Clear' },
+      { label: 'Max Panel Size', value: '3,300mm × 5,000mm' },
+      { label: 'U-Value (IGU)', value: '1.0 – 2.0 W/m²K' },
+      { label: 'SHGC', value: '0.25 – 0.70' },
+      { label: 'Light Transmittance', value: '30% – 80%' },
+      { label: 'Acoustic Performance', value: 'Up to 42 dB reduction (laminated + IGU)' },
+      { label: 'Wind Load Resistance', value: 'Designed per project (up to 5 kPa standard)' },
+      { label: 'Certification', value: '3C (CCC), EN 1279, EN 12150, ASTM E2190' },
+      { label: 'MOQ', value: 'Project-based, negotiable' },
+      { label: 'Lead Time', value: '15-30 working days depending on project scale' },
+    ],
+    applications: [
+      {
+        title: 'Commercial Office Towers',
+        description:
+          'Low-E insulating glass units for high-rise office facades. Combines thermal insulation, solar control, and structural safety. Unitized and stick-system compatible.',
+      },
+      {
+        title: 'Hotel & Mixed-Use Developments',
+        description:
+          'Custom curtain wall glass for hotel towers and mixed-use complexes. Spandrel-to-vision color matching ensures a seamless exterior appearance across all floors.',
+      },
+      {
+        title: 'Retail Flagship Stores',
+        description:
+          'Ultra-large format glass panels (up to 3,300 × 5,000mm) for flagship retail storefronts and atriums. Maximum transparency with structural safety compliance.',
+      },
+      {
+        title: 'Lobby & Atrium Glazing',
+        description:
+          'Structural laminated glass fins and point-supported glazing systems for dramatic lobby and atrium spaces. SGP interlayer provides post-breakage safety.',
+      },
+      {
+        title: 'Spandrel & Concealment Panels',
+        description:
+          'Ceramic frit opacified spandrel glass that matches the exterior color of vision glass. Conceals floor slabs and mechanical equipment behind the facade.',
+      },
+      {
+        title: 'Reflective Solar Control Facades',
+        description:
+          'Reflective coated glass for buildings in hot climates. Reduces solar heat gain while providing a uniform, mirror-like exterior appearance.',
+      },
+    ],
+    faq: [
+      {
+        question: 'What is the difference between stick and unitized curtain wall glass?',
+        answer:
+          'Stick systems install frames and glass on-site panel by panel. Unitized systems pre-assemble frames and glass in the factory into complete modules. Unitized requires tighter glass dimensional tolerances (±1mm). BDGLASS supplies glass for both systems.',
+      },
+      {
+        question: 'Can you match spandrel glass color to vision glass?',
+        answer:
+          'Yes. We apply ceramic frit (enamel) coatings to the interior surface of spandrel glass to match the exterior appearance of the vision area. Custom color matching available.',
+      },
+      {
+        question: 'Do you provide structural calculations for glass fins?',
+        answer:
+          'We provide glass-specific engineering data (bending strength, deflection limits). For full structural calculations of the fin system, we work with your structural engineer and provide the necessary glass parameters.',
+      },
+      {
+        question: 'What certifications does your curtain wall glass have?',
+        answer:
+          'Our curtain wall glass carries Chinese 3C (CCC) certification and complies with EN 1279, EN 12150, and ASTM E2190 standards. Test reports for U-value, SHGC, and acoustic performance are available for project orders.',
+      },
+      {
+        question: 'What is the MOQ for curtain wall glass projects?',
+        answer:
+          'Curtain wall glass orders are project-based. We work with projects ranging from 500 sqm to 50,000+ sqm. Contact us with your project details for a tailored quote and production schedule.',
+      },
+      {
+        question: 'Can you supply glass for point-supported facades?',
+        answer:
+          'Yes. We supply tempered and SGP laminated glass with precision-drilled holes for spider fittings, routels, and cable systems. Hole positions are CNC-machined to ±0.5mm tolerance.',
+      },
+      {
+        question: 'How do you ensure color consistency across large projects?',
+        answer:
+          'We produce full-size sample mock-ups (minimum 1m × 1m) for client approval before mass production. Coating batches are controlled and documented. For extra-large projects, we produce all glass from the same coating run to ensure color uniformity.',
+      },
+    ],
+    relatedProducts: [
+      {
+        name: 'Tempered Glass',
+        slug: 'tempered-glass',
+        description:
+          'The foundation of curtain wall glass. Tempered for safety and strength in thicknesses from 3mm to 19mm.',
+      },
+      {
+        name: 'Insulating Glass',
+        slug: 'insulating-glass',
+        description:
+          'Low-E double and triple glazed units for thermal performance. The standard for modern curtain wall construction.',
+      },
+      {
+        name: 'Laminated Glass',
+        slug: 'laminated-glass',
+        description:
+          'SGP laminated glass for structural fins, overhead canopies, and safety-critical curtain wall applications.',
+      },
+    ],
+    imagePath: '/images/products/curtain-wall-glass.webp',
+  },
+  {
+    name: 'Glass Railing & Balustrade',
+    slug: 'glass-railing-balustrade',
+    description:
+      'Custom glass railings and stair balustrades from BDGLASS, Foshan. 8–15mm tempered or laminated glass with 304/316 stainless hardware. Export to 10+ countries. Complete system supply with installation drawings.',
+    longDescription:
+      'BDGLASS supplies glass railing and balustrade systems for residential, commercial, and hospitality projects from our 15,000㎡ factory in Foshan, Guangdong, China. We produce 10–15mm tempered or laminated glass panels with CNC-drilled holes for standoffs, clamps, and spigots. Every panel is cut to your exact dimensions and edge-polished for a premium finish.\n\nSteel railings block sightlines. Glass railings preserve them. For waterfront properties, high-rise balconies, and modern staircases, frameless glass balustrades deliver uninterrupted views while meeting strict safety codes. BDGLASS supplies both glass-only orders and complete glass + hardware systems.\n\nMost glass factories only supply the glass. BDGLASS supplies glass + hardware as a matched system. This eliminates tolerance mismatches between your glass panels and imported fittings. Our hardware range includes 304 and 316 stainless steel spigots (floor-mounted or side-mounted, satin or mirror finish), top rails (round or square stainless steel tubes, 42.4mm or 50.8mm diameter), U-channels (aluminum or stainless steel base shoes for frameless installations), and installation drawings with panel layout, fixing positions, and structural notes.\n\nGlass options include clear, ultra-clear, frosted, tinted, and silk-screen printed finishes. Standard heights are 850mm, 1,000mm, 1,050mm, and 1,200mm with custom heights available.',
+    features: [
+      'Complete Glass + Hardware System Supply: Most factories only supply glass. We provide matched 304/316 stainless steel hardware — spigots, top rails, U-channels — eliminating tolerance mismatches between glass and fittings.',
+      'CNC Precision Drilling for All Fixing Types: Holes for standoffs, clamps, spigots, and patch fittings machined to ±0.5mm tolerance. Send us your hardware specifications or DWG files.',
+      '304 / 316 Stainless Steel Hardware: Spigots in satin or mirror finish, top rails in round or square profiles, and base shoes for frameless installations. 316-grade recommended for coastal environments.',
+      'Tempered & Laminated Glass Options: 10–15mm tempered for standard railings. 10+1.52+10mm laminated tempered for commercial projects requiring post-breakage retention.',
+      'Installation Drawings Included: Panel layout drawings with fixing positions, structural notes, and elevation views. Reduces installation errors and speeds up on-site work.',
+    ],
+    specs: [
+      { label: 'Glass Type', value: 'Tempered or Tempered-Laminated' },
+      { label: 'Thickness — Tempered', value: '10mm, 12mm, 15mm' },
+      { label: 'Thickness — Laminated', value: '8+1.14+8mm, 10+1.52+10mm' },
+      { label: 'Glass Options', value: 'Clear, Ultra-Clear, Frosted, Tinted, Silk-Screen Printed' },
+      { label: 'Hardware Material', value: '304 / 316 Stainless Steel' },
+      { label: 'Hardware Types', value: 'Spigots, Clamps, Standoffs, U-Channels, Top Rails' },
+      { label: 'Max Panel Width', value: '1,500mm (depending on height and wind load)' },
+      { label: 'Standard Heights', value: '850mm, 1,000mm, 1,050mm, 1,200mm (custom available)' },
+      { label: 'Edge Finish', value: 'Flat polished edges, safety corners, logo etching available' },
+      { label: 'Certification', value: '3C (CCC), EN 12150, AS/NZS 2208, BS 6180' },
+      { label: 'MOQ', value: '20 sqm or negotiable for trial orders' },
+      { label: 'Lead Time', value: '10-15 working days' },
+    ],
+    applications: [
+      {
+        title: 'Residential Balconies',
+        description:
+          'Frameless glass railings with top rail or fully frameless systems. Clear or frosted glass options for privacy. Residential safety compliance in 10+ export markets.',
+      },
+      {
+        title: 'Commercial Staircases',
+        description:
+          'Glass panels with stainless steel handrails for office buildings, hotels, and public spaces. Tempered laminated glass recommended for high-traffic areas.',
+      },
+      {
+        title: 'Pool Fencing',
+        description:
+          '12mm clear tempered glass with frameless spigot system. Compliant with pool safety codes in Australia, the US, and Europe. 316-grade hardware for chlorine resistance.',
+      },
+      {
+        title: 'Hotel Atriums',
+        description:
+          'Ultra-large laminated glass panels for dramatic atrium and lobby balustrades. SGP interlayer for structural stiffness in high-visibility installations.',
+      },
+      {
+        title: 'Deck & Terrace Railings',
+        description:
+          '316-grade stainless steel hardware for coastal and marine environments. Frosted or tinted glass options for wind protection and privacy.',
+      },
+      {
+        title: 'Shopping Mall & Public Balustrades',
+        description:
+          'Heavy-duty tempered laminated glass for shopping malls, airports, and transit stations. Compliant with public safety loading requirements and impact resistance standards.',
+      },
+    ],
+    faq: [
+      {
+        question: 'What thickness of glass do I need for a 1.2-meter high balustrade?',
+        answer:
+          'For residential balconies (1.0–1.2m height), 12mm tempered glass is standard in most jurisdictions. For commercial projects or where post-breakage retention is required, we recommend 10+1.52+10mm laminated tempered glass.',
+      },
+      {
+        question: 'Do you supply just the glass, or the complete railing system?',
+        answer:
+          'Both. We can supply glass only (cut to your hardware specifications) or a complete glass + hardware system. Complete systems include shop drawings and installation guidance.',
+      },
+      {
+        question: 'Can you frost or print the glass for privacy?',
+        answer:
+          'Yes. We offer acid-etched frosted finish, ceramic frit silk-screen printing, and digital UV printing. Patterns, logos, and gradient designs are all possible.',
+      },
+      {
+        question: 'What is the difference between 304 and 316 stainless steel hardware?',
+        answer:
+          '304 stainless steel is suitable for most indoor and sheltered outdoor applications. 316 stainless steel contains molybdenum, providing superior corrosion resistance for coastal environments, pool areas, and marine applications. We recommend 316 for any project within 5km of the ocean.',
+      },
+      {
+        question: 'What is your MOQ and lead time for glass railings?',
+        answer:
+          'Standard MOQ is 20 square meters per project. Lead time is 10-15 working days for standard configurations. Custom shapes, large panels, or special finishes may require 15-20 working days.',
+      },
+      {
+        question: 'Can you supply curved glass for curved balustrades?',
+        answer:
+          'Yes. We supply curved tempered and curved laminated glass for curved railing systems. Please provide the radius, arc length, and height for a custom quote.',
+      },
+      {
+        question: 'How do you prevent glass damage during shipping?',
+        answer:
+          'Each glass panel is individually wrapped in EPE foam with corner protectors. Panels are separated by cork or rubber spacers in plywood crates. Crates are reinforced with steel bands and marked "Fragile — Glass."',
+      },
+    ],
+    relatedProducts: [
+      {
+        name: 'Tempered Glass',
+        slug: 'tempered-glass',
+        description:
+          'The core material for glass railings. 10-15mm tempered glass with CNC-drilled holes and polished edges.',
+      },
+      {
+        name: 'Laminated Glass',
+        slug: 'laminated-glass',
+        description:
+          'Tempered laminated glass for commercial balustrades requiring post-breakage safety and higher impact resistance.',
+      },
+      {
+        name: 'Glass Shower Enclosure',
+        slug: 'glass-shower-enclosure',
+        description:
+          'Similar precision-drilled tempered glass for bathroom applications. 8-10mm with easy-clean coating options.',
+      },
+    ],
+    imagePath: '/images/products/glass-railing-balustrade.webp',
+  },
+  {
+    name: 'Office Glass Partition',
+    slug: 'office-glass-partition',
+    description:
+      'BDGLASS manufactures custom office glass partitions: tempered, frosted, smart switchable glass. Frameless and framed systems. Foshan factory, global delivery. Exact sizing with ±1mm tolerance.',
+    longDescription:
+      'BDGLASS supplies office glass partition systems for corporate headquarters, co-working spaces, and commercial fit-outs from our 15,000㎡ factory in Foshan, Guangdong, China. We produce single-glazed frameless, double-glazed framed, and smart switchable (PDLC) partitions. Glass thickness ranges from 8mm to 12mm tempered, with frosted, printed, or switchable privacy options.\n\nSolid walls kill collaboration. Open plans kill focus. Glass partitions solve both. They maintain visual connectivity across the office while containing sound and creating defined spaces for focused work, meetings, and calls. BDGLASS partitions are engineered for fast installation, acoustic performance, and long-term durability.\n\nOur partition system types include single-glazed frameless (10–12mm tempered glass with minimal aluminum framing, ideal for modern offices and showrooms), double-glazed framed (two glass layers with blind cavity in an aluminum frame, best for meeting rooms and executive offices), smart switchable PDLC (transparent → opaque at the flick of a switch, perfect for boardrooms and privacy-on-demand spaces), acoustic partition (laminated acoustic glass achieving up to 45 dB reduction, ideal for phone booths and recording studios), and demountable system (modular panels that are reusable and relocatable, perfect for tenant-fit offices and flexible workspaces).\n\nCustomization options include frosting patterns (full frosted, band frosting, gradient, logo cut-out), silk-screen printing (company logos, wayfinding graphics, decorative patterns), smart film integration (PDLC film laminated between glass for instant privacy), door integration (glass swing doors, sliding doors, or framed aluminum doors), and blind integration (venetian or roller blinds inside double-glazed cavities).',
+    features: [
+      '5 Partition System Types — One Supplier: Single-glazed frameless, double-glazed framed, smart switchable PDLC, acoustic, and demountable systems. No need to source different suppliers for different partition types.',
+      'Exact Sizing to ±1mm Tolerance: We cut to your finished opening dimensions with ±1mm accuracy. No on-site trimming needed. Reduces installation time and eliminates waste.',
+      'Smart Switchable PDLC Glass: Transparent to opaque at the flick of a switch. Ideal for boardrooms, executive offices, and privacy-on-demand spaces. No blinds or curtains required.',
+      'Acoustic Performance Up to 45 dB: Double-glazed acoustic partitions with laminated glass achieve up to 45 dB sound reduction. A normal conversation (~60 dB) is reduced to a barely audible murmur.',
+      'Demountable & Reusable Systems: Modular aluminum framing systems allow panels to be disassembled, transported, and reinstalled at a new location. Perfect for flexible workspaces and tenant-fit offices.',
+    ],
+    specs: [
+      { label: 'System Types', value: 'Single-glazed, Double-glazed, Smart PDLC, Acoustic, Demountable' },
+      { label: 'Glass Thickness', value: '8mm – 12mm tempered' },
+      { label: 'Glass Options', value: 'Clear, Frosted, Tinted, Silk-Screen Printed, Smart PDLC' },
+      { label: 'Frame Material', value: 'Aluminum (anodized or powder-coated)' },
+      { label: 'Max Panel Height', value: '4,000mm (with structural support)' },
+      { label: 'Sound Reduction — Single', value: '~30–32 dB (10mm tempered)' },
+      { label: 'Sound Reduction — Double', value: 'Up to 45 dB (acoustic laminated)' },
+      { label: 'Smart Film Switching', value: 'Transparent ↔ Opaque in < 1 second' },
+      { label: 'Smart Film Voltage', value: 'AC 48-60V (transformer included)' },
+      { label: 'Tolerances', value: '±1mm on all dimensions' },
+      { label: 'Certification', value: '3C (CCC), EN 12150, AS/NZS 2208' },
+      { label: 'MOQ', value: 'Project-based, negotiable' },
+      { label: 'Lead Time', value: '10-15 working days (urgent: 7 days)' },
+    ],
+    applications: [
+      {
+        title: 'Corporate Headquarters',
+        description:
+          'Full-height frameless and double-glazed partitions for open-plan offices, private offices, and meeting rooms. Smart PDLC glass for executive suites and boardrooms.',
+      },
+      {
+        title: 'Co-Working Spaces',
+        description:
+          'Demountable partition systems that adapt to changing team sizes and layouts. Reusable panels reduce relocation costs for flexible workspace operators.',
+      },
+      {
+        title: 'Meeting & Conference Rooms',
+        description:
+          'Smart switchable PDLC partitions that switch from transparent to opaque for presentations and confidential discussions. No physical blinds or curtains needed.',
+      },
+      {
+        title: 'Phone Booths & Focus Pods',
+        description:
+          'Acoustic laminated glass partitions achieving up to 45 dB sound reduction. Creates quiet spaces for calls and focused work within open offices.',
+      },
+      {
+        title: 'Reception & Lobby Areas',
+        description:
+          'Branded glass partitions with silk-screen printed logos, wayfinding graphics, and decorative patterns. Creates a professional first impression for visitors.',
+      },
+      {
+        title: 'Recording Studios & Media Rooms',
+        description:
+          'High-performance acoustic partitions with double-glazed laminated glass. Sound reduction up to 45 dB for professional audio and video production environments.',
+      },
+    ],
+    faq: [
+      {
+        question: 'What is the difference between single-glazed and double-glazed office partitions?',
+        answer:
+          'Single-glazed uses one layer of 10–12mm tempered glass. It is slimmer, more transparent, and lower cost. Double-glazed uses two layers with a cavity (typically 50–100mm). It provides better sound insulation and allows integrated blinds.',
+      },
+      {
+        question: 'How much sound does a glass partition block?',
+        answer:
+          'Single-glazed 10mm tempered: ~30–32 dB. Double-glazed with acoustic laminated glass: up to 45 dB. For reference, a normal conversation is ~60 dB. A 45 dB partition reduces it to a barely audible murmur.',
+      },
+      {
+        question: 'Can I reuse the partitions if we move office?',
+        answer:
+          'Yes, if you specify our demountable aluminum framing system. The glass panels and frames can be disassembled, transported, and reinstalled at the new location.',
+      },
+      {
+        question: 'What is PDLC smart glass and how does it work?',
+        answer:
+          'PDLC (Polymer Dispersed Liquid Crystal) smart glass contains a film between two glass layers. When electricity is applied, the liquid crystals align and the glass becomes transparent. When power is off, the crystals scatter light and the glass appears opaque (frosted). Switching takes less than 1 second.',
+      },
+      {
+        question: 'Can you print our company logo on the glass?',
+        answer:
+          'Yes. We offer ceramic frit silk-screen printing and digital UV printing for logos, wayfinding graphics, and decorative patterns. Pantone color matching is available. Send us your AI, PDF, or EPS files.',
+      },
+      {
+        question: 'What is your lead time for office partition orders?',
+        answer:
+          'Standard office partition glass: 10–15 working days. Urgent projects can be completed in 7 days. Large fit-out projects with multiple partition types may require 20-25 working days.',
+      },
+      {
+        question: 'Do you supply hardware and tracks, or just the glass?',
+        answer:
+          'We can supply glass only (cut to your track and fitting specifications) or complete partition kits including aluminum frames, tracks, patch fittings, and door hardware. Complete kits include installation instructions.',
+      },
+    ],
+    relatedProducts: [
+      {
+        name: 'Tempered Glass',
+        slug: 'tempered-glass',
+        description:
+          'The core material for office partitions. 8-12mm tempered glass with polished edges and CNC-drilled holes for fittings.',
+      },
+      {
+        name: 'Glass Railing & Balustrade',
+        slug: 'glass-railing-balustrade',
+        description:
+          'Matching glass railing systems for office staircases, atriums, and mezzanines. Complete hardware + glass packages.',
+      },
+      {
+        name: 'Craft Glass',
+        slug: 'craft-glass',
+        description:
+          'Decorative glass with silk-screen printing, digital enamel, and frosted finishes for branded office interiors.',
+      },
+    ],
+    imagePath: '/images/products/office-glass-partition.webp',
+  },
+  {
+    name: 'Glass Shower Enclosure',
+    slug: 'glass-shower-enclosure',
+    description:
+      'BDGLASS manufactures custom glass shower enclosures: frameless, semi-frameless, sliding, and hinged doors. 8–10mm tempered glass with precision-drilled holes. Export to hotels and residential projects.',
+    longDescription:
+      'BDGLASS manufactures shower enclosure glass for hotel chains, apartment developers, and bathroom fixture exporters from our 15,000㎡ factory in Foshan, Guangdong, China. We produce 8–10mm tempered glass panels with precision-drilled holes for hinges, handles, and rollers. Every panel is cut to your exact dimensions, with polished edges and safe corners. We also supply 304 stainless steel hardware: hinges, handles, support bars, and sliding door rollers.\n\nA shower enclosure is used every day. If the glass has optical distortion, the door drags, or the seals leak, users notice immediately. For hotels and apartment developers, that translates into maintenance calls, bad reviews, and replacement costs. BDGLASS eliminates these issues through precision manufacturing, optical quality control, and matched hardware supply.\n\nOur enclosure types include frameless doors (10mm tempered with wall-mounted or glass-to-glass hinges), semi-frameless (8mm tempered with aluminum frame on 2–3 sides), sliding doors (8mm tempered with top-hung or bottom-roller sliding system), walk-in screens (10mm tempered fixed panel with support bar, no door), and quadrant / neo-angle (6–8mm tempered framed or frameless corner enclosures).\n\nSurface treatments include easy-clean hydrophobic nano-coating (repels water and soap scum, reduces cleaning frequency by 60%), frosted / patterned glass (acid-etched or silk-screen patterns for privacy screens), tinted glass (grey, bronze, or blue tinted for designer bathrooms), and logo etching (hotel brand logos etched into the glass surface).',
+    features: [
+      'Hardware + Glass as One Package: No mismatches between your roller system and our glass hole positions. We confirm hole patterns before production. Eliminates on-site drilling and adjustment.',
+      'Optical Quality Control — Roller Wave ≤ 0.15%: Our tempered shower glass has minimal optical distortion. No funhouse-mirror effect. Critical for hotel and luxury residential projects where appearance matters.',
+      'Easy-Clean Nano Coating Available: Hydrophobic nano-coating repels water and soap scum, reducing cleaning frequency by 60%. Ideal for hotels and high-traffic residential buildings.',
+      '304 Stainless Steel Hardware Included: Hinges, handles, support bars, and sliding door rollers in matching finishes. Confirm hole patterns before production for perfect fit.',
+      'Precision-Drilled Holes ±0.5mm: CNC-drilled hinge holes, handle holes, and roller cutouts machined to ±0.5mm tolerance. Send us your hardware specifications or samples for pattern matching.',
+    ],
+    specs: [
+      { label: 'Frameless Door', value: '10mm tempered, wall-mounted or glass-to-glass hinges' },
+      { label: 'Semi-Frameless', value: '8mm tempered, aluminum frame on 2–3 sides' },
+      { label: 'Sliding Door', value: '8mm tempered, top-hung or bottom-roller system' },
+      { label: 'Walk-In Screen', value: '10mm tempered, fixed panel with support bar' },
+      { label: 'Quadrant / Neo-Angle', value: '6–8mm tempered, framed or frameless corner' },
+      { label: 'Max Door Width', value: '900mm (10mm), 1,000mm (12mm recommended)' },
+      { label: 'Standard Heights', value: '1,900mm, 2,000mm, 2,100mm (custom available)' },
+      { label: 'Surface Treatments', value: 'Easy-clean nano, frosted, patterned, tinted, logo etched' },
+      { label: 'Hardware Material', value: '304 Stainless Steel (316 available)' },
+      { label: 'Hole Tolerance', value: '±0.5mm (CNC drilled)' },
+      { label: 'Certification', value: '3C (CCC), EN 12150, AS/NZS 2208' },
+      { label: 'MOQ', value: '50 panels or project-based' },
+      { label: 'Lead Time', value: '10-15 working days' },
+    ],
+    applications: [
+      {
+        title: 'Hotel Bathrooms',
+        description:
+          'Frameless and semi-frameless shower enclosures for hotel chains. Easy-clean nano coating reduces housekeeping time. Logo etching available for branded bathroom experiences.',
+      },
+      {
+        title: 'Apartment & Residential Developments',
+        description:
+          'Sliding and hinged shower doors for multi-unit residential projects. Standard sizes reduce costs. Custom sizes available for penthouse and luxury units.',
+      },
+      {
+        title: 'Luxury Homes & Villas',
+        description:
+          'Custom walk-in screens and frameless enclosures for high-end residential bathrooms. Tinted and frosted glass options for designer interiors.',
+      },
+      {
+        title: 'Bathroom Fixture Export',
+        description:
+          'Shower enclosure glass supplied to bathroom fixture manufacturers and exporters. Glass + hardware kits with installation instructions for DIY and contractor markets.',
+      },
+      {
+        title: 'Spa & Wellness Centers',
+        description:
+          'Large-format tempered glass for spa showers, steam rooms, and hydrotherapy areas. Frosted and patterned glass for privacy in shared wellness spaces.',
+      },
+      {
+        title: 'Commercial & Public Facilities',
+        description:
+          'Heavy-duty tempered glass for gym showers, swimming pool changing rooms, and public restrooms. Safety corners and polished edges standard on all panels.',
+      },
+    ],
+    faq: [
+      {
+        question: 'What is the standard thickness for frameless shower doors?',
+        answer:
+          '10mm tempered glass is the global standard for frameless shower doors. For very large doors (over 900mm wide), 12mm is recommended to prevent flex.',
+      },
+      {
+        question: 'Do you supply the complete shower enclosure or just the glass?',
+        answer:
+          'We can supply glass only (cut to your hardware specifications) or glass + hardware as a complete kit. Complete kits include installation instructions and silicone sealant.',
+      },
+      {
+        question: 'What is easy-clean coating and how long does it last?',
+        answer:
+          'Easy-clean coating is a hydrophobic nano-layer applied to the glass surface. It causes water to bead up and run off, carrying soap and minerals with it. Under normal residential use, the coating remains effective for 3–5 years. It can be reapplied with aftermarket sprays.',
+      },
+      {
+        question: 'Can you match hole patterns to my existing hardware?',
+        answer:
+          'Yes. Send us your hardware specifications, CAD drawings, or physical samples. We CNC-machine holes to ±0.5mm tolerance to ensure perfect alignment with your hinges, handles, and rollers.',
+      },
+      {
+        question: 'What is your MOQ and lead time for shower enclosure glass?',
+        answer:
+          'Standard MOQ is 50 panels per size/configuration. Lead time is 10-15 working days for standard orders. Large hotel or apartment projects may require 20-25 working days. Samples are available for quality verification.',
+      },
+      {
+        question: 'Do you offer curved or shaped shower glass?',
+        answer:
+          'Yes. We supply curved tempered glass for quadrant, neo-angle, and custom-shaped shower enclosures. Please provide the radius, dimensions, and hardware specifications for a custom quote.',
+      },
+      {
+        question: 'How do you protect glass panels during shipping?',
+        answer:
+          'Each panel is individually wrapped in EPE foam with plastic corner protectors. Panels are separated by cork spacers in reinforced plywood crates. Edge protection strips prevent chipping during transit.',
+      },
+    ],
+    relatedProducts: [
+      {
+        name: 'Tempered Glass',
+        slug: 'tempered-glass',
+        description:
+          'The foundation of shower enclosures. 8-10mm tempered glass with CNC precision drilling and polished edges.',
+      },
+      {
+        name: 'Glass Railing & Balustrade',
+        slug: 'glass-railing-balustrade',
+        description:
+          'Matching glass systems for bathroom grab bars, shower screens, and wet-room dividers with 304/316 hardware.',
+      },
+      {
+        name: 'Craft Glass',
+        slug: 'craft-glass',
+        description:
+          'Frosted, patterned, and digitally printed glass for decorative shower enclosures and privacy screens.',
+      },
+    ],
+    imagePath: '/images/products/glass-shower-enclosure.webp',
   },
 ];

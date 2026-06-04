@@ -23,7 +23,17 @@
       "Read(//d//**)",
       "Read(//d/BD-Glass-Factory/**)",
       "Bash(rm -rf bd-glass-factory/.git)",
-      "Bash(printf 'node_modules/\\\\n.next/\\\\nout/\\\\ndist/\\\\n.env\\\\n.env.local\\\\n.DS_Store\\\\n*.log\\\\n')"
+      "Bash(printf 'node_modules/\\\\n.next/\\\\nout/\\\\ndist/\\\\n.env\\\\n.env.local\\\\n.DS_Store\\\\n*.log\\\\n')",
+      "Bash(pm2 list *)",
+      "Bash(pm2 restart *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://[::1]:3000/products/tempered-glass)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://[::1]:3000/images/products/tempered-glass.webp)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://[::1]:3000/images/products/insulating-glass.webp)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://[::1]:3000/images/products/laminated-glass.webp)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://[::1]:3000/images/products/craft-glass.webp)",
+      "Bash(curl -s -o /dev/null -w '%{http_code} \\(%{size_download} bytes\\)' http://[::1]:3000/images/products/__TRACKED_VAR__.webp)",
+      "Bash(curl -s http://[::1]:3000/)",
+      "Read(//tmp/**)"
     ]
   }
 }

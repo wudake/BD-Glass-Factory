@@ -38,7 +38,7 @@ export default function HowWeWork() {
     <section className="section bg-white">
       <div className="container-page">
         <div className="text-center mb-12">
-          <h2 className="text-brand-dark mb-4">From First Message to Delivery — Five Simple Steps</h2>
+          <h2 className="text-brand-dark mb-4">How to Order Glass from Our China Factory — 5 Simple Steps</h2>
           <p className="text-brand-muted-dark text-body-lg max-w-3xl mx-auto">
             No complicated procurement process. Here&apos;s exactly what happens when you reach out.
           </p>

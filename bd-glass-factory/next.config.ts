@@ -3,8 +3,22 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "standalone",
 
+  // Let Nginx handle compression (Brotli + Gzip) — avoids double-compression
+  compress: false,
+
+  // Remove X-Powered-By header
+  poweredByHeader: false,
+
+  // Enable React Strict Mode for better performance patterns
+  reactStrictMode: true,
+
   turbopack: {
     root: process.cwd(),
+  },
+
+  // Optimize tree-shaking for heavy icon library
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
   },
 
   // Image optimization
@@ -12,6 +26,7 @@ const nextConfig: NextConfig = {
     formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 1024, 1280, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 31536000,
   },
 
   // Security headers

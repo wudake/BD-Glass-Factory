@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Check } from "lucide-react";
 
 interface ProductCategory {
@@ -154,13 +153,11 @@ export default function ProductCategories() {
                     index % 2 === 1 ? "lg:order-2" : ""
                   }`}
                 >
-                  <Image
+                  <img
                     src={cat.imageSrc}
                     alt={cat.imageLabel}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
+                    className="w-full h-full object-cover"
+                    loading="lazy" />
                 </div>
               ) : (
                 <div
