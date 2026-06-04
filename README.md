@@ -2,7 +2,7 @@
 
 **Professional China Glass Factory | Foreign Trade Website**
 
-[![Version](https://img.shields.io/badge/version-V2.2.0-blue)](https://github.com/wudake/BD-Glass-Factory/releases/tag/V2.2.0)
+[![Version](https://img.shields.io/badge/version-V2.4.0-blue)](https://github.com/wudake/BD-Glass-Factory/releases/tag/V2.4.0)
 [![Stack](https://img.shields.io/badge/stack-Next.js%2016.2%20%2B%20TypeScript%20%2B%20Tailwind%20CSS%20v4-black)](https://nextjs.org)
 
 ---
@@ -157,6 +157,15 @@ BD-Glass-Factory/
 
 Full development plan: [`docs/development-plan.md`](docs/development-plan.md)
 
+### V2.4.0 Release (2026-06-04)
+
+- **About Page SEO Optimization** — Company description streamlined to ~120 words; added LocalBusiness Schema and FAQPage structured data
+- **Founder Section** — New "Meet Lian.Guo" module with founder biography and portrait photo (`Factory-Founder-Miss-Guo.png`)
+- **Production Base Gallery** — Replaced single placeholder with a 6-image grid showcasing core equipment (tempering furnace, IGU lines, CNC cutting, etc.)
+- **Amazing Clients** — Replaced text list with 6 linked client cards featuring real website banner screenshots (Derchi, Vinco, Smart Alwew, Boswindor, George Buildings, Forge)
+- **Team Photo** — Replaced placeholder with actual team group photo
+- **Association Memberships Removed** — Section replaced by Founder module for stronger brand story
+
 ### V2.2.0 Release (2026-06-03)
 
 - **Phone Number Updated** — Global contact number changed to +86 13786871098 (WhatsApp synced)
@@ -203,4 +212,4 @@ cp bd-glass-factory/.env.example bd-glass-factory/.env.local
 
 ---
 
-> Version: V2.2.0 | Updated: 2026-06-03
+> Version: V2.4.0 | Updated: 2026-06-04

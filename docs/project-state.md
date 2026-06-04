@@ -15,7 +15,7 @@
 | 构建输出 | standalone |
 | 部署方式 | Linux 服务器 + Nginx + PM2 |
 | 包管理器 | npm |
-| 当前版本 | V2.2.0 |
+| 当前版本 | V2.4.0 |
 
 ---
 
@@ -47,7 +47,7 @@
 - [x] CTASection（行动号召）
 
 ### Phase 3 — 核心页面开发 ✅
-- [x] /about — 公司介绍、生产基地、原材料、团队、客户、协会
+- [x] /about — 公司介绍、生产基地、原材料、团队、创始人、客户（外链卡片）
 - [x] /products — 产品列表页
 - [x] /products/[slug] — 4 个产品详情页（静态生成）
 - [x] /services — 服务项目页
@@ -94,6 +94,15 @@
 - [x] 静态图片整理（工厂、设备、认证、团队等）
 - [x] **客户来访照片上传 + 展示模块（2026-06-02）**
 
+### V2.4.0 更新 ✅（2026-06-04）
+- [x] **About 页面 SEO 全面优化** — 精简公司描述至 120 词，LocalBusiness Schema + FAQPage Schema
+- [x] **创始人模块新增** — Lian.Guo（郭女士）介绍 + Factory-Founder-Miss-Guo.png 照片
+- [x] **Production Base 图组** — 6 张设备实拍图（钢化炉、中空线、切割机等）
+- [x] **Amazing Clients 外链卡片** — 6 个真实客户（Derchi/Vinco/Smart Alwew/Boswindor/George Buildings/Forge）+ 首页 banner 截图
+- [x] **Team Photo 替换** — 移除 placeholder，使用 Team Photo.jpg
+- [x] **Association Memberships 移除** — 替换为创始人模块
+- [x] **Foshan Bodian Glass.jpg** — 公司介绍区右侧工厂图替换
+
 ### V2.2.0 更新 ✅（2026-06-03）
 - [x] **联系电话全局更新** — +86 13786871098 / WhatsApp +8613786871098
 - [x] **首页 ProjectExperience 项目详情** — 6 个项目完整配置、面积、地址
@@ -124,7 +133,7 @@
 | 2 | ProductCategories 图片替换 | 7 个 placeholder `<div>` → `<Image>` | `src/components/home/ProductCategories.tsx` |
 | 3 | ProjectExperience 图片替换 | 1 个 placeholder `<div>` → `<Image>` | `src/components/home/ProjectExperience.tsx` |
 | 4 | QualityMaterials 图片替换 | 1 个 placeholder `<div>` → `<Image>` | `src/components/home/QualityMaterials.tsx` |
-| 5 | 重新构建部署 | `deploy.sh` 执行完整流程 | `bd-glass-factory/deploy.sh` |
+| 5 | Founder 图片显示问题排查 | 创始人照片在部分环境渲染异常 | `src/app/about/page.tsx` |
 
 ### 🟡 中优先级
 
@@ -134,7 +143,7 @@
 | 7 | /projects/[slug] 详情页 SEO | 每个项目独立 SEO 内容 |
 | 8 | Google Analytics 4 集成 | 测量 ID 通过环境变量配置 |
 | 9 | 产品图片质量检查 | 确认 4 个产品图是否足够专业 |
-| 10 | 关于页图片检查 | 部分 about 图片可能是占位图 |
+| 10 | 关于页图片检查 | ✅ 已完成 — 创始人、团队、工厂、设备、客户卡片全部替换 |
 | 11 | ClientVisits 模块优化 | 用户可能希望调整交错幅度、裁剪比例或照片顺序 |
 
 ### 🟢 低优先级 / 未来规划
@@ -246,7 +255,12 @@ server {
 
 ```
 public/images/
-├── about/           (20 张 — 工厂、团队)
+├── about/           (30+ 张 — 工厂、团队、创始人、客户)
+│   ├── Production-Base/   (6 张 — 设备实拍)
+│   ├── clients/           (6 张 — 客户网站 banner 截图)
+│   ├── Factory-Founder-Miss-Guo.png
+│   ├── Foshan Bodian Glass.jpg
+│   └── Team Photo.jpg
 ├── certifications/  (8 张 — 认证证书)
 ├── client-visits/   (11 张 — 海外客户来访合影，2026-06-02 新增)
 ├── equipment/       (17 张 — 设备产线)
@@ -315,4 +329,4 @@ public/images/
 ---
 
 > 此文件由 AI 自动生成于 2026-06-02，用于项目进度保存。
-> 最近更新：2026-06-03 — V2.2.0 发布：电话更新 + 项目详情 + Contact 精简 + Standalone 构建脚本根治修复
+> 最近更新：2026-06-04 — V2.4.0 发布：About 页面 SEO 优化 + 创始人模块 + Production Base 图组 + Amazing Clients 外链卡片
