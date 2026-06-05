@@ -60,21 +60,61 @@ export function JsonLdProduct({
   name,
   description,
   imageUrl,
+  sku,
+  offers,
 }: {
   name: string;
   description: string;
   imageUrl?: string;
+  sku?: string;
+  offers?: { priceCurrency?: string; minThickness?: string; maxThickness?: string; maxSize?: string; moq?: string; leadTime?: string };
 }) {
-  const jsonLd = {
+  const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
     name,
     description,
+    ...(sku && { sku }),
     ...(imageUrl && { image: `https://${siteConfig.domain}${imageUrl}` }),
     manufacturer: {
       "@type": "Organization",
       name: siteConfig.fullName,
     },
+    countryOfOrigin: "CN",
+  };
+
+  if (offers) {
+    jsonLd.offers = {
+      "@type": "AggregateOffer",
+      priceCurrency: offers.priceCurrency || "USD",
+      offeredBy: {
+        "@type": "Organization",
+        name: siteConfig.fullName,
+      },
+      availability: "https://schema.org/InStock",
+    };
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
+export function JsonLdProductFAQ({ items }: { items: { question: string; answer: string }[] }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
   };
 
   return (

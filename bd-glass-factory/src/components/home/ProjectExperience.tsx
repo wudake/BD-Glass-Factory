@@ -195,7 +195,8 @@ export default function ProjectExperience() {
               <img
                 src={selectedPhoto.src}
                 alt={selectedPhoto.alt}
-                className="w-full h-full object-cover rounded-t-2xl" />
+                className="w-full h-full object-cover rounded-t-2xl"
+                loading="lazy" />
               <button
                 onClick={() => setSelectedPhoto(null)}
                 className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors"

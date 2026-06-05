@@ -9,7 +9,8 @@ export default function CTASection() {
         <img
           src="/images/factory/factory-20.jpg"
           alt="BDGLASS factory production area"
-          className="w-full h-full object-cover" />
+          className="w-full h-full object-cover"
+          loading="lazy" />
       </div>
 
       <div className="container-page relative z-10 text-center">

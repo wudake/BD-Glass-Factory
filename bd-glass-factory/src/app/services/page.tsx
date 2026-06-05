@@ -2,7 +2,7 @@ import SectionTitle from "@/components/shared/SectionTitle";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import { services } from "@/data/services";
 import { Wrench, Package, Factory, Lightbulb, Globe, ShieldCheck, Check } from "lucide-react";
-import { JsonLdBreadcrumb } from "@/lib/json-ld";
+import { JsonLdBreadcrumb, JsonLdFAQPage } from "@/lib/json-ld";
 import { generatePageMeta } from "@/lib/metadata";
 import { siteConfig } from "@/data/site-config";
 import Link from "next/link";
@@ -99,7 +99,7 @@ export default function ServicesPage() {
                   <div className="w-12 h-12 bg-brand-gray rounded-lg flex items-center justify-center mb-4">
                     <Icon size={24} className="text-brand-blue" />
                   </div>
-                  <h4 className="text-brand-dark mb-3">{service.title}</h4>
+                  <h3 className="text-brand-dark mb-3">{service.title}</h3>
                   <p className="text-brand-muted-dark text-body-sm mb-4">
                     {service.description}
                   </p>
@@ -155,7 +155,7 @@ export default function ServicesPage() {
             ].map((item) => (
               <div key={item.step} className="card p-6 text-center">
                 <div className="text-brand-blue text-3xl font-bold font-mono mb-3">{item.step}</div>
-                <h5 className="text-brand-dark mb-2">{item.title}</h5>
+                <h3 className="text-brand-dark mb-2">{item.title}</h3>
                 <p className="text-brand-muted-dark text-body-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -207,13 +207,21 @@ export default function ServicesPage() {
                 key={i}
                 className="border border-gray-200 rounded-lg p-5 bg-white"
               >
-                <h4 className="text-brand-dark mb-2 text-lg">{item.question}</h4>
+                <h3 className="text-brand-dark mb-2 text-lg">{item.question}</h3>
                 <p className="text-brand-muted-dark text-body-sm leading-relaxed">
                   {item.answer}
                 </p>
               </div>
             ))}
           </div>
+          <JsonLdFAQPage items={[
+            { question: "What glass processing services do you offer?", answer: "We offer a comprehensive range of glass processing services including CNC precision cutting (up to 3,300 × 12,000mm), edge grinding (flat, pencil, bevel, OG), CNC drilling and waterjet cutouts, tempering (3-19mm), laminating (PVB/SGP, 6.38-60mm), insulating glass manufacturing (IGU, 12-52mm), silk screen printing (up to 6 colors), digital ceramic enamel printing, acid etching, sandblasting, and hot melting. All processes are completed in-house at our Foshan factory." },
+            { question: "What is your minimum order quantity (MOQ)?", answer: "Our standard MOQ is 50 square meters per glass type. However, we are flexible for trial orders, sample batches, and first-time buyers. For custom decorative glass or complex multi-layer configurations, the MOQ may vary depending on setup costs. Contact us with your specific requirements for a tailored quotation." },
+            { question: "Do you provide OEM / private label manufacturing?", answer: "Yes. OEM and private label manufacturing is one of our core services. We can produce glass products under your brand name with custom packaging, printed logos, and branded documentation. We offer strict confidentiality agreements and IP protection for your designs and product specifications." },
+            { question: "How do you ensure quality during production?", answer: "Every batch undergoes multi-stage quality control: (1) incoming raw material inspection (flatness, thickness, optical quality), (2) in-process dimensional checks during cutting and grinding, (3) post-processing verification (tempering fragmentation test, laminate adhesion test, IGU seal integrity test), and (4) final pre-shipment inspection with photos and reports. Project orders include full QC documentation." },
+            { question: "What shipping terms and documentation do you provide?", answer: "We offer flexible shipping terms: FOB Tianjin (most common), CIF to your nearest port, and DDP to your door (selected markets). Documentation includes Commercial Invoice, Packing List, Bill of Lading, Certificate of Origin (CO), Form A, Form E (for ASEAN countries), and 3C/EN test reports as required." },
+            { question: "What is your warranty policy?", answer: "We provide a 10-year warranty on insulating glass seal integrity (covering fogging and seal failure under normal use conditions). Tempered and laminated glass products carry a 5-year structural warranty. Warranty claims are processed within 24 hours of receipt, with replacement or refund provided for verified defects." },
+          ]} />
         </div>
       </section>
 

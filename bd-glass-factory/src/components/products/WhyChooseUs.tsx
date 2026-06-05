@@ -45,9 +45,9 @@ export default function WhyChooseUs() {
             <reason.icon size={20} className="text-brand-blue" />
           </div>
           <div>
-            <h5 className="text-brand-dark font-semibold text-sm mb-1">
+            <h3 className="text-brand-dark font-semibold text-sm mb-1">
               {reason.title}
-            </h5>
+            </h3>
             <p className="text-brand-muted-dark text-body-sm leading-relaxed">
               {reason.desc}
             </p>

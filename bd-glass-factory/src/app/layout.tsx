@@ -85,6 +85,11 @@ export const viewport: Viewport = {
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
+// Search engine verification codes
+const GOOGLE_VERIFY = process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "";
+const BING_VERIFY = process.env.NEXT_PUBLIC_BING_VERIFICATION || "";
+const YANDEX_VERIFY = process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || "";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -96,6 +101,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* Search Engine Verification */}
+        {GOOGLE_VERIFY && <meta name="google-site-verification" content={GOOGLE_VERIFY} />}
+        {BING_VERIFY && <meta name="msvalidate.01" content={BING_VERIFY} />}
+        {YANDEX_VERIFY && <meta name="yandex-verification" content={YANDEX_VERIFY} />}
+        {/* IndexNow — enables instant URL submission to Bing & Yandex */}
+        <meta name="indexnow-key" content="dd5f85a303e228068338d592fc2517d9" />
       </head>
       <body className="min-h-full flex flex-col antialiased">
         <JsonLdOrganization />

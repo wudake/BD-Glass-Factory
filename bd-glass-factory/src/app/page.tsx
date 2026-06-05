@@ -19,14 +19,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "China Glass Factory | Tempered & Insulating Glass Manufacturer | BDGLASS",
   description:
-    "BDGLASS is a professional China glass factory. 3C certified tempered, insulating, laminated & craft glass. 15,000㎡ base, 80+ team, factory-direct pricing. Get a quote in 24h.",
+    "China glass factory — 3C certified tempered, insulating, laminated & craft glass. 15,000㎡ Foshan base, 80+ team. Export to 10+ countries. Factory-direct pricing. Quote in 24h.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "China Glass Factory | Tempered & Insulating Glass Manufacturer | BDGLASS",
     description:
-      "BDGLASS is a professional China glass factory. 3C certified tempered, insulating, laminated & craft glass. 15,000㎡ base, 80+ team, factory-direct pricing.",
+      "China glass factory — 3C certified tempered, insulating, laminated & craft glass. 15,000㎡ Foshan base, 80+ team. Factory-direct pricing. Export to 10+ countries.",
     type: "website",
     locale: "en_US",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "China Glass Factory | Tempered & Insulating Glass Manufacturer | BDGLASS",
     description:
-      "BDGLASS is a professional China glass factory. 3C certified tempered, insulating, laminated & craft glass. 15,000㎡ base, 80+ team, factory-direct pricing.",
+      "China glass factory — 3C certified tempered, insulating, laminated & craft glass. 15,000㎡ Foshan base, 80+ team. Factory-direct pricing. Export to 10+ countries.",
     images: [`https://${siteConfig.domain}/og-image.png`],
   },
 };

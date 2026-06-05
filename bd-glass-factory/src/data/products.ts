@@ -11,6 +11,20 @@ export interface Product {
   imagePath: string;
   galleryImages?: string[];
   certifications?: string[];
+  /** Comparison table: tempered vs ordinary glass, etc. */
+  comparisonTable?: {
+    headers: [string, string, string]; // [property, leftColumn, rightColumn]
+    rows: { property: string; left: string; right: string }[];
+    bottomLine: string;
+  };
+  /** Structured buying guide for different audiences */
+  decisionGuide?: {
+    sections: { heading: string; items: { label: string; content: string }[] }[];
+  };
+  /** Price influencing factors */
+  priceFactors?: { name: string; description: string }[];
+  /** Case study highlights */
+  caseStudies?: { project: string; area: string; application: string }[];
 }
 
 export const products: Product[] = [
@@ -110,6 +124,77 @@ export const products: Product[] = [
         answer:
           'Yes. We have export experience to Australia, Africa, the Middle East, and Southeast Asia. We provide professional export packaging (plywood crates with cork separators) and can assist with shipping logistics including FOB, CIF, and DDP arrangements.',
       },
+      {
+        question: 'Is tempered glass the same as toughened glass?',
+        answer:
+          'Yes, tempered glass and toughened glass are the exact same product. "Tempered glass" is the preferred term in North America, while "toughened glass" is commonly used in the UK, Australia, New Zealand, and Commonwealth countries. Both comply with the same safety standards and manufacturing process.',
+      },
+      {
+        question: 'Can tempered glass be heat-soaked to prevent spontaneous breakage?',
+        answer:
+          'Yes. Heat-soak testing (HST) is an additional quality-control process where tempered glass panels are heated to approximately 290°C and held for several hours to induce breakage in panels containing nickel sulfide inclusions. HST is strongly recommended for curtain walls, overhead glazing, and structural applications. BDGLASS offers HST as an optional service — please specify this requirement when placing your order.',
+      },
+      {
+        question: 'What is the minimum thickness for tempered glass used in floors or stair treads?',
+        answer:
+          'For glass floors and stair treads, we recommend a minimum total thickness of 15-19mm using laminated tempered glass with SGP interlayer (not standard PVB). Single-pane tempered glass should never be used for flooring applications — laminated construction is mandatory for post-breakage retention. Contact our engineering team for load calculations specific to your project.',
+      },
+    ],
+    comparisonTable: {
+      headers: ['Property', 'Ordinary (Annealed) Glass', 'Tempered (Toughened) Glass'],
+      rows: [
+        { property: 'Strength', left: 'Baseline (surface ~40 MPa)', right: '4-5× stronger (surface ≥90 MPa)' },
+        { property: 'Breakage pattern', left: 'Sharp, dangerous shards — high injury risk', right: 'Small, blunt granular pieces — low injury risk' },
+        { property: 'Thermal resistance', left: '~60°C temperature differential', right: 'Up to 300°C temperature differential' },
+        { property: 'Post-production cutting', left: 'Can be cut, drilled, and edged anytime', right: 'Cannot be cut or drilled — all fabrication before tempering' },
+        { property: 'Typical applications', left: 'Picture frames, low-risk indoor use', right: 'Facades, shower doors, railings, furniture, structural' },
+        { property: 'Certifications required', left: 'None (not classified as safety glass)', right: '3C (CCC) mandatory in China; EN 12150 in Europe; ASTM C1048 in USA' },
+        { property: 'Cost relative', left: 'Lower material cost', right: 'Higher material cost, but required by safety codes' },
+      ],
+      bottomLine: 'Tempered glass costs more than ordinary annealed glass but is the minimum safety requirement for any application where human impact is possible. Building codes worldwide mandate tempered glass for doors, windows near floor level, shower enclosures, railings, and overhead glazing.',
+    },
+    decisionGuide: {
+      sections: [
+        {
+          heading: 'For Architects & Specifiers',
+          items: [
+            { label: 'Curtain walls', content: '6-12mm tempered glass, optionally with Low-E coating and heat-soak testing (HST recommended for high-rise facades). Combine with insulating glass units for thermal performance.' },
+            { label: 'Overhead glazing', content: '8-15mm laminated tempered glass with SGP interlayer. Heat-soak testing is mandatory for all overhead applications per most building codes.' },
+            { label: 'Point-supported facades', content: '12-19mm tempered glass with CNC-drilled holes for spider fittings. SGP laminated if post-breakage retention is specified.' },
+          ],
+        },
+        {
+          heading: 'For Window & Door Manufacturers',
+          items: [
+            { label: 'Standard aluminum windows', content: '4-6mm clear tempered glass. EN 12150 or ASTM C1048 certified for export markets.' },
+            { label: 'Large sliding doors', content: '8-10mm tempered glass. Flat polished edges standard. Pre-drill hinge and lock holes before tempering.' },
+            { label: 'Broken bridge thermal systems', content: '5-6mm tempered glass, compatible with warm-edge spacers for insulating glass unit assembly.' },
+          ],
+        },
+        {
+          heading: 'For Contractors & Builders',
+          items: [
+            { label: 'Glass railings & balustrades', content: '10-15mm tempered glass (12mm is standard for 1.0-1.2m heights). Use laminated tempered if post-breakage retention is required by local codes.' },
+            { label: 'Shower enclosures', content: '8-10mm tempered glass with polished edges and CNC-drilled hinge holes. Optional easy-clean nano-coating reduces maintenance.' },
+            { label: 'Office partitions', content: '10-12mm tempered glass, clear or frosted. Single-glazed frameless or double-glazed framed systems available.' },
+          ],
+        },
+      ],
+    },
+    priceFactors: [
+      { name: 'Glass thickness', description: '3-4mm（lowest cost）→ 19mm（highest）. Each thickness step adds approximately 15-25% to the glass substrate cost.' },
+      { name: 'Substrate type', description: 'Clear float glass < Tinted (grey, bronze, blue, green) < Ultra-clear low-iron glass < Reflective coated glass.' },
+      { name: 'Edge finishing', description: 'Flat polished edge（standard, included）< Pencil edge < Beveled edge < OG edge. Custom edge profiles quoted per project.' },
+      { name: 'Holes & cutouts', description: 'Each CNC-drilled hole or waterjet cutout adds processing cost. Complex patterns with multiple cutouts are priced per design file review.' },
+      { name: 'Order quantity', description: 'MOQ 50 sqm per thickness/configuration. Larger volumes（500+ sqm）benefit from batch production efficiency and lower per-unit shipping cost.' },
+      { name: 'Surface coatings', description: 'Low-E coating, reflective coating, silk-screen printing, or easy-clean nano-coating are applied post-tempering and priced per sqm.' },
+      { name: 'Heat-soak testing (HST)', description: 'Recommended for curtain walls and overhead glazing. HST adds 2-3 days to lead time and approximately 10-15% to the glass cost.' },
+      { name: 'Shipping & logistics', description: 'Professional export plywood crates with cork separators. FOB Foshan, CIF your port, or DDP to your warehouse. Ocean freight quoted per container.' },
+    ],
+    caseStudies: [
+      { project: 'Shenzhen Guangqi Future Center', area: '28,000 ㎡', application: 'Tempered + Low-E insulating glass units for commercial tower curtain wall' },
+      { project: 'Cambodia 5-Star Beach Resort', area: '5,000 ㎡', application: '10mm clear tempered glass for frameless shower enclosures in 320 guest rooms' },
+      { project: 'Melbourne Luxury Apartment Tower', area: '12,000 ㎡', application: '8-12mm tempered laminated glass for balcony balustrades with 316 stainless hardware' },
     ],
     relatedProducts: [
       {
@@ -231,6 +316,77 @@ export const products: Product[] = [
         answer:
           'Our insulating glass is certified under Chinese 3C (CCC) compulsory certification. We also comply with EN 1279 (European insulating glass standard) and IGCC (Insulating Glass Certification Council) requirements. Test reports for gas retention, dew point, and UV transmittance are available for project orders.',
       },
+      {
+        question: 'What is the difference between "double glazing" and an insulating glass unit (IGU)?',
+        answer:
+          '"Double glazing" is the common consumer term used in the UK, Australia, and New Zealand for what the industry calls an insulating glass unit (IGU). A proper IGU is a factory-sealed assembly of two or more glass panes separated by a spacer filled with desiccant, with the cavity filled with dry air or inert gas. Simple on-site double glazing (two separate panes installed in a frame without hermetic sealing) does not provide the same thermal or condensation performance. BDGLASS supplies only factory-sealed IGUs manufactured to EN 1279 standards.',
+      },
+      {
+        question: 'How long does insulating glass last before the seal fails?',
+        answer:
+          'A properly manufactured IGU with butyl primary seal and silicone/polysulfide secondary seal typically lasts 20-30 years under normal building conditions. BDGLASS backs our insulating glass with a 10-year warranty against seal failure and internal fogging. Key factors affecting seal longevity include: proper installation drainage (no standing water on edge seals), climate (extreme daily temperature swings accelerate seal aging), and glass orientation (sloped or overhead IGUs experience greater stress). We recommend warm-edge spacers for extended seal life in demanding climates.',
+      },
+      {
+        question: 'How much does argon gas filling improve IGU performance compared to air?',
+        answer:
+          'Argon gas fill improves the center-of-glass U-value by approximately 15-20% compared to an air-filled IGU of the same configuration. For example, a 6 Low-E + 12A + 6 Clear IGU might achieve U=1.8 W/m²K with air fill and U=1.5 W/m²K with argon — a meaningful improvement for energy code compliance. Argon is standard for most projects due to its excellent cost-to-performance ratio. Krypton gas provides an additional 5-8% improvement but costs significantly more and is typically reserved for premium triple-glazed units or very thin cavities where argon is less effective.',
+      },
+    ],
+    comparisonTable: {
+      headers: ['Property', 'Single Pane Glass', 'Insulating Glass (IGU)'],
+      rows: [
+        { property: 'Thermal insulation (U-value)', left: '~5.7 W/m²K（almost no insulation）', right: 'As low as 1.0 W/m²K（Low-E + argon + warm-edge）' },
+        { property: 'Sound reduction', left: '~15–20 dB', right: 'Up to 35 dB（double glazed）, 45 dB（triple + laminated pane）' },
+        { property: 'Condensation resistance', left: 'Poor — forms on cold interior surface', right: 'Excellent — sealed cavity with molecular sieve desiccant prevents internal fog' },
+        { property: 'Energy savings', left: 'None（high HVAC running costs）', right: '30–50% HVAC cost reduction; ROI through energy bills in 3–7 years' },
+        { property: 'Glass configuration', left: 'Single pane 3–19mm', right: 'Double 12–52mm / Triple 36–80mm with hermetically sealed cavity' },
+        { property: 'Typical applications', left: 'Outdated single-glazed buildings, outbuildings', right: 'Curtain walls, passive house, cold storage, soundproof studios, all modern construction' },
+        { property: 'Building code compliance', left: 'Not compliant for new construction in most countries', right: 'Required by energy codes（AS/NZS, EU EPBD, China GB 50189, IECC）' },
+      ],
+      bottomLine: 'Single-pane glass has been phased out of modern building codes for exterior applications worldwide. Insulating glass units (IGU) are the minimum standard for energy-efficient construction. The initial investment in IGU pays for itself through HVAC savings within 3–7 years.',
+    },
+    decisionGuide: {
+      sections: [
+        {
+          heading: 'For Architects & Specifiers',
+          items: [
+            { label: 'Curtain walls', content: 'Double-glazed Low-E IGU, tempered outer + tempered inner, argon-filled, warm-edge spacer recommended. Target U-value: ≤1.5 W/m²K for most climate zones. Provide glass data sheets for energy modeling.' },
+            { label: 'Passive house certification', content: 'Triple-glazed Low-E IGU with dual warm-edge spacers, argon/krypton fill. Target U-value: ≤0.8 W/m²K. Certified glass data sheets provided for PHPP energy modeling software.' },
+            { label: 'Spandrel / shadow box areas', content: 'Opacified IGU with ceramic frit on #4 surface, color-matched to vision glass. Insulation behind spandrel panels must be continuous with vision area thermal barrier.' },
+          ],
+        },
+        {
+          heading: 'For Window & Door Manufacturers',
+          items: [
+            { label: 'Standard aluminum windows', content: '5+9A+5 or 6+12A+6 clear IGU with aluminum spacer. Most cost-effective configuration for temperate climates and budget-conscious projects.' },
+            { label: 'Thermal-break systems', content: '6 Low-E + 12A Argon + 6 Clear IGU. Warm-edge spacer recommended — reduces edge condensation risk and improves overall U-value by 0.1–0.2 W/m²K.' },
+            { label: 'Large sliding doors', content: '8+16A+8 or 10+20A+10 IGU, tempered both sides, argon-filled. Wider cavity provides better insulation for large glazed areas with minimal framing.' },
+          ],
+        },
+        {
+          heading: 'For Cold Storage & Specialty Applications',
+          items: [
+            { label: 'Cold storage & refrigeration', content: 'Heated edge spacers to eliminate condensation at gasket interface. Special low-temperature desiccant rated for environments down to -30°C. Triple-glazed for freezer applications.' },
+            { label: 'Soundproof studios & hotels', content: 'Triple glazing with laminated outer pane, acoustic PVB interlayer, and staggered glass thicknesses（e.g., 6+8+6mm）achieves 45+ dB sound reduction. Test certificates provided.' },
+            { label: 'Greenhouse & solar applications', content: 'Low-iron（ultra-clear）glass with 90%+ visible light transmission. Minimal or no Low-E coating to maximize solar heat gain while providing basic insulation and wind protection.' },
+          ],
+        },
+      ],
+    },
+    priceFactors: [
+      { name: 'Number of panes', description: 'Double glazed（standard, most cost-effective）→ Triple glazed（35-50% more material and processing cost, essential for passive house and extreme climates）.' },
+      { name: 'Glass thickness per pane', description: '4+4mm（standard windows）→ 6+6mm（commercial / curtain walls）→ 8+8mm or 10+10mm（large format / structural）. Each step adds approximately 15-25% to glass substrate cost.' },
+      { name: 'Low-E coating grade', description: 'Uncoated < Single-silver Low-E < Double-silver Low-E < Triple-silver Low-E. Higher-grade coatings improve solar control and U-value but cost progressively more per sqm of coated glass.' },
+      { name: 'Spacer type', description: 'Aluminum（standard, lowest cost）→ Warm-edge composite or stainless steel（15-20% more but reduces edge heat loss by 30-50%, recommended for cold climates and passive house certification）.' },
+      { name: 'Gas fill', description: 'Dry air（baseline, included）→ Argon（standard upgrade, +5-10% cost, 15-20% U-value improvement）→ Krypton（premium, +30-40% cost, best for thin cavities or ultra-low U-value targets）.' },
+      { name: 'Glass substrate type', description: 'Clear float < Tinted（grey, bronze, blue, green）< Ultra-clear low-iron < Tempered（safety requirement for most commercial applications）< Laminated（acoustic or security interlayer）.' },
+      { name: 'Order quantity', description: 'MOQ 50 sqm per configuration. Container-load pricing（500+ sqm）reduces per-unit cost through batch production efficiency and consolidated ocean freight.' },
+      { name: 'Shipping & logistics', description: 'IGUs are heavier and bulkier than single panes — shipping is a significant cost factor. Professional export plywood crates with cork separators. FOB Foshan / CIF your port / DDP to your door.' },
+    ],
+    caseStudies: [
+      { project: 'Shenzhen Guangqi Future Center', area: '28,000 ㎡', application: 'Low-E double-glazed IGU（6+12A+6）for 38-story office tower curtain wall, U-value 1.5 W/m²K, argon-filled' },
+      { project: 'Guangzhou Baiyun Convention Center', area: '8,500 ㎡', application: 'Triple-glazed acoustic IGU with laminated outer pane for conference halls, 42 dB sound reduction' },
+      { project: 'Foshan European Industrial Park', area: '6,000 ㎡', application: '6 Low-E + 12A Argon + 6 Clear IGU for mixed-use complex, aluminum window & door integration' },
     ],
     relatedProducts: [
       {
@@ -351,6 +507,78 @@ export const products: Product[] = [
         answer:
           'Laminated glass is packaged in plywood crates with soft cork or rubber separators between each sheet. Crates are reinforced with steel bands and marked with "Fragile — Handle With Care" labels. For ocean shipping, we recommend FOB or CIF terms with professional loading supervision to prevent edge damage that could affect interlayer adhesion.',
       },
+      {
+        question: "What's the difference between laminated glass and tempered glass — which one should I choose?",
+        answer:
+          'Laminated glass and tempered glass serve different safety purposes. Tempered glass is 4-5× stronger than ordinary glass and breaks into small blunt pieces — ideal for areas where glass may be impacted (shower doors, railings, table tops). Laminated glass has a PVB or SGP interlayer that holds broken glass together — it stays in place even when shattered. This makes it essential for overhead glazing, hurricane zones, security applications, and anywhere post-breakage retention is required. For maximum safety, tempered laminated glass combines both: tempered panes for impact resistance + interlayer for fragment retention.',
+      },
+      {
+        question: 'Can laminated glass be used for hurricane-resistant windows and doors?',
+        answer:
+          'Yes. SGP laminated glass is the standard for hurricane-resistant glazing. Our SGP-laminated configurations meet Miami-Dade County impact requirements (Large Missile Impact Test) and ASTM E1996 standards. A typical hurricane-rated configuration is 6mm tempered + 1.52mm SGP + 6mm tempered. The high-strength SGP interlayer withstands wind-borne debris impact and maintains the building envelope integrity even if the glass is cracked. Test reports and NOA (Notice of Acceptance) documentation are available for project submittals.',
+      },
+      {
+        question: 'What is the minimum laminated glass thickness for glass floors and stair treads?',
+        answer:
+          'Glass floors and stair treads require laminated construction — single-pane glass (even tempered) must never be used for flooring. For residential glass floors with light foot traffic, we recommend a minimum of 3-ply laminated tempered construction (e.g., 8+1.52 SGP + 8+1.52 SGP + 8 = ~27mm total). For commercial floors and public spaces, 5-ply or thicker with SGP interlayer is required. All glass floor panels must include an anti-slip surface treatment. BDGLASS provides structural glass data sheets for engineering review — contact us with your span, load requirements, and support conditions for a specific recommendation.',
+      },
+    ],
+    comparisonTable: {
+      headers: ['Property', 'Tempered Glass', 'Laminated Glass'],
+      rows: [
+        { property: 'Strength', left: '4-5× stronger than ordinary glass（surface ≥90 MPa）', right: 'Similar strength to base glass used（tempered or annealed）' },
+        { property: 'Breakage behavior', left: 'Shatters into small blunt granules — pieces fall away', right: 'Glass cracks but fragments stay bonded to interlayer — panel stays in place' },
+        { property: 'Post-breakage retention', left: 'None — opening is created immediately', right: 'Excellent — interlayer holds fragments, maintaining barrier integrity' },
+        { property: 'UV blocking', left: 'Minimal（unless coated）', right: '99% UV blocking with clear PVB interlayer' },
+        { property: 'Sound reduction', left: '~25–30 dB（standard thickness）', right: 'Up to 40 dB with acoustic PVB interlayer' },
+        { property: 'Security level', left: 'Basic safety — prevents injury from sharp shards', right: 'High security — bullet-resistant, hurricane, blast, and forced-entry options' },
+        { property: 'Post-production cutting', left: 'Cannot be cut or drilled', right: 'Cannot be cut or drilled（same limitation）' },
+        { property: 'Best applications', left: 'Shower doors, railings, windows, furniture', right: 'Overhead glazing, hurricane zones, bank security, glass floors, soundproofing' },
+      ],
+      bottomLine: 'Tempered glass is the standard safety glass for most applications where impact resistance and safe breakage are required. Laminated glass is the upgrade when post-breakage retention is critical — for overhead glazing, hurricane zones, security, and soundproofing. For ultimate safety, tempered laminated glass combines the strengths of both.',
+    },
+    decisionGuide: {
+      sections: [
+        {
+          heading: 'For Architects & Specifiers',
+          items: [
+            { label: 'Overhead glazing & skylights', content: 'Laminated tempered glass with SGP interlayer is mandatory for all overhead applications per IBC and EN building codes. Minimum 2-ply（e.g., 6+1.52 SGP + 6）with heat-soak testing. PVB acceptable for sloped glazing ≤30°.' },
+            { label: 'Curtain walls (safety-critical zones)', content: 'Laminated outer pane + tempered inner pane for high-rise facades. The laminated outer pane prevents glass fall-out if broken. SGP recommended for point-supported and structural silicone glazing.' },
+            { label: 'Glass floors & observation decks', content: 'Multi-ply SGP laminated（3-ply minimum for residential, 5-ply+ for commercial）with anti-slip surface treatment. Full structural glass data sheets provided for engineering review.' },
+          ],
+        },
+        {
+          heading: 'For Security Specifiers & Contractors',
+          items: [
+            { label: 'Bank & jewelry store glazing', content: '3-ply to 5-ply bullet-resistant laminated glass（Level 1 handgun to Level 2 rifle）. Tested per UL 752 / EN 1063. Custom thicknesses up to 60mm.' },
+            { label: 'Embassy & high-security facilities', content: '5-ply to 7-ply laminated for Level 3 protection（high-powered rifle）. Combined with polycarbonate backing for spall protection. Forced-entry delay options available.' },
+            { label: 'Hurricane & storm protection', content: 'SGP laminated tempered glass tested to Miami-Dade Large Missile Impact. Typical: 6+1.52 SGP + 6 tempered. NOA documentation provided for building permit submittals.' },
+          ],
+        },
+        {
+          heading: 'For Residential & Commercial Builders',
+          items: [
+            { label: 'Glass railings & balustrades', content: '10+0.76 PVB + 10mm or 10+1.52 SGP + 10mm laminated tempered. Laminated required where post-breakage retention is specified by local codes.' },
+            { label: 'Soundproof windows & partitions', content: 'Acoustic PVB interlayer（0.76mm or 1.14mm）+ staggered glass thicknesses for broad-frequency sound reduction. Up to 40 dB with double-glazed laminated configuration.' },
+            { label: 'UV protection for interiors', content: 'Standard clear PVB interlayer blocks 99% of UV radiation. Protects furniture, artwork, and flooring from fading. Low-iron glass maximizes visible light while maintaining UV blocking.' },
+          ],
+        },
+      ],
+    },
+    priceFactors: [
+      { name: 'Interlayer type', description: 'PVB（standard, most cost-effective for safety and UV blocking）→ Acoustic PVB（+20-30% for enhanced sound reduction）→ SGP / SentryGlas（+40-60% for structural, hurricane, and security applications）.' },
+      { name: 'Interlayer thickness', description: '0.38mm（minimum, light-duty）→ 0.76mm（standard safety）→ 1.14mm（acoustic/higher security）→ 1.52mm（structural, hurricane, bullet-resistant）. Each thickness step adds approximately 20-30% to interlayer cost.' },
+      { name: 'Number of plies', description: '2-ply（standard laminated, most cost-effective）→ 3-ply（enhanced security）→ 5-ply to 7-ply（bullet-resistant）. Each additional ply adds glass + interlayer + autoclave cycle cost.' },
+      { name: 'Glass type per ply', description: 'Annealed（lowest cost, limited applications）→ Tempered（standard for safety glazing, +15-25%）→ Heat-strengthened（overhead applications, similar cost to tempered）.' },
+      { name: 'Glass substrate', description: 'Clear float < Tinted（grey, bronze, blue, green）< Ultra-clear low-iron（for maximum transparency and color accuracy）< Reflective coated.' },
+      { name: 'Custom interlayers', description: 'Colored PVB（+15-25%）→ Digital printed interlayers（images, patterns, logos）→ Gradient interlayers（opaque-to-clear transitions）. Custom colors matched via Pantone or RAL.' },
+      { name: 'Order quantity', description: 'MOQ 50 sqm per configuration. Bullet-resistant and custom interlayer orders may have higher MOQ due to specialized production setup. Container-load pricing at 500+ sqm.' },
+      { name: 'Shipping & logistics', description: 'Laminated glass is heavier than monolithic glass of the same thickness. Export plywood crates with cork separators, steel banded. FOB Foshan / CIF your port / DDP. Edge protection critical for ocean freight.' },
+    ],
+    caseStudies: [
+      { project: 'Shenzhen Guangqi Future Center', area: '12,000 ㎡', application: 'SGP laminated tempered glass（8+1.52+8mm）for point-supported curtain wall and overhead atrium glazing' },
+      { project: 'Melbourne Luxury Apartment Tower', area: '5,000 ㎡', application: 'PVB laminated tempered glass（10+0.76+10mm）for 280 balcony balustrades with frameless spigot system' },
+      { project: 'Cambodia 5-Star Beach Resort', area: '3,200 ㎡', application: 'Acoustic PVB laminated glass（6+1.14+6mm）for ocean-facing guest room windows, 38 dB sound reduction' },
     ],
     relatedProducts: [
       {
@@ -471,6 +699,77 @@ export const products: Product[] = [
         answer:
           'Hot melting glass is produced by heating glass to its softening point and pressing it into a custom metal mold to create three-dimensional relief patterns. The resulting panels have dramatic tactile surfaces that catch and refract light in unique ways. Typical applications include luxury hotel feature walls, bar countertops, artistic installations, and high-end residential statement pieces.',
       },
+      {
+        question: 'Can decorative glass be used outdoors on building facades?',
+        answer:
+          'Yes. Ceramic frit silk-screen printed glass and digital ceramic enamel glass are fired at 680°C+, permanently bonding the design to the glass surface. These are fully weather-resistant and UV-stable, making them ideal for exterior spandrel panels, facade cladding, and outdoor signage. Acid etched and frosted finishes are also suitable for exterior use but may require occasional cleaning. For exterior decorative projects, we recommend tempered or laminated substrates for safety compliance.',
+      },
+      {
+        question: 'What is the difference between acid etched glass and sandblasted frosted glass?',
+        answer:
+          'Both create a translucent matte surface, but the production method and final quality differ. Acid etching uses hydrofluoric acid to chemically alter the glass surface, producing a smoother, more uniform satin finish that is naturally fingerprint-resistant. Sandblasted frosted glass is created by mechanically blasting the surface with abrasive particles, resulting in a slightly rougher texture that can show fingerprints more easily. Acid etched glass is generally preferred for high-end architectural and interior applications due to its superior feel and durability.',
+      },
+      {
+        question: 'What file formats and resolution do you need for custom printed glass designs?',
+        answer:
+          'We accept AI, PDF, DWG, DXF, PSD, and TIFF files. For raster images (PSD/TIFF), please provide at least 300 DPI at the intended print size. Vector files (AI/PDF/DWG) are preferred for logos and geometric patterns as they scale without quality loss. Our design team reviews every file and provides free DFM (design-for-manufacturing) feedback within 24 hours, including recommendations for production feasibility and color accuracy.',
+      },
+    ],
+    comparisonTable: {
+      headers: ['Property', 'Standard Clear Glass', 'Craft / Decorative Glass'],
+      rows: [
+        { property: 'Visual appearance', left: 'Plain transparent surface, no design', right: '8+ decorative techniques — etched, printed, carved, hot-melted, stained, patterned' },
+        { property: 'Privacy level', left: 'None — fully transparent', right: 'Adjustable — translucent frosted to fully opaque printed/ceramic enamel' },
+        { property: 'Customization', left: 'Limited to glass type and tint', right: 'Unlimited — Pantone colors, custom patterns, logos, photographic imagery, 3D relief' },
+        { property: 'Surface durability', left: 'Standard glass surface', right: 'Ceramic enamel fired at 680°C — permanent, scratch-resistant (≥4H). Acid-etched: fingerprint-resistant' },
+        { property: 'UV/weather resistance', left: 'Standard (uncoated glass)', right: 'Ceramic frit and digital enamel: fully weatherproof for exterior use. 10+ year durability for etched finishes' },
+        { property: 'Applications', left: 'Plain windows, basic glazing', right: 'Hotel feature walls, church stained windows, branded storefronts, luxury interiors, decorative partitions' },
+        { property: 'Design file support', left: 'N/A', right: 'AI/PDF/DWG/DXF/PSD/TIFF ≥300 DPI. Free DFM feedback and rendering preview before production' },
+      ],
+      bottomLine: 'Standard clear glass provides basic transparency. Craft glass transforms that same glass into a design element — adding brand identity, artistic expression, privacy, and architectural character. With 8+ techniques under one roof, BDGLASS helps you achieve the exact visual effect your project demands.',
+    },
+    decisionGuide: {
+      sections: [
+        {
+          heading: 'For Architects & Interior Designers',
+          items: [
+            { label: 'Hotel lobbies & feature walls', content: 'Large-format hot melting or carved glass panels (up to 3300×12000mm) create dramatic 3D focal points. Backlight with LED for maximum visual impact. Tempered substrate recommended for public spaces.' },
+            { label: 'Bathroom & spa partitions', content: 'Acid etched or frosted glass in 6-10mm thickness. Permanent fingerprint-resistant finish. Combine with tempered safety glass for shower enclosures and wet areas.' },
+            { label: 'Building facades & spandrels', content: 'Silk screen or digital ceramic enamel on tempered glass. Ceramic frit fired at 680°C for permanent weather resistance. Color-match to vision glass for seamless facade appearance.' },
+          ],
+        },
+        {
+          heading: 'For Brand & Retail Designers',
+          items: [
+            { label: 'Storefronts & branded glazing', content: 'Digital ceramic enamel with photographic-quality imagery. Unlimited colors — exact Pantone matching with ΔE≤2.0. Tempered for safety in public-facing installations.' },
+            { label: 'Restaurant & bar interiors', content: 'LED-backlit carved glass, 3D hot melting panels, and digitally printed decorative screens. Combine multiple techniques for layered visual effects. Custom mold tooling available.' },
+            { label: 'Wayfinding & signage', content: 'Silk screen printed directional graphics and room identifiers directly on glass partitions and doors. Permanent, scratch-resistant, and easy to clean.' },
+          ],
+        },
+        {
+          heading: 'For Heritage & Restoration Projects',
+          items: [
+            { label: 'Church & religious stained glass', content: 'Traditional leaded or copper-foil stained glass using period-accurate colored glass. Custom design from your artwork or historical reference photos. Restoration matching available.' },
+            { label: 'Heritage building restoration', content: 'Patterned / figured glass matching historical patterns (Flora, Karatach, Mistlite, etc.). Custom mold production for discontinued patterns. Tinted and wired glass options for authenticity.' },
+            { label: 'Luxury residential entry doors', content: 'CNC deep-engraved or carved glass panels up to 19mm thick. Custom designs from family crests to nature motifs. Tempered + laminated for security and thermal performance.' },
+          ],
+        },
+      ],
+    },
+    priceFactors: [
+      { name: 'Decorative technique', description: 'Acid etching / sandblasting (most cost-effective) → Silk screen printing → Digital ceramic enamel → Carved / deep-engraved → Hot melting (highest cost due to custom mold tooling). Technique choice is the primary cost driver.' },
+      { name: 'Design complexity', description: 'Simple full-surface finish (lowest) → Geometric patterns → Multi-color designs → Photographic imagery → 3D relief (highest). More complex = more production time and higher per-unit cost.' },
+      { name: 'Glass substrate', description: 'Clear float < Tinted < Ultra-clear low-iron (recommended for color accuracy in backlit applications) < Tempered (safety requirement for public spaces) < Laminated.' },
+      { name: 'Glass thickness', description: '3-6mm (interior partitions, furniture) → 8-12mm (shower enclosures, doors) → 15-25mm (structural, carved, hot-melted). Thicker glass required for deep carving and 3D techniques.' },
+      { name: 'Panel size', description: 'Standard sizes (≤2440×3660mm) are most economical. Jumbo sizes up to 3300×12000mm require special handling and are priced at a premium. Digital print max: 2440×6000mm.' },
+      { name: 'Color count (silk screen)', description: '1-2 colors (standard) → 3-4 colors → 5-6 colors (premium). Each additional color requires a separate screen and printing pass. Digital enamel: unlimited colors at no extra color cost.' },
+      { name: 'Sample production', description: 'Samples strongly recommended for custom designs. 7-10 day turnaround. Sample cost is credited toward the bulk order. Allows verification of color, texture, and overall design intent.' },
+      { name: 'Order quantity', description: 'Custom decorative projects have flexible MOQ. Small batch / trial orders accepted with surcharge. Bulk orders (100+ sqm per design) benefit from mold/screen setup amortization. Shipping in plywood crates with soft separators.' },
+    ],
+    caseStudies: [
+      { project: 'Guangzhou Baiyun Convention Center', area: '4,500 ㎡', application: 'Acid-etched frosted glass with custom geometric pattern for conference hall partitions and wayfinding panels' },
+      { project: 'Macau Luxury Hotel & Casino', area: '3,800 ㎡', application: 'LED-backlit hot melting glass feature walls and digital enamel printed glass for lobby and VIP lounge areas' },
+      { project: 'Shanghai Heritage Church Restoration', area: '800 ㎡', application: 'Traditional leaded stained glass windows — period-accurate colored glass matching original 1920s designs' },
     ],
     relatedProducts: [
       {
@@ -591,6 +890,77 @@ export const products: Product[] = [
         answer:
           'We produce full-size sample mock-ups (minimum 1m × 1m) for client approval before mass production. Coating batches are controlled and documented. For extra-large projects, we produce all glass from the same coating run to ensure color uniformity.',
       },
+      {
+        question: 'What is the difference between stick-built and unitized curtain wall systems — and which glass do I need?',
+        answer:
+          'Stick-built systems assemble the frame and install glass on-site, panel by panel. They allow looser glass tolerances (±2mm) and are common for low-to-mid-rise buildings. Unitized systems pre-assemble glass and frame into factory-made modules that are hung on the building structure — they require tighter glass tolerances (±1mm) and are standard for high-rise towers. BDGLASS supplies glass for both systems. Unitized projects require precision CNC sizing and edge finishing — specify "unitized" when ordering so we apply the tighter tolerance standard.',
+      },
+      {
+        question: 'Do you provide structural engineering calculations for curtain wall glass?',
+        answer:
+          'We provide glass-specific engineering data including bending strength, deflection under wind load, and post-breakage behavior. For full structural calculations of the curtain wall system (mullions, transoms, anchors), we work with your structural engineer and provide all necessary glass parameters. Our project support package includes U-value and SHGC calculations, glass scheduling with panel IDs and dimensions, and shop drawings for both stick and unitized systems.',
+      },
+      {
+        question: 'What is spandrel glass and how do you ensure it matches the vision glass color?',
+        answer:
+          'Spandrel glass conceals the floor slabs, columns, and mechanical equipment behind the curtain wall. We apply ceramic frit (enamel) coating to the interior surface (#4 surface) of the glass to make it opaque, then color-match it to the vision glass using spectrophotometer readings. For the best color match, we produce a full-size mock-up (minimum 1m × 1m) showing both vision and spandrel glass side by side under natural daylight. Spandrel glass can be supplied as monolithic or IGU depending on thermal requirements.',
+      },
+    ],
+    comparisonTable: {
+      headers: ['Property', 'Standard Window Glass', 'Curtain Wall Glass'],
+      rows: [
+        { property: 'Application scale', left: 'Individual punched windows, residential', right: 'Full building envelope — continuous glazing across multiple floors, commercial towers' },
+        { property: 'Structural role', left: 'Non-structural — sits within wall opening', right: 'Structural interface with building — resists wind load, thermal movement, and building sway' },
+        { property: 'Glass configuration', left: 'Single IGU or monolithic pane', right: 'Multi-component system — vision IGU + spandrel panels + structural fins + fire-rated zones' },
+        { property: 'Performance requirements', left: 'Basic U-value and SHGC', right: 'Full thermal analysis (U-value, SHGC, VT), acoustic ratings, wind load resistance to 5+ kPa, blast resistance optional' },
+        { property: 'Spandrel integration', left: 'Not applicable', right: 'Opacified spandrel glass color-matched to vision glass — conceals floor slabs and mechanical systems' },
+        { property: 'Project support', left: 'Standard size order', right: 'Performance calculations, shop drawings, glass scheduling, full-size mock-ups (≥1m×1m), engineering data' },
+        { property: 'Typical project size', left: '10-500 sqm (residential/small commercial)', right: '500-50,000+ sqm (commercial towers, hotels, mixed-use developments)' },
+      ],
+      bottomLine: 'Standard window glass is designed to fill openings. Curtain wall glass IS the building envelope — it must perform structurally, thermally, and aesthetically as a continuous system. BDGLASS provides the engineering support, calculations, mock-ups, and production capacity to deliver facade glass for projects of any scale.',
+    },
+    decisionGuide: {
+      sections: [
+        {
+          heading: 'For Architects & Facade Engineers',
+          items: [
+            { label: 'High-rise office towers', content: 'Low-E double-glazed IGU (6+12A+6 with argon) as vision glass. Spandrel panels with ceramic frit opacifier, color-matched to vision area. Tempered outer pane for thermal stress resistance.' },
+            { label: 'Hotel & mixed-use', content: 'Combination of vision IGU for guest floors + spandrel for slab coverage. High light transmission glass for lobby/atrium areas. Acoustic laminated option for street-facing facades.' },
+            { label: 'Structural glass facades', content: 'SGP laminated tempered glass (15mm+) for structural fins. Point-supported glazing with CNC-drilled holes for spider fittings. Full engineering data package provided.' },
+          ],
+        },
+        {
+          heading: 'For Developers & Project Owners',
+          items: [
+            { label: 'Budget optimization', content: 'Standard double-glazed Low-E IGU for typical floors; premium configurations (triple-glazed, acoustic) only where needed. Value-engineer spandrel-to-vision ratio to balance performance and cost.' },
+            { label: 'Energy code compliance', content: 'Target U-value ≤1.5 W/m²K for most climate zones. Triple-glazed with warm-edge spacers for LEED/BREEAM certification. Solar control Low-E for hot climates to reduce cooling loads.' },
+            { label: 'Long-term durability', content: 'Silicone structural sealant (not polysulfide) for SSG facades. Heat-soak testing for all tempered glass to prevent spontaneous breakage. 10-year warranty on IGU seal integrity.' },
+          ],
+        },
+        {
+          heading: 'For Glazing Subcontractors',
+          items: [
+            { label: 'Unitized system glass', content: 'Precision CNC-sized panels to ±1mm tolerance. Pre-glazed into modules at factory or on-site. Glass scheduling with unique panel IDs matching the module grid. Shop drawings provided.' },
+            { label: 'Stick system glass', content: 'Standard tolerance (±2mm). Glass delivered in sequence per floor/zone. Edge protection for site handling. Compatible with all major system suppliers.' },
+            { label: 'Spandrel & shadow box', content: 'Ceramic frit on #4 surface. Insulation behind spandrel must be continuous with vision area. Provide cavity ventilation details for condensation control.' },
+          ],
+        },
+      ],
+    },
+    priceFactors: [
+      { name: 'Glass configuration', description: 'Monolithic reflective (lowest cost) → Standard double IGU → High-performance double IGU (Low-E + argon + warm-edge) → Triple IGU → Structural laminated IGU (highest cost).' },
+      { name: 'Vision-to-spandrel ratio', description: 'Higher spandrel ratio = lower cost (spandrel is cheaper than vision IGU). Typical: 60-70% vision, 30-40% spandrel. Spandrel with ceramic frit adds cost vs basic opacified glass.' },
+      { name: 'Low-E coating grade', description: 'Single-silver (standard) → Double-silver (better solar control) → Triple-silver (premium, lowest SHGC). Higher grades add cost but improve energy performance and may enable HVAC downsizing.' },
+      { name: 'Glass size & thickness', description: 'Standard panel sizes (≤2,000×3,500mm) are most cost-effective. Oversize panels (up to 3,300×5,000mm) require thicker glass and special handling — premium pricing applies.' },
+      { name: 'Spandrel color matching', description: 'Standard colors (grey, white, black) are stock. Custom color matching to vision glass requires spectrophotometer reading and sample production — adds setup cost but essential for facade aesthetics.' },
+      { name: 'Project scale', description: 'Under 500 sqm: higher per-unit cost (small batch). 500-5,000 sqm: standard pricing. 5,000+ sqm: volume discount through batch optimization. 28,000+ sqm: our largest single project to date.' },
+      { name: 'Engineering & mock-up package', description: 'Performance calculations, shop drawings, and glass scheduling included for project orders. Full-size mock-ups (1m×1m min) recommended before mass production — mock-up cost credited toward order.' },
+      { name: 'Shipping & logistics', description: 'Curtain wall glass is heavy — shipping is a major cost factor. Export plywood crates, steel-banded. Container optimization maximizes glass per shipment. FOB Foshan / CIF your port. Project-phased delivery available.' },
+    ],
+    caseStudies: [
+      { project: 'Shenzhen Guangqi Future Center', area: '28,000 ㎡', application: 'Low-E double-glazed IGU (6+12A+6) for 38-story office tower — vision + spandrel panels, unitized system, U-value 1.5 W/m²K' },
+      { project: 'Guangzhou Baiyun Convention Center', area: '15,000 ㎡', application: 'Triple-glazed acoustic IGU + spandrel panels for conference center facade — 42 dB sound reduction, stick system' },
+      { project: 'Foshan European Industrial Park', area: '8,500 ㎡', application: 'Reflective coated tempered glass + spandrel for mixed-use complex — solar control SHGC 0.35, aluminum frame integration' },
     ],
     relatedProducts: [
       {
@@ -710,6 +1080,77 @@ export const products: Product[] = [
         answer:
           'Each glass panel is individually wrapped in EPE foam with corner protectors. Panels are separated by cork or rubber spacers in plywood crates. Crates are reinforced with steel bands and marked "Fragile — Glass."',
       },
+      {
+        question: 'What is the difference between 304 and 316 stainless steel for railing hardware?',
+        answer:
+          '304 stainless steel is suitable for most indoor and sheltered outdoor applications and offers good corrosion resistance at a competitive price. 316 stainless steel contains molybdenum (2-3%), providing superior resistance to chloride corrosion from salt water, pool chemicals, and coastal air. We strongly recommend 316-grade hardware for any project within 5km of the ocean, pool fencing, and marine environments. The cost difference is approximately 20-30% for 316 vs 304 hardware.',
+      },
+      {
+        question: 'Do I need tempered or laminated glass for my balustrade — and what thickness?',
+        answer:
+          'For residential balconies (1.0-1.2m height), 12mm tempered glass is standard in most jurisdictions. For commercial projects, pool areas, or where post-breakage retention is required by code, 10+1.52+10mm or 12+1.52+12mm laminated tempered glass is recommended. The laminated option ensures that even if the glass is struck and broken, the interlayer holds the fragments together and the barrier remains intact. Always check your local building code (BS 6180, AS/NZS 2208, IBC) for specific requirements.',
+      },
+      {
+        question: 'Can you supply curved glass panels for curved balconies and staircases?',
+        answer:
+          'Yes. We supply curved tempered and curved laminated glass for curved railing and balustrade systems. Curved glass requires a custom bending mold and has longer lead times (15-25 working days) than flat panels. Please provide the radius, arc length, and height for a quote. Minimum radius depends on glass thickness — contact us with your project geometry for a feasibility review.',
+      },
+    ],
+    comparisonTable: {
+      headers: ['Property', 'Steel / Aluminum Railings', 'Glass Railings & Balustrades'],
+      rows: [
+        { property: 'View obstruction', left: 'Significant — posts, rails, and infill block sightlines', right: 'Minimal — frameless glass provides near-invisible barrier, preserving panoramic views' },
+        { property: 'Aesthetics', left: 'Industrial/utilitarian appearance; limited design flexibility', right: 'Modern, premium, open feel; maximizes natural light; enhances property value for waterfront/view properties' },
+        { property: 'Maintenance', left: 'Steel: rust treatment and repainting required; Aluminum: low maintenance but can oxidize', right: 'Glass: wipe clean with standard glass cleaner; 304/316 stainless hardware: virtually maintenance-free' },
+        { property: 'Wind load', left: 'Open design — wind passes through', right: 'Solid barrier — must be engineered for local wind loads. 10-15mm tempered glass rated for most residential/commercial applications' },
+        { property: 'Safety compliance', left: 'Must meet gap and height requirements', right: 'Tempered (safe breakage) or laminated tempered (post-breakage retention). CNC-drilled holes for secure fixing. Meets BS 6180, AS/NZS 2208, IBC' },
+        { property: 'Coastal/marine use', left: '316 stainless or special coatings required', right: '316 stainless hardware standard for coastal projects. Glass unaffected by salt air — simply rinse with fresh water' },
+        { property: 'Cost comparison', left: 'Lower upfront material cost (especially aluminum)', right: 'Higher upfront material cost, but premium aesthetic adds property value. Complete system (glass + hardware) from single supplier eliminates fitting costs' },
+      ],
+      bottomLine: 'Steel and aluminum railings are functional and cost-effective. Glass railings are the architectural choice — they preserve views, maximize natural light, and create a premium aesthetic. For waterfront properties, high-rise balconies, and modern staircases, frameless glass balustrades deliver the unobstructed experience that traditional railings cannot match.',
+    },
+    decisionGuide: {
+      sections: [
+        {
+          heading: 'For Residential Builders & Developers',
+          items: [
+            { label: 'Apartment balconies', content: '12mm clear tempered glass with 304 stainless spigots (316 for coastal). Standard height 1,050mm. Frameless spigot system for clean, minimal look. Installation drawings included.' },
+            { label: 'Pool fencing', content: '12mm clear tempered glass with frameless spigot system. MUST use 316 stainless hardware for chlorine resistance. Compliant with pool safety codes (AS 1926, ISPSC). Self-closing gate hardware available.' },
+            { label: 'Staircase balustrades', content: '10+1.52+10mm laminated tempered glass for post-breakage safety. Top rail (stainless steel, 42.4mm or 50.8mm diameter) recommended for handrail comfort and code compliance.' },
+          ],
+        },
+        {
+          heading: 'For Commercial & Hospitality Projects',
+          items: [
+            { label: 'Hotel atriums & lobbies', content: 'Ultra-large laminated panels (up to 1,500mm wide). SGP interlayer for structural stiffness. Ultra-clear low-iron glass for maximum transparency and color neutrality.' },
+            { label: 'Shopping malls & public spaces', content: 'Heavy-duty 15mm tempered or 12+1.52+12mm laminated tempered. Designed for public loading requirements. Safety corners (radiused edges) standard on all panels.' },
+            { label: 'Office mezzanines & atriums', content: '12mm tempered with satin-finish 304 stainless hardware. Optional frosted band or full-height frosting for privacy. Silk-screen logo/pattern available for corporate branding.' },
+          ],
+        },
+        {
+          heading: 'For Coastal & Marine Projects',
+          items: [
+            { label: 'Waterfront villas & decks', content: '12-15mm clear or ultra-clear tempered glass. 316 stainless hardware MANDATORY. All hardware in satin or mirror finish. Extra corrosion-resistant packaging for sea-freight delivery.' },
+            { label: 'Marina & boardwalk railings', content: '15mm tempered or laminated tempered for high wind load areas. 316 stainless spigots with extra anchoring depth. Glass treated with hydrophobic coating to reduce salt spray residue.' },
+            { label: 'Beachfront resorts', content: '12mm tempered with optional tinted or frosted finish for wind protection and privacy. 316 stainless hardware in custom finishes. Installation supervision available for large resort projects.' },
+          ],
+        },
+      ],
+    },
+    priceFactors: [
+      { name: 'Glass type & thickness', description: '10mm tempered (standard residential, lowest cost) → 12mm tempered (most common) → 15mm tempered (commercial/heavy-duty) → 10+1.52+10mm laminated tempered (premium, post-breakage safety).' },
+      { name: 'Glass finish', description: 'Clear (standard, lowest cost) → Ultra-clear low-iron (premium clarity, +20-30%) → Frosted/acid-etched (+25-40%) → Tinted (grey/bronze/blue) → Silk-screen printed with custom pattern (highest cost).' },
+      { name: 'Hardware material grade', description: '304 stainless (standard, indoor/sheltered) → 316 stainless (coastal/marine/pool, +20-30% premium). Hardware finish: Satin (standard) vs Mirror polish (+10-15%).' },
+      { name: 'Hardware type & quantity', description: 'Spigots (most common, 3-4 per panel) → Standoffs/clamps → U-channel base shoe (continuous support). More fixing points = higher hardware cost but better structural performance.' },
+      { name: 'Panel dimensions', description: 'Standard heights (850/1,000/1,050/1,200mm) are most cost-effective. Custom heights and widths priced per project. Larger panels require thicker glass and more fixing points.' },
+      { name: 'Hole drilling & edge finishing', description: 'CNC-drilled holes for spigots/standoffs (standard, included). Complex hole patterns or waterjet cutouts (premium). Flat polished edges standard; beveled or pencil edges optional.' },
+      { name: 'Order quantity', description: 'MOQ 20 sqm per project. Small orders (<50 sqm): surcharge applies. Medium (50-200 sqm): standard pricing. Large (200+ sqm): volume discount. Complete system orders include hardware + installation drawings.' },
+      { name: 'Shipping & logistics', description: 'Glass panels individually wrapped in EPE foam with corner protectors. Cork spacers between panels in reinforced plywood crates. Steel banded. FOB Foshan / CIF your port. Hardware packed separately in labeled boxes.' },
+    ],
+    caseStudies: [
+      { project: 'Melbourne Luxury Apartment Tower', area: '5,000 ㎡', application: '12mm clear tempered glass with 316 stainless spigots for 280 balcony balustrades — frameless system, coastal-rated hardware' },
+      { project: 'Shenzhen Waterfront Villa Development', area: '3,200 ㎡', application: '12mm ultra-clear tempered glass + 316 stainless U-channel base shoe for 42 waterfront villa decks and pool enclosures' },
+      { project: 'Guangzhou 5-Star Hotel Atrium', area: '2,800 ㎡', application: '10+1.52+10mm SGP laminated tempered glass for hotel atrium and staircase balustrades — low-iron glass, satin 304 hardware' },
     ],
     relatedProducts: [
       {
@@ -830,6 +1271,77 @@ export const products: Product[] = [
         answer:
           'We can supply glass only (cut to your track and fitting specifications) or complete partition kits including aluminum frames, tracks, patch fittings, and door hardware. Complete kits include installation instructions.',
       },
+      {
+        question: 'How much sound does a glass office partition actually block?',
+        answer:
+          'Single-glazed 10mm tempered: approximately 30-32 dB reduction — enough to reduce normal conversation (~60 dB) to a low murmur. Double-glazed with acoustic laminated glass: up to 45 dB reduction — a normal conversation becomes barely audible. For reference, a 45 dB partition creates a quiet, focused environment suitable for executive offices, meeting rooms, and phone booths. We provide acoustic test data for project specifications.',
+      },
+      {
+        question: 'What is PDLC smart switchable glass and how does it work for office partitions?',
+        answer:
+          'PDLC (Polymer Dispersed Liquid Crystal) smart glass contains a liquid crystal film laminated between two glass panes. When power is applied (AC 48-60V), the crystals align and the glass becomes transparent. When power is off, the crystals scatter light and the glass becomes instantly opaque (frosted/milky white). Switching time is under 1 second. It is ideal for boardrooms, executive offices, medical consultation rooms, and any space requiring on-demand privacy without blinds or curtains. The PDLC film is energized via concealed edge wiring connected to a standard wall switch or remote control.',
+      },
+      {
+        question: 'Can I disassemble and reuse glass partitions if our office relocates?',
+        answer:
+          'Yes — if you specify our demountable aluminum framing system. Unlike traditional silicone-glazed systems that are permanent, demountable partitions use mechanical clamp-and-gasket connections. Glass panels and aluminum frames can be disassembled, labeled, transported, and reinstalled at the new location with minimal waste. This is a key advantage for tenant-fit offices, co-working spaces, and companies with flexible lease terms. We provide disassembly/reassembly instructions and can supply replacement gaskets and seals for the second installation.',
+      },
+    ],
+    comparisonTable: {
+      headers: ['Property', 'Drywall / Plaster Partitions', 'Glass Office Partitions'],
+      rows: [
+        { property: 'Natural light transmission', left: 'Zero — creates dark interior spaces; requires artificial lighting all day', right: 'Maximum daylight penetration — reduces lighting energy costs, improves occupant wellbeing and productivity' },
+        { property: 'Visual connectivity', left: 'None — completely enclosed, isolated spaces', right: 'Open, connected feel while maintaining acoustic separation. Clear sightlines support collaboration and supervision' },
+        { property: 'Flexibility & reconfiguration', left: 'Permanent — demolition required; generates construction waste', right: 'Demountable systems — disassemble, move, and reinstall at new location. Zero-waste reconfiguration for evolving teams' },
+        { property: 'Installation speed', left: 'Multi-day process: framing → drywall → mud → sand → paint → clean', right: 'Pre-cut glass panels + aluminum frames — dry installation in hours, not days. No dust, no paint, no cure time' },
+        { property: 'Modern aesthetic', left: 'Basic — requires paint, wallpaper, or cladding for visual appeal', right: 'Premium, contemporary look. Options: clear, frosted, printed patterns, company logos, PDLC smart switchable' },
+        { property: 'Acoustic performance', left: 'STC 35-50 depending on construction (insulated stud cavity)', right: 'Single-glazed: 30-32 dB. Double-glazed acoustic: up to 45 dB. Comparable to drywall for most office applications' },
+        { property: 'Long-term cost', left: 'Lower upfront; higher lifecycle cost due to renovation/demolition/reconstruction', right: 'Higher upfront; lower lifecycle — reusable panels, no renovation waste, adaptable to changing office layouts' },
+      ],
+      bottomLine: 'Drywall partitions are the default low-cost option for permanent walls. Glass office partitions are the strategic choice for modern workplaces — they create defined spaces for focus and privacy while maintaining the openness, natural light, and flexibility that today\'s teams expect. Demountable glass systems future-proof your office layout.',
+    },
+    decisionGuide: {
+      sections: [
+        {
+          heading: 'For Corporate Office Fit-Outs',
+          items: [
+            { label: 'Executive offices & boardrooms', content: 'Smart PDLC switchable glass partitions — transparent for open-door culture, opaque for confidential meetings at the flick of a switch. Double-glazed for acoustic privacy up to 45 dB.' },
+            { label: 'Open-plan work zones', content: 'Single-glazed 10mm tempered frameless partitions. Clear glass maintains visual connectivity; band-frosted or full-frosted options define team zones. Logo printing for departmental branding.' },
+            { label: 'Meeting & conference rooms', content: 'Double-glazed framed system with integrated venetian blinds in the cavity. Acoustic seals at floor and ceiling tracks. Glass swing or sliding doors with matching hardware finishes.' },
+          ],
+        },
+        {
+          heading: 'For Co-Working & Flexible Workspaces',
+          items: [
+            { label: 'Demountable systems', content: 'Modular aluminum frame + glass panel system. Disassemble and relocate in 1-2 days. Reusable panels eliminate renovation waste. Ideal for 3-5 year lease cycles and growing teams.' },
+            { label: 'Phone booths & focus pods', content: 'Acoustic laminated glass partitions achieving 40-45 dB reduction. Compact footprint (1.2×1.2m). Integrated ventilation and lighting. Pre-fabricated for rapid on-site assembly.' },
+            { label: 'Community & lounge areas', content: 'Frosted or printed glass with custom patterns and branding. Creates semi-private zones within open lounges. Silk-screen printed wayfinding graphics directly on glass.' },
+          ],
+        },
+        {
+          heading: 'For Healthcare & Specialist Environments',
+          items: [
+            { label: 'Medical consultation rooms', content: 'PDLC smart glass for instant visual privacy during examinations. Easy-clean surface for hygiene compliance. Rounded safety corners standard. Acoustic seals for patient confidentiality.' },
+            { label: 'Recording studios & media rooms', content: 'Double-glazed acoustic laminated with staggered glass thicknesses. Up to 45 dB reduction. Flush floor tracks for wheelchair accessibility. Non-reflective glass coating for camera use.' },
+            { label: 'Clean room & lab partitions', content: 'Flush-glazed frameless system with minimal horizontal ledges (no dust traps). Chemical-resistant silicone seals. Tempered safety glass with polished edges.' },
+          ],
+        },
+      ],
+    },
+    priceFactors: [
+      { name: 'Partition system type', description: 'Single-glazed frameless (most cost-effective) → Double-glazed framed → Demountable system → Smart PDLC switchable (highest due to PDLC film + electrical integration).' },
+      { name: 'Glass finish', description: 'Clear tempered (standard, lowest cost) → Full frosted → Band/partial frosted → Silk-screen printed with custom pattern or logo → Smart PDLC film (premium).' },
+      { name: 'Acoustic requirements', description: 'Standard single-glazed (~30 dB, included) → Acoustic single (laminated glass, +20-30%) → Double-glazed acoustic (up to 45 dB, +40-60%). Higher STC = thicker glass + more complex frame system.' },
+      { name: 'Panel dimensions', description: 'Standard heights (2,400-3,000mm) most cost-effective. Floor-to-ceiling (up to 4,000mm) requires thicker glass and structural support — premium pricing. Custom widths priced per project.' },
+      { name: 'Door integration', description: 'Glass swing door (standard, included) → Glass sliding door (+20-30%) → Framed aluminum door (+15-25%) → Double door configuration (+40-50%). Door hardware (handles, locks, closers) adds cost.' },
+      { name: 'Blind integration', description: 'No blinds (standard) → Integrated venetian blinds inside double-glazed cavity (+30-40% — magnetic or motorized control) → External roller blinds (mounted on partition, +15-20%).' },
+      { name: 'Order quantity', description: 'Project-based MOQ. Small fit-outs (<100 sqm): surcharge. Standard (100-500 sqm): standard pricing. Large fit-outs (500+ sqm): volume discount. Complete kit (glass + frames + doors) pricing available.' },
+      { name: 'Shipping & logistics', description: 'Glass panels individually wrapped in EPE foam, packed vertically in reinforced plywood crates. Aluminum frames and hardware in separate labeled boxes. FOB Foshan / CIF your port. Phased delivery for multi-floor fit-outs available.' },
+    ],
+    caseStudies: [
+      { project: 'Shenzhen Tech HQ Office Fit-Out', area: '4,200 ㎡', application: 'Single-glazed frameless 10mm tempered + double-glazed acoustic partitions with integrated blinds for 300-person headquarters across 3 floors' },
+      { project: 'Guangzhou Co-Working Flagship', area: '3,500 ㎡', application: 'Demountable PDLC smart switchable partitions for 25 private offices and 8 meeting rooms — reusable system for flexible lease terms' },
+      { project: 'Foshan Media Production Studio', area: '1,800 ㎡', application: 'Double-glazed acoustic laminated partitions (45 dB) for 3 recording studios, 2 control rooms, and 4 editing suites' },
     ],
     relatedProducts: [
       {
@@ -950,6 +1462,77 @@ export const products: Product[] = [
         answer:
           'Each panel is individually wrapped in EPE foam with plastic corner protectors. Panels are separated by cork spacers in reinforced plywood crates. Edge protection strips prevent chipping during transit.',
       },
+      {
+        question: 'What is the standard thickness for frameless vs semi-frameless shower doors?',
+        answer:
+          '10mm tempered glass is the global standard for frameless shower doors (wall-mounted hinges or glass-to-glass hinges). The 10mm thickness provides sufficient rigidity to prevent flex and door sag without a supporting frame. For semi-frameless doors (aluminum frame on 2-3 sides), 8mm tempered is standard and more cost-effective. For very large frameless doors over 900mm wide or 2,200mm tall, we recommend 12mm tempered to prevent flex and ensure smooth hinge operation.',
+      },
+      {
+        question: 'What is easy-clean nano coating and how long does it last on shower glass?',
+        answer:
+          'Easy-clean (hydrophobic) nano coating is a transparent layer applied to the glass surface at the molecular level. It causes water to bead up and roll off, carrying soap scum, minerals, and body oils with it — reducing cleaning frequency by approximately 60%. Under normal residential use (1-2 showers/day), the coating remains effective for 3-5 years. In hotels with higher usage, expect 2-3 years. The coating can be reapplied with aftermarket spray products. We recommend easy-clean coating for all hotel and luxury residential projects — it is the single most appreciated feature by end users.',
+      },
+      {
+        question: 'Can you supply curved or custom-shaped shower glass for corner enclosures?',
+        answer:
+          'Yes. We supply curved tempered glass for quadrant, neo-angle, and custom-shaped shower enclosures. Curved glass requires a custom bending mold — minimum order quantities are higher (typically 30-50 panels per radius) due to mold setup costs. Common radii for quadrant enclosures: 500mm, 550mm, 600mm. For bespoke shapes, please provide a CAD drawing or dimensioned sketch. Lead time for curved glass is 15-25 working days vs 10-15 for flat panels.',
+      },
+    ],
+    comparisonTable: {
+      headers: ['Property', 'Shower Curtain / Acrylic Screen', 'Tempered Glass Shower Enclosure'],
+      rows: [
+        { property: 'Durability & lifespan', left: 'Shower curtain: 1-2 years, mold/mildew, replacement. Acrylic: 3-5 years, scratches, yellowing', right: '20+ years — tempered glass does not scratch, yellow, or degrade. Only hardware may need replacement after 10+ years' },
+        { property: 'Appearance', left: 'Plastic/vinyl look — dates quickly. Acrylic looks acceptable initially but scratches and hazes', right: 'Premium, frameless spa aesthetic. Clear, ultra-clear, frosted, or tinted. Timeless design that adds property value' },
+        { property: 'Cleaning & hygiene', left: 'Curtain: mold/mildew trap, machine wash or replace. Acrylic: scratches trap bacteria, special cleaners required', right: 'Glass wipes clean with standard glass cleaner or squeegee. Optional easy-clean nano coating repels water and soap scum — 60% less cleaning' },
+        { property: 'Water containment', left: 'Curtain: billows inward, leaks at edges, floor puddles. Acrylic screen: better but limited coverage', right: 'Full enclosure with precision-cut panels, magnetic seals, and drip channels. Contains water effectively — no floor puddles' },
+        { property: 'Safety', left: 'No safety concerns (curtain). Acrylic can crack if struck', right: '8-10mm tempered safety glass — 4-5× stronger than ordinary glass. Breaks into small blunt granules if shattered. 3C/EN 12150 certified' },
+        { property: 'Customization', left: 'Curtain: limited colors/patterns. Acrylic: limited to standard sizes', right: 'Custom-cut to any size. Edge profiles, hole positions, hardware finish, glass tint/frost — all configurable. Logo etching for hotel branding' },
+        { property: 'Hotel/maintenance impact', left: 'Curtain: high maintenance — frequent replacement, mold complaints. Acrylic: moderate', right: 'Low maintenance — easy-clean coating. No replacement cycle. Luxury guest experience = better reviews and higher ADR. Housekeeping time reduced ~40%' },
+      ],
+      bottomLine: 'Shower curtains and acrylic screens are temporary solutions with short lifespans and ongoing maintenance issues. A tempered glass shower enclosure is a one-time investment that transforms the bathroom experience — delivering the luxury, durability, and easy maintenance that homeowners and hotel guests expect.',
+    },
+    decisionGuide: {
+      sections: [
+        {
+          heading: 'For Hotels & Hospitality',
+          items: [
+            { label: 'Guest room bathrooms', content: 'Frameless 10mm clear tempered with polished edges and CNC-drilled hinge holes. Easy-clean nano coating standard — reduces housekeeping time ~40%. Logo etching on door panel for branded experience.' },
+            { label: 'Suite & VIP bathrooms', content: 'Walk-in screen with 10mm ultra-clear low-iron tempered glass. No door — open entry design with support bar. Frosted band for partial privacy. Premium satin 304 stainless hardware.' },
+            { label: 'Spa & wellness areas', content: 'Large-format 10-12mm tempered panels for steam room and hydrotherapy enclosures. Frosted or patterned glass for privacy. 316 stainless hardware for chemical/moisture resistance.' },
+          ],
+        },
+        {
+          heading: 'For Residential Developers & Builders',
+          items: [
+            { label: 'Apartment standard bathrooms', content: 'Semi-frameless sliding door with 8mm tempered glass. Most cost-effective for multi-unit projects. Standard sizes (1,900/2,000mm height) for bulk pricing. Aluminum frame in anodized silver or white.' },
+            { label: 'Premium apartment en-suites', content: 'Frameless hinged door with 10mm tempered glass. Matte black or brushed nickel hardware. Walk-in screen option for master en-suites. Easy-clean coating standard for premium units.' },
+            { label: 'Accessible / ADA bathrooms', content: 'Walk-in screen with no threshold, 10mm tempered glass. Flush floor entry for wheelchair access. Support bar integrated into glass panel. Compliant with accessibility standards.' },
+          ],
+        },
+        {
+          heading: 'For Luxury Villas & Custom Homes',
+          items: [
+            { label: 'Master en-suite statement showers', content: 'Oversized walk-in enclosure with 10mm ultra-clear low-iron glass. Floor-to-ceiling panels (up to 2,400mm). Matte black or custom-finish hardware. Double door or open-entry design.' },
+            { label: 'Wet room glass screens', content: '10-12mm tempered fixed panel with support bar. Full-height or half-height. Ultra-clear glass for invisible look. Wall-to-floor silicone seal for watertight installation.' },
+            { label: 'Custom shapes & finishes', content: 'Curved quadrant, neo-angle, or custom-shaped enclosures. Tinted glass (grey, bronze, blue) for designer interiors. Frosted or patterned glass for privacy without sacrificing light.' },
+          ],
+        },
+      ],
+    },
+    priceFactors: [
+      { name: 'Enclosure type', description: 'Semi-frameless sliding door (most cost-effective) → Frameless hinged door → Walk-in fixed screen → Custom curved/neo-angle enclosure (highest due to curved glass + specialized hardware).' },
+      { name: 'Glass thickness', description: '8mm tempered (semi-frameless, standard sliding doors) → 10mm tempered (frameless, standard for hinged doors) → 12mm tempered (oversized doors >900mm wide or >2,200mm tall).' },
+      { name: 'Glass finish', description: 'Clear (standard, lowest cost) → Ultra-clear low-iron (premium transparency, +20-30%) → Frosted/acid-etched → Tinted (grey/bronze/blue) → Patterned/textured glass.' },
+      { name: 'Surface treatment', description: 'No coating (standard) → Easy-clean nano coating (+10-15%, strongly recommended — reduces cleaning 60%, lasts 3-5 years). Logo/pattern etching (+15-25% per design).' },
+      { name: 'Hardware material & finish', description: '304 stainless in chrome/satin (standard) → Matte black, brushed nickel, brass, or gold PVD coating (+20-40% depending on finish) → 316 stainless for coastal/marine (+20-30%).' },
+      { name: 'Door configuration', description: 'Single hinged door (standard) → Sliding door (+10-20%) → Double door (+40-50%) → Walk-in screen/no door (simplest, lowest hardware cost).' },
+      { name: 'Order quantity', description: 'MOQ 50 panels per size/configuration. Hotel projects (100+ identical panels): best pricing through batch production. Samples available for quality verification before bulk order.' },
+      { name: 'Shipping & logistics', description: 'Each panel individually wrapped in EPE foam with corner protectors. Cork spacers between panels in reinforced plywood crates. Hardware packed separately in labeled boxes. FOB Foshan / CIF your port.' },
+    ],
+    caseStudies: [
+      { project: 'Cambodia 5-Star Beach Resort', area: '5,000 ㎡', application: '10mm clear tempered frameless hinged doors with easy-clean nano coating for 320 guest room bathrooms — brushed nickel 304 hardware' },
+      { project: 'Guangzhou Luxury Residential Tower', area: '3,800 ㎡', application: '10mm ultra-clear low-iron walk-in screens and frameless doors for 180 premium apartment en-suites — matte black hardware' },
+      { project: 'Shenzhen Boutique Hotel Spa', area: '1,200 ㎡', application: '10mm frosted tempered glass enclosures with 316 stainless hardware for spa steam rooms and hydrotherapy suites' },
     ],
     relatedProducts: [
       {

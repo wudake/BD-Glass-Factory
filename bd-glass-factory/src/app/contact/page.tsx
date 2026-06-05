@@ -3,7 +3,7 @@ import Breadcrumb from "@/components/shared/Breadcrumb";
 import InquiryForm from "@/components/contact/InquiryForm";
 import { siteConfig } from "@/data/site-config";
 import { MapPin, Phone, Mail, Check } from "lucide-react";
-import { JsonLdBreadcrumb } from "@/lib/json-ld";
+import { JsonLdBreadcrumb, JsonLdLocalBusiness, JsonLdFAQPage } from "@/lib/json-ld";
 import { generatePageMeta } from "@/lib/metadata";
 import Script from "next/script";
 import type { Metadata } from "next";
@@ -36,6 +36,12 @@ export default function ContactPage() {
       <div className="container-page py-4">
         <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
         <JsonLdBreadcrumb items={[{ name: "Home", item: "/" }, { name: "Contact" }]} />
+        <JsonLdLocalBusiness />
+        <JsonLdFAQPage items={[
+          { question: "How can I get a quote for glass products?", answer: "Fill out the inquiry form above with your glass specifications (type, thickness, dimensions, quantity, and destination), and we will reply with a detailed factory quotation within 24 hours. You can also contact us directly via WhatsApp at +86 13786871098 or email info@bdglassfactory.com." },
+          { question: "Where is BDGLASS factory located?", answer: "No.23, North Garden Road, Shishan Town, Nanhai District, Foshan City, Guangdong Province, China. Factory visits are welcome by appointment — approximately 45 minutes from Guangzhou Baiyun International Airport (CAN)." },
+          { question: "What information do I need to provide for an accurate quote?", answer: "For the most accurate quote, please provide: glass type (tempered/insulating/laminated/craft), thickness, dimensions (width × height), quantity (sqm or pieces), edge finishing requirements, hole/cutout specifications (if any), and destination port. Photos or drawings are always helpful." },
+        ]} />
       </div>
 
       {/* Introduction */}

@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = generatePageMeta({
   title: "About BDGLASS | Glass Manufacturer China Since 2019 | Foshan Factory",
   description:
-    "Foshan Bodian Glass Co., LTD — professional glass manufacturer in China since 2019. 15,000sqm factory, 80+ team, 3C certified. Tempered, insulating, laminated & craft glass exporter.",
+    "Foshan Bodian Glass Co., LTD — China glass factory since 2019. 15,000sqm, 80+ team, 3C certified. Tempered, insulating, laminated & craft glass. Export to 10+ countries.",
   path: "/about",
 });
 
@@ -98,7 +98,8 @@ export default function AboutPage() {
               <img
                 src="/images/about/Foshan%20Bodian%20Glass.jpg"
                 alt="Foshan Bodian Glass factory building and production facility"
-                className="w-full h-full object-cover" />
+                className="w-full h-full object-cover"
+                loading="lazy" />
             </div>
           </div>
         </div>
@@ -144,7 +145,8 @@ export default function AboutPage() {
                   <img
                     src={img.src}
                     alt={img.label}
-                    className="w-full h-full object-cover" />
+                    className="w-full h-full object-cover"
+                loading="lazy" />
                   <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs py-1.5 px-2 text-center font-medium">
                     {img.label}
                   </div>
@@ -159,7 +161,7 @@ export default function AboutPage() {
                 glass products that meet international standards.
               </p>
 
-              <h5 className="text-brand-dark font-semibold mb-4">Core Equipment</h5>
+              <h3 className="text-brand-dark font-semibold mb-4">Core Equipment</h3>
               <div className="space-y-3">
                 {[
                   "SouthTech Tempering Furnace — High-precision glass tempering up to 3,300 × 8,000mm",
@@ -212,7 +214,7 @@ export default function AboutPage() {
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-5">
                   <Check size={22} className="text-brand-blue" />
                 </div>
-                <h4 className="text-brand-dark mb-1">{item.title}</h4>
+                <h3 className="text-brand-dark mb-1">{item.title}</h3>
                 <p className="text-brand-blue text-sm font-semibold mb-3">{item.brand}</p>
                 <p className="text-brand-muted-dark text-body-sm">{item.desc}</p>
               </div>
@@ -262,7 +264,8 @@ export default function AboutPage() {
               <img
                 src="/images/about/Team%20Photo.jpg"
                 alt="BDGLASS team photo"
-                className="w-full h-full object-cover" />
+                className="w-full h-full object-cover"
+                loading="lazy" />
             </div>
           </div>
         </div>
@@ -298,7 +301,7 @@ export default function AboutPage() {
                 <div className="w-14 h-14 bg-brand-blue/10 rounded-xl flex items-center justify-center mx-auto mb-5">
                   <item.icon size={26} className="text-brand-blue" />
                 </div>
-                <h5 className="text-brand-dark mb-3">{item.title}</h5>
+                <h3 className="text-brand-dark mb-3">{item.title}</h3>
                 <p className="text-brand-muted-dark text-body-sm">{item.desc}</p>
               </div>
             ))}
@@ -364,12 +367,13 @@ export default function AboutPage() {
                   <img
                     src={client.image}
                     alt={`${client.name} website banner`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy" />
                 </div>
                 <div className="p-5 text-center">
-                  <h5 className="text-brand-dark font-semibold mb-1 group-hover:text-brand-blue transition-colors">
+                  <span className="text-brand-dark font-semibold mb-1 group-hover:text-brand-blue transition-colors block">
                     {client.name}
-                  </h5>
+                  </span>
                   <p className="text-brand-muted text-xs">{client.domain}</p>
                 </div>
               </a>
@@ -416,7 +420,8 @@ export default function AboutPage() {
                 className="w-full h-auto object-cover rounded-xl"
                 width="505"
                 height="898"
-               
+                loading="lazy"
+
               />
             </div>
           </div>
@@ -436,7 +441,7 @@ export default function AboutPage() {
                 key={i}
                 className="border border-gray-200 rounded-lg p-5 bg-white"
               >
-                <h4 className="text-brand-dark mb-2 text-lg">{item.question}</h4>
+                <h3 className="text-brand-dark mb-2 text-lg">{item.question}</h3>
                 <p className="text-brand-muted-dark text-body-sm leading-relaxed">
                   {item.answer}
                 </p>

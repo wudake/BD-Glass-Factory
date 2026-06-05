@@ -80,7 +80,8 @@ export default function ProjectsPage() {
                   <img
                     src={project.imagePath}
                     alt={`${project.name} - ${project.location}`}
-                    className="w-full h-full object-cover" />
+                    className="w-full h-full object-cover"
+                    loading="lazy" />
                   {/* Area Badge */}
                   <div className="absolute top-3 right-3 bg-brand-blue text-white text-xs font-bold px-3 py-1.5 rounded-md z-10">
                     {project.area}
@@ -89,9 +90,9 @@ export default function ProjectsPage() {
 
                 {/* Content */}
                 <div className="p-5 flex flex-col flex-1">
-                  <h4 className="text-brand-dark mb-2 group-hover:text-brand-blue transition-colors">
+                  <h3 className="text-brand-dark mb-2 group-hover:text-brand-blue transition-colors">
                     {project.name}
-                  </h4>
+                  </h3>
                   <div className="flex items-center gap-2 text-brand-muted-dark text-sm mb-3">
                     <MapPin size={14} />
                     <span>{project.location}</span>

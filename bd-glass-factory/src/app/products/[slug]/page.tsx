@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import SectionTitle from "@/components/shared/SectionTitle";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import Link from "next/link";
-import { JsonLdBreadcrumb, JsonLdProduct } from "@/lib/json-ld";
+import { JsonLdBreadcrumb, JsonLdProduct, JsonLdProductFAQ } from "@/lib/json-ld";
 import { siteConfig } from "@/data/site-config";
 import type { Metadata } from "next";
 
@@ -38,40 +38,40 @@ export async function generateMetadata({
 
   const titleMap: Record<string, string> = {
     "tempered-glass":
-      "Tempered Glass Manufacturer China | 3-19mm Safety Glass Factory | BDGLASS",
+      "China Tempered Glass Factory — 3-19mm Toughened Safety Glass | BDGLASS",
     "insulating-glass":
-      "Insulating Glass Manufacturer China | Low-E Double Glazed IGU | BDGLASS",
+      "China Insulating Glass Factory — Low-E Double & Triple Glazed IGU | BDGLASS",
     "laminated-glass":
-      "Laminated Glass Manufacturer China | PVB/SGP Safety Glass | BDGLASS",
+      "China Laminated Safety Glass Factory — PVB & SGP from Foshan | BDGLASS",
     "craft-glass":
-      "Craft Glass Manufacturer China | Decorative & Patterned Glass | BDGLASS",
+      "China Custom Craft & Decorative Glass Factory — 8+ Techniques | BDGLASS",
     "curtain-wall-glass":
-      "Curtain Wall Glass Supplier China | Facade Glass Manufacturer | BDGLASS",
+      "China Curtain Wall Glass Supplier — Low-E IGU & Facade Glass Factory | BDGLASS",
     "glass-railing-balustrade":
-      "Glass Railing & Stair Balustrade Manufacturer China | Custom Supplier | BDGLASS",
+      "China Glass Railing & Balustrade Factory — Custom Tempered/Laminated | BDGLASS",
     "office-glass-partition":
-      "Office Glass Partition Manufacturer China | Custom Supplier | BDGLASS",
+      "China Office Glass Partition Factory — Frameless & Smart PDLC | BDGLASS",
     "glass-shower-enclosure":
-      "Glass Shower Enclosure Manufacturer China | Custom Supplier | BDGLASS",
+      "China Glass Shower Enclosure Factory — Frameless & Sliding Doors | BDGLASS",
   };
 
   const descMap: Record<string, string> = {
     "tempered-glass":
-      "BDGLASS is a professional tempered glass manufacturer in China. We supply 3-19mm tempered safety glass with 3C/EN 12150 certification. Max size 3300×8000mm. Factory direct pricing. Get a quote today.",
+      "China tempered glass factory — 3-19mm safety glass with 3C, EN 12150 & ASTM C1048 certs. Max 3300×8000mm. 4-5× stronger than ordinary glass. MOQ 50 sqm. Factory direct pricing. 7-15 day lead time. Request a quote within 24h.",
     "insulating-glass":
-      "BDGLASS manufactures insulating glass (IGU) in China. Double & triple glazed units with Low-E coating and argon gas fill. 12-52mm thickness, up to 2500×5000mm. 3C/EN 1279 certified. 10-year warranty.",
+      "China insulating glass (IGU) factory — double & triple glazed units with Low-E, argon gas & warm-edge spacers. 12-52mm, max 2500×5000mm. U-value as low as 1.0 W/m²K. 3C/EN 1279 certified. 10-year seal warranty. MOQ 50 sqm. Quote in 24h.",
     "laminated-glass":
-      "BDGLASS manufactures PVB and SGP laminated glass in China. 6.38-60mm thickness, max 2500×6000mm. 99% UV blocking, bullet-resistant options. 3C/EN 14449 certified. Factory direct pricing.",
+      "China laminated glass factory — PVB & SGP interlayers, 6.38-60mm, max 2500×6000mm. 99% UV blocking. Bullet-resistant & hurricane options. 3C/EN 14449 certified. MOQ 50 sqm. Factory direct pricing. Quote in 24h.",
     "craft-glass":
-      "BDGLASS is a custom craft glass manufacturer in China. Acid etched, frosted, silk screen, digital enamel, hot melting, carved, patterned & stained glass. Pantone matching. Factory direct for hotels, churches & villas.",
+      "China custom craft & decorative glass factory — acid etched, frosted, silk screen, digital enamel, hot melting, carved, patterned & stained glass. 8+ techniques under one roof. Pantone matching ΔE≤2.0. 3-25mm, max 3300×12000mm. Samples in 7-10 days. Quote in 24h.",
     "curtain-wall-glass":
-      "BDGLASS supplies curtain wall glass for commercial buildings: Low-E IGU, tempered laminated, reflective coated. Foshan factory, 15,000sqm capacity. Get project quote.",
+      "China curtain wall glass supplier — Low-E IGU, tempered laminated, reflective coated & spandrel panels for commercial facades. 15,000sqm Foshan factory. Largest project: 28,000sqm. Performance calculations & shop drawings included. Project quote in 24h.",
     "glass-railing-balustrade":
-      "Custom glass railings and stair balustrades from BDGLASS, Foshan. 8–15mm tempered or laminated glass with 304/316 stainless hardware. Export to 10+ countries.",
+      "China glass railing & balustrade factory — 8-15mm tempered or laminated glass with 304/316 stainless hardware. Complete glass+hardware system supply. CNC drilled ±0.5mm. Installation drawings included. Export to 10+ countries. Quote in 24h.",
     "office-glass-partition":
-      "BDGLASS manufactures custom office glass partitions: tempered, frosted, smart switchable glass. Frameless and framed systems. Foshan factory, global delivery.",
+      "China office glass partition factory — single-glazed, double-glazed, smart PDLC switchable & acoustic systems. ±1mm sizing. Frameless & framed. Up to 45 dB sound reduction. Global delivery. Quote in 24h.",
     "glass-shower-enclosure":
-      "BDGLASS manufactures custom glass shower enclosures: frameless, semi-frameless, sliding, and hinged doors. 8–10mm tempered glass. Export to hotels and residential projects.",
+      "China glass shower enclosure factory — frameless, semi-frameless, sliding & hinged doors. 8-10mm tempered glass with CNC-drilled holes ±0.5mm. Easy-clean nano coating. 304 stainless hardware included. Hotel & residential export. Quote in 24h.",
   };
 
   const title = titleMap[slug] || `${product.name} - BDGLASS`;
@@ -129,21 +129,21 @@ export default async function ProductDetailPage({
 
   const subMap: Record<string, string> = {
     "tempered-glass":
-      "BDGLASS manufactures 3-19mm tempered safety glass (toughened glass) at our 15,000㎡ factory in Foshan, China. 4-5× stronger than ordinary glass. 3C certified. Factory direct pricing.",
+      "BDGLASS manufactures 3-19mm tempered safety glass (also called toughened glass) at our 15,000㎡ factory in Foshan, Guangdong, China. 4-5× stronger than ordinary annealed glass. 3C, EN 12150 & ASTM C1048 certified. Max panel size 3,300×8,000mm. Factory direct pricing with MOQ 50 sqm. Ships to 10+ countries.",
     "insulating-glass":
-      "BDGLASS manufactures insulating glass units (IGU) with Low-E coating and argon gas fill at our 15,000㎡ factory in Foshan, China. 12-52mm thickness. 3C/EN 1279 certified. 10-year seal warranty.",
+      "BDGLASS manufactures insulating glass units (IGU) — double & triple glazed with Low-E coating, argon gas fill, and warm-edge spacers — at our 15,000㎡ factory in Foshan, Guangdong, China. U-values as low as 1.0 W/m²K. 3C/EN 1279 certified. 10-year seal warranty. MOQ 50 sqm. Ships to 10+ countries.",
     "laminated-glass":
-      "BDGLASS manufactures PVB and SGP laminated glass at our 15,000㎡ factory in Foshan, China. 6.38-60mm thickness. 99% UV blocking. 3C/EN 14449 certified. Bullet-resistant options available.",
+      "BDGLASS manufactures PVB and SGP laminated safety glass at our 15,000㎡ factory in Foshan, Guangdong, China. 6.38-60mm thickness, max 2500×6000mm. 99% UV blocking. Bullet-resistant (Level 1-3) and hurricane-rated options. 3C/EN 14449 certified. Factory direct pricing with MOQ 50 sqm. Ships to 10+ countries.",
     "craft-glass":
-      "BDGLASS manufactures custom decorative glass with 8+ techniques at our China factory. Acid etched, frosted, silk screen, digital enamel, hot melting, carved, patterned & stained. Pantone matching. Free DFM feedback.",
+      "BDGLASS manufactures custom decorative glass with 8+ techniques at our 15,000㎡ factory in Foshan, Guangdong, China. Acid etched, frosted, silk screen, digital enamel, hot melting, carved, patterned & stained. Pantone color matching with ΔE ≤ 2.0. Free DFM feedback with design file review. Samples in 7-10 days. Ships to 10+ countries.",
     "curtain-wall-glass":
-      "BDGLASS supplies curtain wall glass for commercial buildings at our 15,000㎡ factory in Foshan, China. Low-E IGU, reflective coated, spandrel panels, and structural glass fins. Project support with calculations and drawings.",
+      "BDGLASS supplies curtain wall glass for commercial towers, hotels, and mixed-use developments at our 15,000㎡ factory in Foshan, Guangdong, China. Low-E IGU, reflective coated, spandrel panels, and structural SGP laminated fins. Shop drawings and performance calculations included. Largest project: 28,000 sqm. Ships to 10+ countries.",
     "glass-railing-balustrade":
-      "BDGLASS supplies glass railings and stair balustrades from our Foshan factory. 8–15mm tempered or laminated glass with 304/316 stainless hardware. Complete system supply with installation drawings.",
+      "BDGLASS supplies glass railing and balustrade systems from our 15,000㎡ factory in Foshan, Guangdong, China. 8-15mm tempered or laminated glass with 304/316 stainless hardware. Complete system supply with shop drawings and installation guidance. CNC drilled to ±0.5mm. Ships to 10+ countries.",
     "office-glass-partition":
-      "BDGLASS manufactures custom office glass partitions at our Foshan factory. Single-glazed, double-glazed, smart PDLC, and acoustic systems. Exact sizing to ±1mm. Global delivery.",
+      "BDGLASS manufactures custom office glass partitions at our 15,000㎡ factory in Foshan, Guangdong, China. Single-glazed frameless, double-glazed framed, smart PDLC switchable, and acoustic systems. ±1mm dimensional accuracy. Sound reduction up to 45 dB. Demountable & reusable options. Global delivery.",
     "glass-shower-enclosure":
-      "BDGLASS manufactures custom glass shower enclosures at our Foshan factory. Frameless, semi-frameless, sliding, and hinged doors. 8–10mm tempered glass with precision-drilled holes.",
+      "BDGLASS manufactures custom glass shower enclosures at our 15,000㎡ factory in Foshan, Guangdong, China. Frameless, semi-frameless, sliding, and hinged doors. 8-10mm tempered glass with CNC-drilled holes ±0.5mm. Easy-clean nano coating available. 304 stainless hardware included. Ships to 10+ countries.",
   };
 
   const ctaMap: Record<string, string> = {
@@ -256,7 +256,7 @@ export default async function ProductDetailPage({
 
               {/* Key Features */}
               <div className="mb-8">
-                <h5 className="text-brand-dark font-semibold mb-3">Key Features</h5>
+                <h3 className="text-brand-dark font-semibold mb-3">Key Features</h3>
                 <ul className="space-y-3">
                   {product.features.map((f, i) => (
                     <li
@@ -295,17 +295,76 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
+      {/* ===== COMPARISON TABLE ===== */}
+      {product.comparisonTable && (
+        <section className="section bg-gray-50/50">
+          <div className="container-page">
+            <div className="max-w-3xl mx-auto text-center mb-10">
+              <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-3">
+                Material Comparison
+              </p>
+              <h2 className="text-brand-dark mb-4">
+                {product.comparisonTable.headers[1]} vs {product.comparisonTable.headers[2]}
+              </h2>
+              <p className="text-brand-muted-dark text-body-lg">
+                Understanding the key differences helps you specify the right safety glass for your project.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto overflow-x-auto">
+              <table className="w-full border-collapse bg-white rounded-xl overflow-hidden border border-gray-100">
+                <thead>
+                  <tr className="bg-brand-dark text-white">
+                    {product.comparisonTable.headers.map((h, i) => (
+                      <th key={i} className={`text-left p-4 font-semibold text-sm ${i === 0 ? "min-w-[140px]" : ""}`}>
+                        {h}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {product.comparisonTable.rows.map((row, i) => (
+                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
+                      <td className="p-4 text-brand-dark font-medium text-sm border-b border-gray-100">{row.property}</td>
+                      <td className="p-4 text-brand-muted-dark text-sm border-b border-gray-100">{row.left}</td>
+                      <td className="p-4 text-brand-muted-dark text-sm border-b border-gray-100">{row.right}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="max-w-3xl mx-auto text-center text-brand-dark font-medium mt-6 text-body-lg">
+              {product.comparisonTable.bottomLine}
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* ===== LONG DESCRIPTION ===== */}
       {product.longDescription && (
         <section className="section bg-gray-50/50">
           <div className="container-page">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-3">
-                Factory Details
+                Manufacturing & Quality
               </p>
               <h2 className="text-brand-dark mb-4">
-                About Our {product.name}
+                How BDGLASS Manufactures {product.name}
               </h2>
+              {isTempered && (
+                <p className="text-brand-muted-dark text-body-sm">
+                  From float glass cutting to final quality inspection — our Foshan factory produces tempered safety glass with SouthTech furnaces and strict 3C / EN 12150 compliance.
+                </p>
+              )}
+              {isInsulating && (
+                <p className="text-brand-muted-dark text-body-sm">
+                  From glass cutting and edge polishing to automated IGU assembly with butyl primary seal and silicone secondary seal — our Foshan factory produces insulating glass units with controlled humidity and strict EN 1279 compliance.
+                </p>
+              )}
+              {isLaminated && (
+                <p className="text-brand-muted-dark text-body-sm">
+                  From glass cutting and edge preparation to autoclave lamination under heat and pressure — our Foshan factory produces PVB and SGP laminated glass with precision interlayer bonding and strict EN 14449 compliance.
+                </p>
+              )}
             </div>
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-2xl border border-gray-100 p-8 md:p-10">
@@ -315,6 +374,48 @@ export default async function ProductDetailPage({
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ===== DECISION GUIDE ===== */}
+      {product.decisionGuide && (
+        <section className="section">
+          <div className="container-page">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-3">
+                Buying Guide
+              </p>
+              <h2 className="text-brand-dark mb-4">
+                How to Choose the Right {product.name} for Your Project
+              </h2>
+              <p className="text-brand-muted-dark text-body-lg">
+                A practical guide by buyer type — from architects specifying facades to builders ordering shower enclosures.
+              </p>
+            </div>
+            <div className="max-w-5xl mx-auto space-y-8">
+              {product.decisionGuide.sections.map((section, si) => (
+                <div key={si} className="bg-white rounded-xl border border-gray-100 p-6 md:p-8">
+                  <h3 className="text-brand-dark text-lg font-semibold mb-5 flex items-center gap-2">
+                    <span className="w-8 h-8 rounded-lg bg-brand-blue/10 text-brand-blue text-sm font-bold flex items-center justify-center shrink-0">
+                      {si + 1}
+                    </span>
+                    {section.heading}
+                  </h3>
+                  <div className="space-y-4">
+                    {section.items.map((item, ii) => (
+                      <div key={ii} className="flex items-start gap-3 pl-10">
+                        <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full bg-brand-blue" />
+                        <div>
+                          <span className="text-brand-dark font-semibold text-sm">{item.label}: </span>
+                          <span className="text-brand-muted-dark text-body-sm">{item.content}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -333,12 +434,57 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
+      {/* ===== PRICE FACTORS ===== */}
+      {product.priceFactors && (
+        <section className="section">
+          <div className="container-page">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-3">
+                Pricing Guide
+              </p>
+              <h2 className="text-brand-dark mb-4">
+                {product.name} Price Factors: What Affects Your Quote
+              </h2>
+              <p className="text-brand-muted-dark text-body-lg">
+                Understanding these 8 factors helps you budget accurately and avoid surprises when sourcing tempered glass from China.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {product.priceFactors.map((factor, i) => (
+                  <div key={i} className="bg-white rounded-xl border border-gray-100 p-5 hover:border-brand-blue/20 hover:shadow-sm transition-all">
+                    <div className="flex items-start gap-3">
+                      <span className="shrink-0 w-7 h-7 rounded-full bg-brand-blue text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <h3 className="text-brand-dark font-semibold text-sm mb-1.5">{factor.name}</h3>
+                        <p className="text-brand-muted-dark text-body-sm leading-relaxed">{factor.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-center text-brand-muted-dark text-body-sm mt-6">
+                Contact us with your specifications for an exact factory-direct quote — typical response within 24 hours.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ===== APPLICATIONS ===== */}
       <section className="section bg-gray-50/50">
         <div className="container-page">
           <SectionTitle
             title={`${product.name} Applications`}
-            subtitle="Widely used in construction, home decoration, and commercial projects worldwide."
+            subtitle={isTempered
+              ? "From building facades and windows to shower enclosures and furniture — tempered glass is the safety standard worldwide."
+              : isInsulating
+              ? "From curtain walls and passive houses to cold storage and soundproof studios — insulating glass is the foundation of energy-efficient construction."
+              : isLaminated
+              ? "From hurricane-resistant windows and bank security glazing to glass floors and soundproof partitions — laminated glass delivers safety, security, and acoustic performance."
+              : "Widely used in construction, home decoration, and commercial projects worldwide."}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {product.applications.map((app, i) => {
@@ -351,7 +497,7 @@ export default async function ProductDetailPage({
                   <div className="w-11 h-11 rounded-lg bg-brand-blue/10 flex items-center justify-center mb-4 group-hover:bg-brand-blue/15 transition-colors">
                     <Icon size={22} className="text-brand-blue" />
                   </div>
-                  <h5 className="text-brand-dark mb-2">{app.title}</h5>
+                  <h3 className="text-brand-dark mb-2">{app.title}</h3>
                   <p className="text-brand-muted-dark text-body-sm leading-relaxed">
                     {app.description}
                   </p>
@@ -362,12 +508,52 @@ export default async function ProductDetailPage({
         </div>
       </section>
 
+      {/* ===== CASE STUDIES ===== */}
+      {product.caseStudies && (
+        <section className="section bg-brand-dark relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)",
+              backgroundSize: "40px 40px",
+            }} />
+          </div>
+          <div className="container-page relative">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <p className="text-brand-blue text-sm font-semibold uppercase tracking-wider mb-3">
+                Project Experience
+              </p>
+              <h2 className="text-white mb-4">
+                {product.name} Projects We've Delivered
+              </h2>
+              <p className="text-brand-muted text-body-lg">
+                From high-rise curtain walls in Shenzhen to hotel shower enclosures in Cambodia — our tempered glass is trusted across continents.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5">
+              {product.caseStudies.map((cs, i) => (
+                <div key={i} className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 p-6 hover:border-brand-blue/30 transition-all">
+                  <p className="text-brand-blue text-2xl font-bold mb-2">{cs.area}</p>
+                  <p className="text-white font-semibold mb-2">{cs.project}</p>
+                  <p className="text-brand-muted text-sm leading-relaxed">{cs.application}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Link href="/projects" className="btn-outline border-brand-blue text-brand-blue inline-flex items-center gap-2">
+                View All Projects
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ===== WHY CHOOSE BDGLASS ===== */}
       <section className="section">
         <div className="container-page">
           <SectionTitle
-            title="Why Buyers Choose BDGLASS"
-            subtitle="15,000㎡ factory in Foshan, China. Direct export to 10+ countries."
+            title="Why International Buyers Choose BDGLASS"
+            subtitle="15,000㎡ factory in Foshan, Guangdong, China. Direct export to 10+ countries. 3C, EN & ASTM certified production."
           />
           <WhyChooseUs />
         </div>
@@ -394,13 +580,14 @@ export default async function ProductDetailPage({
                   Support
                 </p>
                 <h2 className="text-brand-dark mb-4">
-                  Frequently Asked Questions
+                  Frequently Asked Questions About {product.name}
                 </h2>
                 <p className="text-brand-muted-dark text-body-lg">
-                  Common questions from international buyers about {product.name.toLowerCase()}.
+                  Common questions from international buyers about {product.name.toLowerCase()}. Straightforward answers to help you source with confidence.
                 </p>
               </div>
               <Accordion items={product.faq} />
+              <JsonLdProductFAQ items={product.faq} />
             </div>
           </div>
         </section>
@@ -412,7 +599,13 @@ export default async function ProductDetailPage({
           <div className="container-page">
             <SectionTitle
               title="You May Also Need"
-              subtitle="Explore related glass products for your project."
+              subtitle={isTempered
+                ? "Complete your project with insulating, laminated, and curtain wall glass — all from our Foshan factory."
+                : isInsulating
+                ? "Pair your IGU with tempered safety glass, laminated acoustic panes, or complete curtain wall systems — all from our Foshan factory."
+                : isLaminated
+                ? "Combine laminated glass with tempered safety panes, decorative interlayers, or insulating glass units — all from our Foshan factory."
+                : "Explore related glass products for your project."}
             />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {product.relatedProducts.map((rp, i) => (
@@ -421,9 +614,9 @@ export default async function ProductDetailPage({
                   href={`/products/${rp.slug}`}
                   className="bg-white rounded-xl border border-gray-100 p-6 hover:border-brand-blue/30 hover:shadow-md transition-all group"
                 >
-                  <h5 className="text-brand-dark mb-2 group-hover:text-brand-blue transition-colors">
+                  <h3 className="text-brand-dark mb-2 group-hover:text-brand-blue transition-colors">
                     {rp.name}
-                  </h5>
+                  </h3>
                   <p className="text-brand-muted-dark text-body-sm leading-relaxed mb-4">
                     {rp.description}
                   </p>
@@ -509,6 +702,8 @@ export default async function ProductDetailPage({
         name={product.name}
         description={product.description.slice(0, 200)}
         imageUrl={product.imagePath}
+        sku={`BDGLASS-${product.slug}`}
+        offers={isTempered ? { minThickness: "3mm", maxThickness: "19mm", maxSize: "3300×8000mm", moq: "50 sqm", leadTime: "7-15 working days" } : isInsulating ? { minThickness: "12mm", maxThickness: "52mm", maxSize: "2500×5000mm", moq: "50 sqm", leadTime: "10-20 working days" } : isLaminated ? { minThickness: "6.38mm", maxThickness: "60mm", maxSize: "2500×6000mm", moq: "50 sqm", leadTime: "10-20 working days" } : isCraft ? { minThickness: "3mm", maxThickness: "25mm", maxSize: "3300×12000mm", moq: "Project-based", leadTime: "Samples 7-10 days, bulk 3-4 weeks" } : isCurtainWall ? { minThickness: "6mm", maxThickness: "15mm+", maxSize: "3300×5000mm", moq: "Project-based", leadTime: "15-30 working days" } : isRailing ? { minThickness: "10mm", maxThickness: "15mm", maxSize: "Custom (max panel 1500mm wide)", moq: "20 sqm", leadTime: "10-15 working days" } : isPartition ? { minThickness: "8mm", maxThickness: "12mm", maxSize: "Custom (max height 4000mm)", moq: "Project-based", leadTime: "10-15 working days" } : isShower ? { minThickness: "8mm", maxThickness: "10mm", maxSize: "Custom (max door 1000mm wide)", moq: "50 panels", leadTime: "10-15 working days" } : undefined}
       />
     </div>
   );

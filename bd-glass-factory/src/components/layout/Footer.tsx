@@ -18,7 +18,7 @@ export default function Footer() {
                 className="h-9 w-9 rounded-md"
                 width="36"
                 height="36"
-              />
+                loading="lazy" />
               <h5 className="text-white text-lg font-semibold">
                 {siteConfig.name}
               </h5>

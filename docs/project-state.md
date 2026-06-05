@@ -15,7 +15,7 @@
 | 构建输出 | standalone |
 | 部署方式 | Linux 服务器 + Nginx + PM2 |
 | 包管理器 | npm |
-| 当前版本 | V2.5.0 |
+| 当前版本 | V2.6.0 |
 
 ---
 
@@ -84,6 +84,25 @@
 - [x] PM2 进程管理
 - [x] 域名解析生效
 
+### V2.6.0 更新 ✅（2026-06-05 — /products/tempered-glass + /products/insulating-glass SEO + GEO 全面优化）
+
+- [x] **Meta 层优化** — Title 重写（"China Tempered Glass Factory — 3-19mm Toughened Safety Glass"），Description 重写（160字符，含 MOQ/认证/lead time 信号）
+- [x] **Heading 层级修复** — 全页 H5→H3（Key Features, Apps, WhyChooseUs, Related Products），消除跨级跳层
+- [x] **对比模块新增** — Tempered Glass vs Ordinary Glass 对比表（7 行 × 3 列 + bottom line）
+- [x] **决策指南新增** — "How to Choose" 按买家角色分段（Architect / Window Mfr / Contractor）
+- [x] **价格因素新增** — 8 大定价因素（厚度/基板/边加工/孔位/量/涂层/HST/物流）
+- [x] **案例研究新增** — 3 个已完成项目（Shenzhen 28,000㎡、Cambodia 5,000㎡、Melbourne 12,000㎡）
+- [x] **FAQ 扩展** — 7 → 10 项（新增：toughened vs tempered, heat-soak testing, floor glass thickness）
+- [x] **FAQPage Schema 新增** — 10 Q&A JSON-LD
+- [x] **Product Schema 增强** — 新增 AggregateOffer, countryOfOrigin: CN, SKU
+- [x] **图片组件修复** — ProductGallery 从 placeholder div 改为 Next.js Image + 完整 alt text
+- [x] **认证徽标修复** — CertBadges 从 ImageOff icon 改为真实认证图片
+- [x] **内部链接增强** — 项目案例链接 → /projects, 关键区域字幕文案优化
+- [x] **Product 接口扩展** — 新增 comparisonTable / decisionGuide / priceFactors / caseStudies 可选字段
+- [x] **/products/insulating-glass 同步优化** — Meta 重写、FAQ 7→10、对比表（IGU vs Single Pane）、决策指南、价格因素、案例研究、AggregateOffer Schema、FAQPage Schema (10 Q&A)
+- [x] **FAQ 标题 Bug 修复** — 从硬编码 "About Tempered Glass" 改为动态 `About {product.name}`
+- [x] **条件渲染数据驱动化** — comparison/decision/price/case 从 `isTempered` 改为 `product.xxx`，任何产品有数据即渲染
+
 ### 额外完成 ✅
 - [x] Logo 设计（SVG + PNG + favicon 全套）
 - [x] **Logo 更换（2026-06-02 — 新 3D 金属质感 BD Logo）**
@@ -137,39 +156,30 @@
 
 ## 三、进行中 / 待完成工作
 
-### 🔴 高优先级（下次会话首选）
+### 🔴 高优先级
 
-| # | 任务 | 说明 | 涉及文件 |
-|---|------|------|----------|
-| 1 | 替换钢化玻璃图片 | 用户自行寻找合适的 tempered-glass 产品图 | `public/images/home/categories/tempered-glass.jpg` |
-| 2 | ProductCategories 图片替换 | 7 个 placeholder `<div>` → `<Image>` | `src/components/home/ProductCategories.tsx` |
-| 3 | ProjectExperience 图片替换 | 1 个 placeholder `<div>` → `<Image>` | `src/components/home/ProjectExperience.tsx` |
-| 4 | QualityMaterials 图片替换 | 1 个 placeholder `<div>` → `<Image>` | `src/components/home/QualityMaterials.tsx` |
-| 5 | Founder 图片显示问题排查 | 创始人照片在部分环境渲染异常 | `src/app/about/page.tsx` |
+| # | 任务 | 说明 |
+|---|------|------|
+| 1 | 搜索引擎手动验证 | Google/Bing/Yandex Webmaster 账号创建 + meta 验证码填入 .env.local |
+| 2 | GA4 正式接入 | 获取 GA4 Measurement ID 填入 .env.local，当前代码已预留 |
 
 ### 🟡 中优先级
 
 | # | 任务 | 说明 |
 |---|------|------|
-| 6 | /certifications 页 SEO 优化 | 当前内容较基础，需关键词丰富化 |
-| 7 | /projects/[slug] 详情页 SEO | 每个项目独立 SEO 内容 |
-| 8 | Google Analytics 4 集成 | 测量 ID 通过环境变量配置 |
-| 9 | 产品图片质量检查 | 确认 4 个产品图是否足够专业 |
-| 10 | 关于页图片检查 | ✅ 已完成 — 创始人、团队、工厂、设备、客户卡片全部替换 |
-| 11 | ClientVisits 模块优化 | 用户可能希望调整交错幅度、裁剪比例或照片顺序 |
+| 3 | /projects/[slug] 详情页独立 SEO | 6 个项目各自独立的 metadata |
+| 4 | /products/[slug] 产品图多角度 | 详情页 gallery 多张产品图 |
+| 5 | Lighthouse 优化 | 目标 Desktop ≥ 90, Mobile ≥ 85 |
+| 6 | Schema.org 增强 | 产品详情页增加 Offer/AggregateRating Schema |
 
 ### 🟢 低优先级 / 未来规划
 
 | # | 任务 | 说明 |
 |---|------|------|
-| 14 | Blog 内容策略 | 用于持续 SEO |
-| 15 | 多语言支持 | next-intl 预留但未实施 |
-| 16 | 产品图片画廊 | 详情页多图切换 |
-| 17 | 案例图片画廊 | 详情页多图切换 |
-| 18 | Lighthouse 持续优化 | 目标 Desktop ≥ 90, Mobile ≥ 85 |
-| 19 | 加载骨架屏 | 提升 perceived performance |
-| 20 | 图片懒加载优化 | 非首屏图片 lazy loading |
-| 21 | 服务端缓存 | ISR 或 revalidate |
+| 7 | Blog 内容策略 | 持续 SEO 内容输出 |
+| 8 | 多语言支持 | next-intl 预留但未实施 |
+| 9 | 加载骨架屏 | 提升 perceived performance |
+| 10 | ISR / revalidate | 服务端增量静态生成 | |
 
 ---
 
@@ -236,7 +246,8 @@ server {
 | **构建后样式丢失** | ✅ **已根治（2026-06-03）** | `npm run build` 后未复制 `public/` 和 `.next/static/` 到 standalone 目录 | **`package.json` build 脚本已集成自动复制**：`next build && cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public` |
 | AI 图片生成不可用 | ⚠️ 已知 | Pollinations.ai 返回 402 | 使用 Unsplash 库存图或付费 API |
 | 询盘表单无邮件通知 | ✅ 已解决（2026-06-02）| API 仅接收，未配置 SMTP | 已集成 Resend，内部通知 + 客户确认邮件 |
-| 移动端图片 placeholder | 🔄 进行中 | 组件使用 `<div>` 代替 `<Image>` | 待替换为 Next.js Image |
+| 移动端图片 placeholder | ✅ 已解决（2026-06-04）| 组件使用 `<div>` 代替 `<img>` | 全部替换为真实产品图 + `loading="lazy"` |
+| `/certifications` 页面已删除 | ✅ 已解决 | 内容已整合到 About 页 | 路由已移除，sitemap 已更新 |
 | **src/app/favicon.ico 导致构建失败** | ✅ 已解决（2026-06-02）| Turbopack 无法解码 ICO 中 RGB 格式的 PNG | **已删除** `src/app/favicon.ico`，改用 layout.tsx metadata 引用 `public/favicon.ico` |
 
 > ⚠️ **关于 "构建后样式丢失" 的详细说明（2026-06-03 已根治）：**
@@ -255,13 +266,18 @@ server {
 
 ## 六、文件结构速查
 
-### 首页组件图片映射（待完成）
+### 图片懒加载状态（2026-06-04 已完成全站覆盖）
 
-| 组件 | 当前状态 | 目标图片路径 |
-|------|----------|-------------|
-| ProductCategories (7 个) | placeholder div | `public/images/home/categories/{slug}.jpg` |
-| ProjectExperience | placeholder div | `public/images/home/projects/project-showcase.jpg` |
-| QualityMaterials | placeholder div | `public/images/home/materials/quality-inspection.jpg` |
+| 页面 | 总图片 | 懒加载 | 覆盖率 |
+|------|--------|--------|--------|
+| 首页 | 35 | 33 | 94% |
+| About | 17 | 16 | 94% |
+| Products | 10 | 9 | 90% |
+| Projects | 8 | 7 | 88% |
+| Contact | 2 | 1 | 50% |
+| Services | 2 | 1 | 50% |
+
+> 仅 Header Logo（全站）和 Hero 背景图（首页 LCP）不使用懒加载，符合 Web Vitals 最佳实践。
 
 ### 图片目录总览
 
@@ -274,16 +290,14 @@ public/images/
 │   ├── Foshan Bodian Glass.jpg
 │   └── Team Photo.jpg
 ├── certifications/  (8 张 — 认证证书)
-├── client-visits/   (11 张 — 海外客户来访合影，2026-06-02 新增)
+├── client-visits/   (11 张 — 海外客户来访合影)
 ├── equipment/       (17 张 — 设备产线)
 ├── factory/         (30+ 张 — 工厂实拍)
 ├── home/
-│   ├── categories/  (7 张，1 张待替换)
-│   ├── materials/   (1 张)
-│   ├── projects/    (1 张)
 │   ├── hero-bg.jpg
-│   └── about-preview.jpg
-├── products/        (4 张 — 产品图)
+│   └── (7 张产品图 + 原材料图 + 项目图)
+├── products/        (8 张 WebP + 8 张 JPG 源文件)
+│   └── case/        (8 张原始 JPG)
 ├── projects/        (6 张 — 案例图)
 ├── services/        (13 张 — 服务图)
 └── team/            (2 张 — 团队照)
@@ -323,22 +337,35 @@ public/images/
 - `custom glass processing` — 出现在 keywords
 - `Foshan, Guangdong` — 出现在 FactoryStrength 卡片
 
-## 八、下次会话启动检查清单
+## 八、IndexNow & 搜索引擎索引配置（2026-06-04）
 
-当用户说"继续开发"时，按以下顺序执行：
+### IndexNow API
+- **Key**: `dd5f85a303e228068338d592fc2517d9`
+- **验证文件**: `public/dd5f85a303e228068338d592fc2517d9.txt`
+- **API 端点**: `POST /api/indexnow` — 接收 `{urlList: [...]}`，转发至 `api.indexnow.org`
+- **覆盖**: Bing + Yandex 双引擎
 
-1. **读取本文件** — 了解当前项目状态（30 秒）
-2. **检查 git 状态** — `git status` 确认是否有未提交更改
-3. **检查 tempered-glass.jpg** — 问用户是否已替换
-4. **替换组件 placeholder** — ProductCategories, ProjectExperience, QualityMaterials
-5. **本地测试** — `npm run dev`，确认图片和文案正常显示
-6. **构建** — `npm run build`（脚本已自动复制 static + public，无需手动操作）
-7. **部署** — `pm2 restart bd-glass-factory`
-8. **线上验证** — 访问 https://bdglassfactory.com 确认
+### 搜索引擎验证（待用户手动配置）
+- Google: `.env.local` → `NEXT_PUBLIC_GOOGLE_VERIFICATION=`
+- Bing: `.env.local` → `NEXT_PUBLIC_BING_VERIFICATION=`
+- Yandex: `.env.local` → `NEXT_PUBLIC_YANDEX_VERIFICATION=`
 
-> **重要提醒**：`package.json` 的 `build` 脚本已集成 `cp -r .next/static .next/standalone/.next/static && cp -r public .next/standalone/public`，执行 `npm run build` 即可自动完成，无需额外手动复制。
+### Sitemap
+- URL: `https://bdglassfactory.com/sitemap.xml`
+- 包含 20 个页面（首页 + 5 核心页 + 8 产品 + 6 项目）
+
+---
+
+## 九、下次会话启动检查清单
+
+1. **读取本文件** — 了解当前项目状态
+2. **检查 git 状态** — 确认是否有未提交更改
+3. **问用户：搜索引擎验证码拿到了吗？** — 如有，填入 `.env.local` 并重新构建
+4. **构建** — `npm run build`（自动复制 static + public）
+5. **部署** — `pm2 restart bd-glass-factory`
+6. **线上验证** — 访问 https://bdglassfactory.com 确认
 
 ---
 
 > 此文件由 AI 自动生成于 2026-06-02，用于项目进度保存。
-> 最近更新：2026-06-04 — V2.5.0 发布：首页全面 SEO 优化 + 产品图片替换 + JSON-LD Schema 扩展
+> 最近更新：2026-06-05 — V2.6.0：/products/tempered-glass SEO + GEO 全面优化

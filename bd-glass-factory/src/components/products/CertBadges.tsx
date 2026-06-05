@@ -1,10 +1,10 @@
-import { ImageOff } from "lucide-react";
+import Image from "next/image";
 
 const certs = [
-  { label: "3C / CCC", size: "400 × 300 px" },
-  { label: "Test Report", size: "400 × 300 px" },
-  { label: "EN 1279", size: "400 × 300 px" },
-  { label: "10Y Warranty", size: "400 × 300 px" },
+  { label: "3C / CCC Certification", image: "/images/certifications/3c-tempered.jpg" },
+  { label: "EN 12150 Test Report", image: "/images/certifications/3c-test-report.jpg" },
+  { label: "Quality Warranty", image: "/images/certifications/warranty-10-year.jpg" },
+  { label: "10-Year Seal Warranty", image: "/images/certifications/desiccant-warranty.jpg" },
 ];
 
 export default function CertBadges() {
@@ -13,11 +13,16 @@ export default function CertBadges() {
       {certs.map((cert, i) => (
         <div
           key={i}
-          className="flex flex-col items-center text-center p-4 rounded-xl bg-white border border-gray-100 hover:border-brand-blue/20 transition-all"
+          className="flex flex-col items-center text-center p-4 rounded-xl bg-white border border-gray-100 hover:border-brand-blue/20 hover:shadow-sm transition-all"
         >
-          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-brand-gray flex flex-col items-center justify-center mb-3">
-            <ImageOff size={28} className="text-brand-muted mb-1.5" />
-            <span className="text-brand-muted/60 text-[10px]">{cert.size}</span>
+          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-brand-gray mb-3">
+            <Image
+              src={cert.image}
+              alt={cert.label}
+              fill
+              className="object-contain"
+              sizes="(max-width: 640px) 50vw, 25vw"
+            />
           </div>
           <span className="text-brand-dark font-semibold text-sm">{cert.label}</span>
         </div>

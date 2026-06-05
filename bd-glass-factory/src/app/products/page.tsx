@@ -62,9 +62,9 @@ export default function ProductsPage() {
                 {/* Content */}
                 <div className="p-6 flex flex-col justify-between flex-1">
                   <div>
-                    <h4 className="text-brand-dark mb-2 group-hover:text-brand-blue transition-colors">
+                    <h3 className="text-brand-dark mb-2 group-hover:text-brand-blue transition-colors">
                       {product.name}
-                    </h4>
+                    </h3>
                     <p className="text-brand-muted-dark text-body-sm mb-4 line-clamp-2">
                       {product.description}
                     </p>

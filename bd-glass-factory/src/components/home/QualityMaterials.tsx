@@ -48,7 +48,8 @@ export default function QualityMaterials() {
             <img
               src="/images/home/Raw Materials.jpg"
               alt="Raw Materials"
-              className="w-full h-full object-cover" />
+              className="w-full h-full object-cover"
+              loading="lazy" />
           </div>
         </div>
       </div>
